@@ -11,6 +11,7 @@ public class MyPlayerController : MonoBehaviour
     public float gravity = 9.81f;
 
     private CharacterController characterController;
+    [SerializeField] private Animator animator;
     private Vector3 moveDirection;
     private float verticalVelocity;
 
@@ -23,7 +24,9 @@ public class MyPlayerController : MonoBehaviour
     {
         Move();
         HandleJump();
-        Debug.Log(characterController.isGrounded);
+        UpdateAnimator();
+
+        animator.SetBool("isJumping", !characterController.isGrounded);
     }
 
     void Move()
@@ -41,6 +44,10 @@ public class MyPlayerController : MonoBehaviour
             moveDirection = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
             characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
         }
+        else
+        {
+            moveDirection = Vector3.zero;
+        }
     }
 
     void HandleJump()
@@ -51,7 +58,13 @@ public class MyPlayerController : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 verticalVelocity = jumpForce;
+                //animator.SetBool("isJumping", true); // Set jumping to true when starting a jump
             }
+            //else
+            //{
+            //    animator.SetBool("isJumping", false); // Set jumping to false when grounded
+            //}
+
         }
         else
         {
@@ -60,5 +73,15 @@ public class MyPlayerController : MonoBehaviour
 
         Vector3 verticalMove = new Vector3(0, verticalVelocity, 0);
         characterController.Move(verticalMove * Time.deltaTime);
+    }
+
+    void UpdateAnimator()
+    {
+        // Update the isRunning parameter based on movement
+        bool isRunning = moveDirection.magnitude > 0;
+        animator.SetBool("isRunning", isRunning);
+
+        // Update the isJumping parameter based on vertical velocity
+        animator.SetBool("isJumping", !characterController.isGrounded);
     }
 }
