@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class TaxiTransport : MonoBehaviour
@@ -11,7 +12,6 @@ public class TaxiTransport : MonoBehaviour
     public float stopDistance = 1f; // Distance to stop from the waypoint
 
     private Transform targetWaypoint; // The current target waypoint
-    private bool isTransporting = false; // Whether the taxi is currently transporting the player
 
     void Start()
     {
@@ -21,11 +21,7 @@ public class TaxiTransport : MonoBehaviour
 
     void Update()
     {
-        // Move taxi towards the target waypoint if not transporting
-        if (!isTransporting && targetWaypoint != null)
-        {
-            MoveToWaypoint();
-        }
+        
     }
 
     void SetRandomWaypoint()
@@ -35,24 +31,11 @@ public class TaxiTransport : MonoBehaviour
         taxi.transform.position = targetWaypoint.position;
     }
 
-    void MoveToWaypoint()
-    {
-        // Move the taxi towards the target waypoint
-        Vector3 direction = targetWaypoint.position - taxi.transform.position;
-        taxi.transform.Translate(direction.normalized * moveSpeed * Time.deltaTime, Space.World);
-
-        // Check if taxi is close enough to the waypoint to stop
-        if (Vector3.Distance(taxi.transform.position, targetWaypoint.position) <= stopDistance)
-        {
-            isTransporting = false;
-        }
-    }
-
     public void TransportPlayer(Transform destination)
     {
         // Set the target waypoint to the selected destination
         targetWaypoint = destination;
-        isTransporting = true;
+        taxi.transform.position = targetWaypoint.position;
     }
 
     public void SetNearestWaypoint()

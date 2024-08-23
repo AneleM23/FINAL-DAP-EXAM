@@ -6,7 +6,10 @@ public class TaxiDestination : MonoBehaviour
 {
     public TaxiTransport taxi;
     public Transform[] destinationArray; // Array of possible destinations
-    private Transform destination;
+    [SerializeField] private Transform destination;
+
+    public GameObject[] zuluIcons;
+    public GameObject[] xhosaIcons;
 
     [SerializeField] private int pickDestination;
 
@@ -16,6 +19,18 @@ public class TaxiDestination : MonoBehaviour
         if (pickDestination > 0 && pickDestination <= destinationArray.Length)
         {
             destination = destinationArray[pickDestination - 1];
+        }
+
+        switch (pickDestination)
+        {
+            case 1:
+                SetToFalse();
+                zuluIcons[0].SetActive(true);
+                break;
+            case 2:
+                SetToFalse();
+                xhosaIcons[0].SetActive(true);
+                break;
         }
     }
 
@@ -44,6 +59,19 @@ public class TaxiDestination : MonoBehaviour
         else
         {
             Debug.LogWarning("Destination not set or out of range!");
+        }
+    }
+
+    void SetToFalse()
+    {
+        for (int i = 0; i < zuluIcons.Length; i++)
+        {
+            zuluIcons[i].SetActive(false);
+        }
+
+        for (int i = 0; i < xhosaIcons.Length; i++)
+        {
+            xhosaIcons[i].SetActive(false);
         }
     }
 }
