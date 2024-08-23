@@ -22,6 +22,8 @@ public class MyPlayerController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(characterController.isGrounded);
+
         Move();
         HandleJump();
         UpdateAnimator();

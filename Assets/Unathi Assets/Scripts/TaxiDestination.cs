@@ -8,7 +8,7 @@ public class TaxiDestination : MonoBehaviour
     public Transform[] destinationArray; // Array of possible destinations
     private Transform destination;
 
-    [SerializeField] private int pickDestination = 1;
+    [SerializeField] private int pickDestination;
 
     void Update()
     {

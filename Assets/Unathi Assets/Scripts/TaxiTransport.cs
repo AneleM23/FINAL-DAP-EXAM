@@ -54,4 +54,28 @@ public class TaxiTransport : MonoBehaviour
         targetWaypoint = destination;
         isTransporting = true;
     }
+
+    public void SetNearestWaypoint()
+    {
+        // Find the nearest waypoint to the player's position
+        float closestDistance = Mathf.Infinity;
+        Transform nearestWaypoint = null;
+
+        foreach (Transform waypoint in waypoints)
+        {
+            float distanceToPlayer = Vector3.Distance(player.position, waypoint.position);
+            if (distanceToPlayer < closestDistance)
+            {
+                closestDistance = distanceToPlayer;
+                nearestWaypoint = waypoint;
+            }
+        }
+
+        // Set the target waypoint to the nearest waypoint found
+        if (nearestWaypoint != null)
+        {
+            targetWaypoint = nearestWaypoint;
+            taxi.transform.position = targetWaypoint.position;
+        }
+    }
 }
