@@ -8,6 +8,9 @@ public class TaxiTransport : MonoBehaviour
     public Transform[] waypoints; // Array of waypoints where the taxi can go
     public Transform player; // Reference to the player
     public Transform taxi;
+
+    public Transform circle;
+
     public float moveSpeed = 5f; // Speed at which the taxi moves
     public float stopDistance = 1f; // Distance to stop from the waypoint
 
@@ -31,11 +34,17 @@ public class TaxiTransport : MonoBehaviour
         taxi.transform.position = targetWaypoint.position;
     }
 
-    public void TransportPlayer(Transform destination)
+    public IEnumerator TransportPlayer(Transform destination)
     {
         // Set the target waypoint to the selected destination
         targetWaypoint = destination;
+
+        // Move the taxi to the target waypoint
         taxi.transform.position = targetWaypoint.position;
+
+        yield return new WaitForSeconds(0.2f);
+
+        player.transform.position = circle.position;
     }
 
     public void SetNearestWaypoint()

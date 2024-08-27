@@ -54,7 +54,7 @@ public class TaxiDestination : MonoBehaviour
     {
         if (destination != null)
         {
-            taxi.TransportPlayer(destination); // Transport the player to the selected destination
+            StartCoroutine(taxi.TransportPlayer(destination)); // Transport the player to the selected destination
         }
         else
         {

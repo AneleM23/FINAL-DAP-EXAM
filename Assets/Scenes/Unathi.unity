@@ -2842,6 +2842,7 @@ MonoBehaviour:
   - {fileID: 1345566717}
   player: {fileID: 1272128429}
   taxi: {fileID: 1056795147}
+  circle: {fileID: 1645923916}
   moveSpeed: 5
   stopDistance: 1
 --- !u!1 &390695000 stripped
