@@ -28,6 +28,8 @@ public class MyPlayerController : MonoBehaviour
         Move();
         HandleJump(isGrounded);
         UpdateAnimator();
+
+        Debug.Log(characterController.isGrounded);
     }
 
     void Move()
