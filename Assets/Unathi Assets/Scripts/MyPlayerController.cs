@@ -22,13 +22,12 @@ public class MyPlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(characterController.isGrounded);
+        bool isGrounded = characterController.isGrounded;
+        animator.SetBool("isJumping", !isGrounded);
 
         Move();
-        HandleJump();
+        HandleJump(isGrounded);
         UpdateAnimator();
-
-        animator.SetBool("isJumping", !characterController.isGrounded);
     }
 
     void Move()
@@ -37,13 +36,20 @@ public class MyPlayerController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         Vector3 move = new Vector3(horizontal, 0, vertical).normalized;
+
         if (move.magnitude >= 0.1f)
         {
+            // Calculate the target angle
             float targetAngle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+            // Smoothly rotate towards the target angle
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSpeed, turnSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(0, angle, 0);
 
+            // Calculate the move direction based on the target angle
             moveDirection = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
+            moveDirection.y = 0; // Ensure no vertical movement is included in horizontal direction
+
+            // Move the player
             characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
         }
         else
@@ -52,21 +58,15 @@ public class MyPlayerController : MonoBehaviour
         }
     }
 
-    void HandleJump()
+    void HandleJump(bool isGrounded)
     {
-        if (characterController.isGrounded)
+        if (isGrounded)
         {
             verticalVelocity = -gravity * Time.deltaTime;
             if (Input.GetButtonDown("Jump"))
             {
                 verticalVelocity = jumpForce;
-                //animator.SetBool("isJumping", true); // Set jumping to true when starting a jump
             }
-            //else
-            //{
-            //    animator.SetBool("isJumping", false); // Set jumping to false when grounded
-            //}
-
         }
         else
         {
@@ -82,8 +82,6 @@ public class MyPlayerController : MonoBehaviour
         // Update the isRunning parameter based on movement
         bool isRunning = moveDirection.magnitude > 0;
         animator.SetBool("isRunning", isRunning);
-
-        // Update the isJumping parameter based on vertical velocity
-        animator.SetBool("isJumping", !characterController.isGrounded);
     }
+
 }

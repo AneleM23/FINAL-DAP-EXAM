@@ -6169,7 +6169,7 @@ GameObject:
   - component: {fileID: 592657176}
   - component: {fileID: 592657175}
   - component: {fileID: 592657174}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Xhosa Tribe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9845,6 +9845,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 0}
   target: {fileID: 0}
+  meter: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1001 &967637329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13566,6 +13568,7 @@ Transform:
   - {fileID: 285573111}
   - {fileID: 535061853}
   - {fileID: 1217684646}
+  - {fileID: 1311750278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1272128430
@@ -13609,7 +13612,7 @@ CharacterController:
   m_SlopeLimit: 35
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1272128432
 MonoBehaviour:
@@ -14185,6 +14188,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3581873577330021610, guid: 8d42ac1d92d644c4bad576276c281c50, type: 3}
+--- !u!1 &1311750277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1311750278}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1311750278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311750277}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.411, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1272128429}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1313729571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -516098083770646512, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
@@ -14392,7 +14426,7 @@ GameObject:
   - component: {fileID: 1344133780}
   - component: {fileID: 1344133779}
   - component: {fileID: 1344133778}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14849,7 +14883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.347
+      value: -1.328
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16282,6 +16316,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
   m_PrefabInstance: {fileID: 1454955180}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1478368933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1478368935}
+  - component: {fileID: 1478368934}
+  m_Layer: 0
+  m_Name: MissionsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1478368934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478368933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4fca19e8897aa4b88ab9e3efafb682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMissions: []
+--- !u!4 &1478368935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478368933}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 363.60712, y: 2.1521716, z: 220.71101}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1484966069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16889,8 +16968,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a7e192002f229b458fe1d8937216f7a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1539844792}
   m_SourcePrefab: {fileID: 100100000, guid: 7a7e192002f229b458fe1d8937216f7a, type: 3}
+--- !u!1 &1539844791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a7e192002f229b458fe1d8937216f7a, type: 3}
+  m_PrefabInstance: {fileID: 1539844790}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1539844792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539844791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aad19d50a433af4594e0f5fdc5e2491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionName: Find my Cow!
+  missionDescription: My Cow is lost, last  seen in the nearby woods.
 --- !u!1001 &1545780106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22046,3 +22147,4 @@ SceneRoots:
   - {fileID: 888325421}
   - {fileID: 1539844790}
   - {fileID: 1606834645}
+  - {fileID: 1478368935}

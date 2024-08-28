@@ -9,6 +9,8 @@ public class MissionWaypoint : MonoBehaviour
 {
     public Image img;
     public Transform target;
+    public Text meter;
+    public Vector3 offset;
 
     // Update is called once per frame
     void Update()
@@ -19,7 +21,7 @@ public class MissionWaypoint : MonoBehaviour
         float minY = img.GetPixelAdjustedRect().width / 2;
         float maxY = Screen.width - minY;
 
-        Vector2 pos = Camera.main.WorldToScreenPoint(target.position);
+        Vector2 pos = Camera.main.WorldToScreenPoint(target.position+ offset);
 
          if(Vector3.Dot((target.position - transform.position), transform.forward) < 0)
         {
@@ -35,6 +37,7 @@ public class MissionWaypoint : MonoBehaviour
            pos.x = Mathf.Clamp(pos.x, minX, maxX);
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
-       img.transform.position = pos; 
+       img.transform.position = pos;
+        meter.text = ((int)Vector3.Distance(target.position, transform.position)).ToString() + "m";
     }
 }
