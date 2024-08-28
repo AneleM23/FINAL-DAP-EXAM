@@ -40,19 +40,19 @@ public class MissionManager : MonoBehaviour
         return currentMissions.FindAll(m => !m.isCompleted);
     }
 
-    public List<string> GetCurrentMissionDescriptions()
+    public List<string> GetCurrentMissionNames()
     {
-        List<string> descriptions = new List<string>();
+        List<string> names = new List<string>();
 
         foreach (Mission mission in currentMissions)
         {
             if (!mission.isCompleted)
             {
-                descriptions.Add(mission.missionDescription);
+                names.Add(mission.missionName);
             }
         }
 
-        return descriptions;
+        return names;
     }
 
     //// Example usage

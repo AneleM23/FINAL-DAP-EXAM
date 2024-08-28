@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,9 +11,20 @@ public class MissionWaypoint : MonoBehaviour
     public Text meter;
     public Vector3 offset;
 
+    [SerializeField] WaypointManager waypoint;
+
     // Update is called once per frame
     void Update()
     {
+        // Ensure waypoint and currentWaypoint are assigned
+        if (waypoint == null || waypoint.currentWaypoint == null)
+        {
+            Debug.LogWarning("WaypointManager or currentWaypoint is not assigned.");
+            return;
+        }
+
+        target = waypoint.currentWaypoint.transform;
+
         float minX = img.GetPixelAdjustedRect().width / 2;
         float maxX = Screen.width - minX;
 

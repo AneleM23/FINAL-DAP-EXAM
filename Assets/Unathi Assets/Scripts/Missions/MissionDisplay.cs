@@ -15,7 +15,7 @@ public class MissionDisplay : MonoBehaviour
 
     void UpdateMissionDisplay()
     {
-        List<string> descriptions = missionManager.GetCurrentMissionDescriptions();
+        List<string> descriptions = missionManager.GetCurrentMissionNames();
 
         missionText.text = ""; // Clear the text first
 
