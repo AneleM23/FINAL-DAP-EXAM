@@ -24,6 +24,8 @@ public class WaypointManager : MonoBehaviour
         }
     }
 
+
+
     // Method to set a specific waypoint
     public void SetWaypoint(GameObject waypoint)
     {

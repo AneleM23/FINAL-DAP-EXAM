@@ -9,11 +9,14 @@ public class MyPlayerController : MonoBehaviour
     public float turnSpeed = 720f;
     public float jumpForce = 7f;
     public float gravity = 9.81f;
+    public float groundCheckDistance = 0.1f; // Distance for ground detection
+    public LayerMask groundLayer; // Layer to detect as ground
 
     private CharacterController characterController;
     [SerializeField] private Animator animator;
     private Vector3 moveDirection;
     private float verticalVelocity;
+    private bool isGrounded;
 
     void Start()
     {
@@ -22,14 +25,23 @@ public class MyPlayerController : MonoBehaviour
 
     void Update()
     {
-        bool isGrounded = characterController.isGrounded;
-        animator.SetBool("isJumping", !isGrounded);
+        Debug.Log(isGrounded);
 
+        GroundCheck();
         Move();
-        HandleJump(isGrounded);
+        HandleJump();
         UpdateAnimator();
 
-        Debug.Log(characterController.isGrounded);
+        animator.SetBool("isJumping", !isGrounded);
+    }
+
+    void GroundCheck()
+    {
+        // Use a raycast to detect if the player is grounded
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundCheckDistance, groundLayer);
+
+        // Debug line to visualize the raycast in the scene view
+        Debug.DrawLine(transform.position, transform.position + Vector3.down * groundCheckDistance, Color.red);
     }
 
     void Move()
@@ -38,20 +50,13 @@ public class MyPlayerController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         Vector3 move = new Vector3(horizontal, 0, vertical).normalized;
-
         if (move.magnitude >= 0.1f)
         {
-            // Calculate the target angle
             float targetAngle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
-            // Smoothly rotate towards the target angle
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSpeed, turnSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(0, angle, 0);
 
-            // Calculate the move direction based on the target angle
             moveDirection = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
-            moveDirection.y = 0; // Ensure no vertical movement is included in horizontal direction
-
-            // Move the player
             characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
         }
         else
@@ -60,7 +65,7 @@ public class MyPlayerController : MonoBehaviour
         }
     }
 
-    void HandleJump(bool isGrounded)
+    void HandleJump()
     {
         if (isGrounded)
         {
@@ -84,6 +89,9 @@ public class MyPlayerController : MonoBehaviour
         // Update the isRunning parameter based on movement
         bool isRunning = moveDirection.magnitude > 0;
         animator.SetBool("isRunning", isRunning);
+
+        // Update the isJumping parameter based on ground check
+        animator.SetBool("isJumping", !isGrounded);
     }
 
 }

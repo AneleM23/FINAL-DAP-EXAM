@@ -9,6 +9,17 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject interactionButton; // UI button to display
 
     private DialogueTrigger nearestDialogueTrigger;
+    private MissionManager missionManager;
+
+    void Start()
+    {
+        // Find the MissionManager in the scene
+        missionManager = FindObjectOfType<MissionManager>();
+        if (missionManager == null)
+        {
+            Debug.LogWarning("MissionManager not found in the scene.");
+        }
+    }
 
     void Update()
     {
@@ -24,8 +35,25 @@ public class PlayerInteraction : MonoBehaviour
         foreach (Collider collider in hitColliders)
         {
             DialogueTrigger trigger = collider.GetComponent<DialogueTrigger>();
+            MissionTrigger missionTrigger = collider.GetComponent<MissionTrigger>();
+
             if (trigger != null)
             {
+                // Debug information
+                Debug.Log("Found DialogueTrigger on: " + collider.name);
+
+                // Check if the object has a MissionTrigger component and if the mission is complete
+                if (missionTrigger != null)
+                {
+                    bool missionCompleted = missionManager.GetCurrentMissionNames().Contains(missionTrigger.missionName);
+                    Debug.Log("Mission name: " + missionTrigger.missionName + " completed: " + missionCompleted);
+
+                    if (!missionCompleted)
+                    {
+                        continue; // Skip this object if the mission is completed
+                    }
+                }
+
                 float distance = Vector3.Distance(transform.position, trigger.transform.position);
                 if (distance < closestDistance)
                 {
@@ -36,7 +64,9 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         // Activate or deactivate the interaction button based on whether a DialogueTrigger is nearby
-        interactionButton.SetActive(nearestDialogueTrigger != null);
+        bool buttonShouldBeActive = nearestDialogueTrigger != null;
+        interactionButton.SetActive(buttonShouldBeActive);
+        Debug.Log("Interaction button active: " + buttonShouldBeActive);
     }
 
     public void HandleInput()
