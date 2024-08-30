@@ -37,7 +37,7 @@ public class Mouse_Hover : MonoBehaviour
             objectNameText.text = objectName;
 
             // If right-click is pressed
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(1))
             {
                 // Empty space for additional functionality
                 Debug.Log("Right-clicked on: " + objectName);
