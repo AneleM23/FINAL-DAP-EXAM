@@ -7,6 +7,8 @@ public class WaypointManager : MonoBehaviour
     public List<GameObject> waypoints = new List<GameObject>();
     public GameObject currentWaypoint;
 
+    [SerializeField] MissionManager mission;
+
     void Start()
     {
         // Find all objects with the MissionTrigger script
@@ -27,11 +29,16 @@ public class WaypointManager : MonoBehaviour
 
 
     // Method to set a specific waypoint
-    public void SetWaypoint(GameObject waypoint)
+    public void SetWaypoint(int index)
     {
-        if (waypoints.Contains(waypoint))
+        if (index >= 0 && index < mission.GetActiveMissions().Count)
         {
-            currentWaypoint = waypoint;
+            currentWaypoint = waypoints[index];
+            Debug.Log("Waypoint set to: " + currentWaypoint.name);
+        }
+        else
+        {
+            Debug.LogWarning("Invalid mission index");
         }
     }
 
