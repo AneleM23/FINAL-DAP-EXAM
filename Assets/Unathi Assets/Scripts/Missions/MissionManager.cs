@@ -74,7 +74,7 @@ public class MissionManager : MonoBehaviour
             {
                 missionButtons[i].SetActive(true);
                 // Optionally set the button's text to the mission name
-                missionButtons[i].GetComponentInChildren<Text>().text = activeMissions[i].missionName;
+               // missionButtons[i].GetComponentInChildren<Text>().text = activeMissions[i].missionName;
             }
             else
             {

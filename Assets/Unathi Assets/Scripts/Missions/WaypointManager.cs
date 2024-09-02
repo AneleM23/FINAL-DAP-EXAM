@@ -26,7 +26,26 @@ public class WaypointManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (currentWaypoint != null)
+        {
+            // Get the MissionTrigger attached to the current waypoint
+            MissionTrigger missionTrigger = currentWaypoint.GetComponent<MissionTrigger>();
 
+            if (missionTrigger != null)
+            {
+                // Check if the current mission is completed
+                Mission currentMission = mission.currentMissions.Find(m => m.missionName == missionTrigger.missionName);
+
+                if (currentMission == null || currentMission.isCompleted)
+                {
+                    // Set the waypoint to the first active mission
+                    SetWaypointToFirstActiveMission();
+                }
+            }
+        }
+    }
 
     // Method to set a specific waypoint
     public void SetWaypoint(int index)
@@ -39,6 +58,31 @@ public class WaypointManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Invalid mission index");
+        }
+    }
+
+    // Method to set the waypoint to the first active mission
+    private void SetWaypointToFirstActiveMission()
+    {
+        List<Mission> activeMissions = mission.GetActiveMissions();
+
+        if (activeMissions.Count > 0)
+        {
+            Mission firstMission = activeMissions[0];
+            GameObject firstMissionObject = waypoints.Find(wp => wp.GetComponent<MissionTrigger>().missionName == firstMission.missionName);
+
+            if (firstMissionObject != null)
+            {
+                SetWaypoint(waypoints.IndexOf(firstMissionObject));
+            }
+            else
+            {
+                Debug.LogWarning("First active mission's GameObject not found in waypoints");
+            }
+        }
+        else
+        {
+            Debug.Log("No active missions available");
         }
     }
 
