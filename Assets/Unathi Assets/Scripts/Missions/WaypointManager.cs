@@ -40,6 +40,9 @@ public class WaypointManager : MonoBehaviour
 
                 if (currentMission == null || currentMission.isCompleted)
                 {
+                    // Remove the completed mission's waypoint
+                    RemoveCompletedMissionWaypoints();
+
                     // Set the waypoint to the first active mission
                     SetWaypointToFirstActiveMission();
                 }
@@ -47,10 +50,36 @@ public class WaypointManager : MonoBehaviour
         }
     }
 
+    // Method to remove waypoints of completed missions
+    private void RemoveCompletedMissionWaypoints()
+    {
+        // Create a temporary list to store completed waypoints
+        List<GameObject> completedWaypoints = new List<GameObject>();
+
+        foreach (GameObject waypoint in waypoints)
+        {
+            MissionTrigger missionTrigger = waypoint.GetComponent<MissionTrigger>();
+            if (missionTrigger != null)
+            {
+                Mission missionToCheck = mission.currentMissions.Find(m => m.missionName == missionTrigger.missionName);
+                if (missionToCheck != null && missionToCheck.isCompleted)
+                {
+                    completedWaypoints.Add(waypoint);
+                }
+            }
+        }
+
+        // Remove completed waypoints from the waypoints list
+        foreach (GameObject completedWaypoint in completedWaypoints)
+        {
+            waypoints.Remove(completedWaypoint);
+        }
+    }
+
     // Method to set a specific waypoint
     public void SetWaypoint(int index)
     {
-        if (index >= 0 && index < mission.GetActiveMissions().Count)
+        if (index >= 0 && index < waypoints.Count)
         {
             currentWaypoint = waypoints[index];
             Debug.Log("Waypoint set to: " + currentWaypoint.name);
@@ -92,3 +121,4 @@ public class WaypointManager : MonoBehaviour
         return currentWaypoint;
     }
 }
+
