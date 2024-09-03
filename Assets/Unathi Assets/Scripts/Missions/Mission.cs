@@ -9,6 +9,8 @@ public class Mission
     public string missionDescription;
     public bool isCompleted;
 
+    public Item rewardItem; // The item rewarded for completing this mission
+
     public Mission(string name, string description)
     {
         missionName = name;

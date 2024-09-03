@@ -8,6 +8,8 @@ public class MissionManager : MonoBehaviour
     public List<Mission> currentMissions = new List<Mission>();
     public List<GameObject> missionButtons; // Assign your buttons in the Inspector
 
+    public InventoryManager inventoryManager; // Reference to the InventoryManager
+
     // Add a new mission
     public void AddMission(Mission newMission)
     {
@@ -23,7 +25,12 @@ public class MissionManager : MonoBehaviour
         if (mission != null)
         {
             mission.CompleteMission();
-            UpdateMissionButtons();
+
+            // Reward the item
+            inventoryManager.AddItem(mission.rewardItem);
+
+            // Optionally, remove the completed mission
+            RemoveCompletedMissions();
         }
         else
         {
