@@ -66,7 +66,6 @@ public class PlayerInteraction : MonoBehaviour
         // Activate or deactivate the interaction button based on whether a DialogueTrigger is nearby
         bool buttonShouldBeActive = nearestDialogueTrigger != null;
         interactionButton.SetActive(buttonShouldBeActive);
-        Debug.Log("Interaction button active: " + buttonShouldBeActive);
     }
 
     public void HandleInput()

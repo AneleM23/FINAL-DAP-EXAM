@@ -25,8 +25,6 @@ public class MyPlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isGrounded);
-
         GroundCheck();
         Move();
         HandleJump();
