@@ -19319,8 +19319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionName: I lost my cow!
   missionDescription: My cow ran away, I think in the hills nearby.
-  itemSprite: {fileID: 0}
-  itemName: 
+  itemSprite: {fileID: 21300000, guid: eba2acf231fcbc946aee000e9a0d8406, type: 3}
+  itemName: Intonga
 --- !u!1 &1417725008
 GameObject:
   m_ObjectHideFlags: 0
