@@ -12,6 +12,7 @@ public class TaxiDestination : MonoBehaviour
     public GameObject[] xhosaIcons;
     public GameObject[] tswanaIcons;
     public GameObject[] swatiIcons;
+    public GameObject[] sothoIcons;
 
     [SerializeField] private int pickDestination;
 
@@ -33,13 +34,17 @@ public class TaxiDestination : MonoBehaviour
                 SetToFalse();
                 xhosaIcons[0].SetActive(true);
                 break;
-                case 3:
+            case 3:
                 SetToFalse();
-                swatiIcons[0].SetActive(true);
+                tswanaIcons[0].SetActive(true);
                 break;
             case 4:
                 SetToFalse();
-                tswanaIcons[0].SetActive(true);
+                swatiIcons[0].SetActive(true);
+                break;
+            case 5:
+                SetToFalse();
+                sothoIcons[0].SetActive(true);
                 break;
         }
     }
@@ -92,6 +97,11 @@ public class TaxiDestination : MonoBehaviour
         for (int i = 0; i < swatiIcons.Length; i++)
         {
             swatiIcons[i].SetActive(false);
+        }
+
+        for (int i = 0; i < sothoIcons.Length; i++)
+        {
+            sothoIcons[i].SetActive(false);
         }
     }
 }

@@ -27,7 +27,7 @@ public class DialogueTrigger : MonoBehaviour
         }
         else if (gameObject.name == "Gogo_Tswana")
         {
-            swatiIntro.Play();
+            tswanaIntro.Play();
         }
 
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
