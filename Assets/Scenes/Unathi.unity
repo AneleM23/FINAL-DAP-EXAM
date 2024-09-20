@@ -15549,7 +15549,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b8eaebb3b5ed2724d8bf582e0c62f593, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -33745,7 +33745,7 @@ MonoBehaviour:
     - I lost my cow, could you help me find it?
     - I last saw it in the mountains.
   zuluIntro: {fileID: 320538307}
-  xhosaIntro: {fileID: 0}
+  xhosaIntro: {fileID: 681948707}
   swatiIntro: {fileID: 0}
   tswanaIntro: {fileID: 0}
 --- !u!114 &1415858463
