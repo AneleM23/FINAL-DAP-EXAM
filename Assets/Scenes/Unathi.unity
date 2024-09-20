@@ -35433,7 +35433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aad19d50a433af4594e0f5fdc5e2491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionName: Please. help.
+  missionName: Please! Help me.
   missionDescription: My cow ran away, please search for it.
   itemSprite: {fileID: 21300000, guid: d45f35c8c1c10b44994e5cd75d51e3ad, type: 3}
   itemName: Ligcebesha

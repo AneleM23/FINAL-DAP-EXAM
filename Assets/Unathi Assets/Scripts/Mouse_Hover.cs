@@ -10,10 +10,12 @@ public class Mouse_Hover : MonoBehaviour
     public float hoverDistance = 10f; // Max distance for detecting objects
 
     MissionManager missionManager;
+    WaypointManager wayPoints;
 
     void Start()
     {
         missionManager= GameObject.Find("MissionsManager").GetComponent<MissionManager> ();
+        wayPoints = GameObject.Find("WaypointManager").GetComponent<WaypointManager>();
     }
 
     private void Update()
@@ -43,6 +45,7 @@ public class Mouse_Hover : MonoBehaviour
                 Debug.Log("Right-clicked on: " + objectName);
                 // You can add your custom code here to interact with the object
                 missionManager.CompleteMission(hit.collider.gameObject.GetComponent<MissionInformation>().missionName);
+                wayPoints.waypoints.Remove(hit.collider.gameObject.GetComponent<MissionInformation>().missionTrigger.gameObject);
             }
         }
         else

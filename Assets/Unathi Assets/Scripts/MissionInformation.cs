@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MissionInformation : MonoBehaviour
 {
-    [SerializeField ] MissionTrigger missionTrigger;
+    public MissionTrigger missionTrigger;
 
     public string missionName;
 
