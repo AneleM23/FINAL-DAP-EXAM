@@ -27,7 +27,7 @@ public class MissionManager : MonoBehaviour
             mission.CompleteMission();
 
             // Reward the item
-            inventoryManager.AddItem(mission.rewardItem);
+            StartCoroutine(inventoryManager.AddItem(mission.rewardItem));
 
             // Optionally, remove the completed mission
             RemoveCompletedMissions();
