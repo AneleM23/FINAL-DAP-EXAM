@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
+    enum GameState { PlayerTurn, EnemyTurn, Lose, Win}
+
     public static BattleManager Instance; // Singleton for easy access
 
     public int playerHealth = 100;
@@ -35,6 +37,7 @@ public class BattleManager : MonoBehaviour
                 break;
             case CardData.CardType.DoubleAttack:
                 // Special logic here
+                StartCoroutine(PlayerDoubleAttack(card));
                 break;
             case CardData.CardType.Heal:
                 // Heal logic here
@@ -71,5 +74,27 @@ public class BattleManager : MonoBehaviour
                 // Enemy special logic
                 break;
         }
+    }
+
+    IEnumerator PlayerDoubleAttack(CardData newCard)
+    {
+        playerAnimator.SetTrigger("Attack");
+        enemyHealth -= newCard.power;
+
+        yield return new WaitForSeconds(3);
+
+        playerAnimator.SetTrigger("Attack");
+        enemyHealth -= newCard.power;
+    }
+
+    IEnumerator EnemyDoubleAttack(CardData newCard)
+    {
+        enemyAnimator.SetTrigger("Attack");
+        playerHealth -= newCard.power;
+
+        yield return new WaitForSeconds(3);
+
+        enemyAnimator.SetTrigger("Attack");
+        playerHealth -= newCard.power;
     }
 }
