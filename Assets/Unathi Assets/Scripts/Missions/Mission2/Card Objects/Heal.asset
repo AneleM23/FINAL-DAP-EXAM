@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0478a54c5e29748a85c5b70663928f, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: 
-  cardName: 
-  cardType: 0
+  cardName: HEAL
+  cardType: 3
   power: 0
-  cardImage: {fileID: 0}
+  heal: 0
+  cardImage: {fileID: 21300000, guid: 790eb241fe41b054084cf290b11da503, type: 3}

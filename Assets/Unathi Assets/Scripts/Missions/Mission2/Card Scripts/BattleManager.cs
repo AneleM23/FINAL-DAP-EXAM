@@ -15,6 +15,15 @@ public class BattleManager : MonoBehaviour
     public Animator playerAnimator;
     public Animator enemyAnimator;
     public Text enemyCardDisplay; // Displays enemy card
+    public Text playerCardDisplay;
+    public Text turnText;
+
+
+    bool playerBlock;
+    bool enemySkipTurn;
+    bool playerSkipTurn;
+
+    GameState game;
 
     void Awake()
     {
@@ -24,77 +33,175 @@ public class BattleManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    void Start()
+    {
+        playerCardDisplay.text = "";
+        enemyCardDisplay.text = "";
+    }
+
+    void Update()
+    {
+         switch (game)
+        {
+            case GameState.PlayerTurn:
+                enemyCardDisplay.gameObject.SetActive(false);
+                playerCardDisplay.gameObject.SetActive(true);
+                turnText.text = "Your Turn!";
+                break;
+            case GameState.EnemyTurn:
+                enemyCardDisplay.gameObject.SetActive(true);
+                playerCardDisplay.gameObject.SetActive(false);
+                turnText.text = "Enemy's Turn!";
+                break;
+            //case GameState.Win:
+        }
+    }
+
     public void PlayCard(CardData card)
     {
-        switch (card.cardType)
+        if (playerSkipTurn)
         {
-            case CardData.CardType.Attack:
-                playerAnimator.SetTrigger("Attack");
-                enemyHealth -= card.power;
-                break;
-            case CardData.CardType.Block:
-                // Block logic here
-                break;
-            case CardData.CardType.DoubleAttack:
-                // Special logic here
-                StartCoroutine(PlayerDoubleAttack(card));
-                break;
-            case CardData.CardType.Heal:
-                // Heal logic here
-                playerHealth += card.heal;
-                break;
-            case CardData.CardType.Stun:
-                // Block logic here
-                break;
+            StartCoroutine(UpdatePlayerText("Skip Turn!"));
+
+            // After the player plays a card, have the enemy play one
+            StartCoroutine(EnemyTurn(card));
+
         }
 
-        // After the player plays a card, have the enemy play one
-        PlayEnemyTurn();
+        else
+        {
+            switch (card.cardType)
+            {
+                case CardData.CardType.Attack:
+                    playerAnimator.SetTrigger("isAttacking");
+                    enemyHealth -= card.power;
+                    break;
+                case CardData.CardType.Block:
+                    // Block logic here
+                    playerBlock = true;
+                    break;
+                case CardData.CardType.DoubleAttack:
+                    // Special logic here
+                    StartCoroutine(PlayerDoubleAttack(card));
+                    break;
+                case CardData.CardType.Heal:
+                    // Heal logic here
+                    playerHealth += card.heal;
+                    break;
+                case CardData.CardType.Stun:
+                    // Block logic here
+                    enemySkipTurn = true;
+                    break;
+            }
+
+            StartCoroutine(UpdatePlayerText(card.cardName));
+
+            // After the player plays a card, have the enemy play one
+            StartCoroutine(EnemyTurn(card));
+        }
     }
 
     void PlayEnemyTurn()
     {
-        // Generate a random enemy card (similar to player's card generation)
-        CardData enemyCard = DeckManager.Instance.cardDeck[Random.Range(0, DeckManager.Instance.cardDeck.Count)];
+        game = GameState.EnemyTurn;
 
-        // Display enemy's card name
-        enemyCardDisplay.text = enemyCard.cardName;
-
-        // Handle enemy card action (e.g., attack, block)
-        switch (enemyCard.cardType)
+        if (enemySkipTurn)
         {
-            case CardData.CardType.Attack:
-                enemyAnimator.SetTrigger("Attack");
-                playerHealth -= enemyCard.power;
-                break;
-            case CardData.CardType.Block:
-                // Enemy block logic
-                break;
-            case CardData.CardType.DoubleAttack:
-                // Enemy special logic
-                break;
+            enemyCardDisplay.text = "Skip Turn!";
+            StartCoroutine(PlayerTurn());
+        }
+        else
+        {
+
+            // Generate a random enemy card (similar to player's card generation)
+            CardData enemyCard = DeckManager.Instance.cardDeck[Random.Range(0, DeckManager.Instance.cardDeck.Count)];
+
+            // Display enemy's card name
+            enemyCardDisplay.text = enemyCard.cardName;
+
+            // Handle enemy card action (e.g., attack, block)
+            switch (enemyCard.cardType)
+            {
+                case CardData.CardType.Attack:
+                    enemyAnimator.SetTrigger("Attack");
+
+                    if (playerBlock)
+                    {
+                        playerHealth -= enemyCard.power / 2;
+                    }
+                    else
+                    {
+                        playerHealth -= enemyCard.power;
+                    }
+
+                    playerBlock = false;
+
+                    break;
+                case CardData.CardType.Block:
+                    // Enemy block logic
+                    break;
+                case CardData.CardType.DoubleAttack:
+                    // Enemy special logic
+                    StartCoroutine(EnemyDoubleAttack(enemyCard));
+                    break;
+                case CardData.CardType.Heal:
+                    // Heal logic here
+                    enemyHealth += enemyCard.heal;
+                    break;
+                case CardData.CardType.Stun:
+                    // Block logic here
+                    playerSkipTurn = true;
+                    break;
+            }
+
+            StartCoroutine(PlayerTurn());
         }
     }
 
     IEnumerator PlayerDoubleAttack(CardData newCard)
     {
-        playerAnimator.SetTrigger("Attack");
+        playerAnimator.SetTrigger("isAttacking");
         enemyHealth -= newCard.power;
 
         yield return new WaitForSeconds(3);
 
-        playerAnimator.SetTrigger("Attack");
+        playerAnimator.SetTrigger("isAttacking");
         enemyHealth -= newCard.power;
     }
 
     IEnumerator EnemyDoubleAttack(CardData newCard)
     {
-        enemyAnimator.SetTrigger("Attack");
+        enemyAnimator.SetTrigger("isAttacking");
         playerHealth -= newCard.power;
 
         yield return new WaitForSeconds(3);
 
-        enemyAnimator.SetTrigger("Attack");
+        enemyAnimator.SetTrigger("isAttacking");
         playerHealth -= newCard.power;
+    }
+
+    IEnumerator EnemyTurn(CardData card)
+    {
+        yield return new WaitForSeconds(3);
+
+        PlayEnemyTurn();
+
+        yield return new WaitForSeconds(3);
+    }
+
+    IEnumerator PlayerTurn()
+    {
+        yield return new WaitForSeconds(3);
+
+        game = GameState.PlayerTurn;
+    }
+
+    IEnumerator UpdatePlayerText(string text)
+    {
+        playerCardDisplay.text = text;
+
+        yield return new WaitForSeconds(3);
+
+        playerCardDisplay.text = "";
     }
 }

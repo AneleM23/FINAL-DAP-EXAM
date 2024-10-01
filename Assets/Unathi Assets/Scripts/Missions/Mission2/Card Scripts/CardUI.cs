@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; // Add this to use TextMeshPro
 
 public class CardUI : MonoBehaviour
 {
     public Image cardImage;
-    public Text cardName;
-    public Text cardPower;
+    public TMP_Text cardName; // Changed to TMP_Text
+    public TMP_Text cardPower; // Changed to TMP_Text
+    public TMP_Text cardHeal; // Changed to TMP_Text
     private CardData cardData;
 
     public void SetCard(CardData card)
@@ -15,7 +17,8 @@ public class CardUI : MonoBehaviour
         cardData = card;
         cardImage.sprite = card.cardImage;
         cardName.text = card.cardName;
-        cardPower.text = card.power.ToString();
+        cardPower.text = "Power: " + card.power.ToString();
+        cardHeal.text = "Heal: " + card.heal.ToString();
 
         // Add button listener
         GetComponent<Button>().onClick.AddListener(OnCardClicked);

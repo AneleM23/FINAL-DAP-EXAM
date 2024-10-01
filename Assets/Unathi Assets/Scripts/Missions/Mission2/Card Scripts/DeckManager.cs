@@ -13,6 +13,14 @@ public class DeckManager : MonoBehaviour
     private List<CardData> playerHand = new List<CardData>();
     private int handSize = 5;
 
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
     void Start()
     {
         DrawInitialHand();
