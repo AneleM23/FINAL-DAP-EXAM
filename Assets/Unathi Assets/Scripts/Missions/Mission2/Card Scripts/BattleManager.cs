@@ -22,6 +22,10 @@ public class BattleManager : MonoBehaviour
     bool playerBlock;
     bool enemySkipTurn;
     bool playerSkipTurn;
+    public bool canPlay;
+
+    public Slider hpSlider;
+    public Slider enemyHpSlider;
 
     GameState game;
 
@@ -35,6 +39,9 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
+        SetHPSlider();
+        SetEnemyHPSlider();
+
         playerCardDisplay.text = "";
         enemyCardDisplay.text = "";
     }
@@ -55,50 +62,60 @@ public class BattleManager : MonoBehaviour
                 break;
             //case GameState.Win:
         }
+
+           UpdateSlider();
+        UpdateEnemySlider();
     }
 
     public void PlayCard(CardData card)
     {
-        if (playerSkipTurn)
+        if (canPlay)
         {
-            StartCoroutine(UpdatePlayerText("Skip Turn!"));
+            canPlay = false;
 
-            // After the player plays a card, have the enemy play one
-            StartCoroutine(EnemyTurn(card));
-
-        }
-
-        else
-        {
-            switch (card.cardType)
+            if (playerSkipTurn)
             {
-                case CardData.CardType.Attack:
-                    playerAnimator.SetTrigger("isAttacking");
-                    enemyHealth -= card.power;
-                    break;
-                case CardData.CardType.Block:
-                    // Block logic here
-                    playerBlock = true;
-                    break;
-                case CardData.CardType.DoubleAttack:
-                    // Special logic here
-                    StartCoroutine(PlayerDoubleAttack(card));
-                    break;
-                case CardData.CardType.Heal:
-                    // Heal logic here
-                    playerHealth += card.heal;
-                    break;
-                case CardData.CardType.Stun:
-                    // Block logic here
-                    enemySkipTurn = true;
-                    break;
+                StartCoroutine(UpdatePlayerText("Skip Turn!"));
+
+                // After the player plays a card, have the enemy play one
+                StartCoroutine(EnemyTurn(card));
+
+                playerSkipTurn = false;
             }
 
-            StartCoroutine(UpdatePlayerText(card.cardName));
+            else
+            {
+                switch (card.cardType)
+                {
+                    case CardData.CardType.Attack:
+                        playerAnimator.SetTrigger("isAttacking");
+                        enemyHealth -= card.power;
+                        break;
+                    case CardData.CardType.Block:
+                        // Block logic here
+                        playerBlock = true;
+                        break;
+                    case CardData.CardType.DoubleAttack:
+                        // Special logic here
+                        StartCoroutine(PlayerDoubleAttack(card));
+                        break;
+                    case CardData.CardType.Heal:
+                        // Heal logic here
+                        playerHealth += card.heal;
+                        break;
+                    case CardData.CardType.Stun:
+                        // Block logic here
+                        enemySkipTurn = true;
+                        break;
+                }
 
-            // After the player plays a card, have the enemy play one
-            StartCoroutine(EnemyTurn(card));
+                StartCoroutine(UpdatePlayerText(card.cardName));
+
+                // After the player plays a card, have the enemy play one
+                StartCoroutine(EnemyTurn(card));
+            }
         }
+        
     }
 
     void PlayEnemyTurn()
@@ -109,6 +126,7 @@ public class BattleManager : MonoBehaviour
         {
             enemyCardDisplay.text = "Skip Turn!";
             StartCoroutine(PlayerTurn());
+            enemySkipTurn= false;
         }
         else
         {
@@ -123,7 +141,7 @@ public class BattleManager : MonoBehaviour
             switch (enemyCard.cardType)
             {
                 case CardData.CardType.Attack:
-                    enemyAnimator.SetTrigger("Attack");
+                    enemyAnimator.SetTrigger("isAttacking");
 
                     if (playerBlock)
                     {
@@ -194,6 +212,7 @@ public class BattleManager : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         game = GameState.PlayerTurn;
+        canPlay = true;
     }
 
     IEnumerator UpdatePlayerText(string text)
@@ -203,5 +222,27 @@ public class BattleManager : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         playerCardDisplay.text = "";
+    }
+
+    void SetHPSlider()
+    {
+        hpSlider.maxValue = playerHealth;
+        hpSlider.value = playerHealth;
+    }
+
+    void UpdateSlider()
+    {
+        hpSlider.value = playerHealth;
+    }
+
+    void SetEnemyHPSlider()
+    {
+        enemyHpSlider.maxValue = enemyHealth;
+        enemyHpSlider.value = enemyHealth;
+    }
+
+    void UpdateEnemySlider()
+    {
+        enemyHpSlider.value = enemyHealth;
     }
 }

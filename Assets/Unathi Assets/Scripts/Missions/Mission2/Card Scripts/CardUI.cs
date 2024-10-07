@@ -25,14 +25,17 @@ public class CardUI : MonoBehaviour
     }
 
     void OnCardClicked()
-    {
-        // Perform the card action (attack, block, etc.)
-        BattleManager.Instance.PlayCard(cardData);
+    {    
+        if (BattleManager.Instance.canPlay == true)
+        {
+            // Perform the card action (attack, block, etc.)
+            BattleManager.Instance.PlayCard(cardData);
 
-        // Inform DeckManager that the card was used
-        FindObjectOfType<DeckManager>().OnCardUsed(cardData);
+            // Inform DeckManager that the card was used
+            FindObjectOfType<DeckManager>().OnCardUsed(cardData);
 
-        // Destroy the card UI
-        Destroy(gameObject);
+            // Destroy the card UI
+            Destroy(gameObject);
+        }
     }
 }
