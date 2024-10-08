@@ -6,7 +6,7 @@ public class ZuluCowManager : MonoBehaviour
 {
     [SerializeField] MissionManager missionManager;
 
-    [SerializeField] MissionTrigger missionTrigger;
+    public MissionTrigger missionTrigger;
 
     [SerializeField] Transform forest;
 
