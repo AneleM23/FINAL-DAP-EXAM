@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    [SerializeField] SceneManagement scenes;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -59,6 +61,9 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         dialogueBox.SetActive(false);
+
+        if (nameText.text == "Zulu Boss")
+            scenes.StartBattle();
     }
 }
 

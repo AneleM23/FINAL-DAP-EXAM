@@ -8,7 +8,9 @@ public class Mission2Manager : MonoBehaviour
 
     [SerializeField] MissionManager mission;
 
-    Sprite itemSprite;
+    [SerializeField] WaypointManager waypoints;
+
+    [SerializeField] Sprite itemSprite;
 
     bool missionAdded;
 
@@ -21,9 +23,9 @@ public class Mission2Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool missionCompleted = mission.GetCurrentMissionNames().Contains(zuluMission1.missionTrigger.missionName);
+        bool missionCompleted = mission.GetActiveMissions().Exists(m => m.missionName == zuluMission1.missionTrigger.missionName);
 
-        if(!missionAdded && !missionCompleted)
+        if (!missionAdded && !missionCompleted)
         {
             SetMissionTrigger();
             missionAdded=true;
@@ -37,5 +39,6 @@ public class Mission2Manager : MonoBehaviour
         mission.missionDescription = "The Zulu chief wants you gone from his village!";
         mission.itemSprite = itemSprite;
         mission.itemName = "Isihlangu";
+        waypoints.waypoints.Add(gameObject);
     }
 }

@@ -45,7 +45,7 @@ public class PlayerInteraction : MonoBehaviour
                 // Check if the object has a MissionTrigger component and if the mission is complete
                 if (missionTrigger != null)
                 {
-                    bool missionCompleted = missionManager.GetCurrentMissionNames().Contains(missionTrigger.missionName);
+                    bool missionCompleted = missionManager.GetActiveMissions().Exists(m => m.missionName == missionTrigger.missionName);
                     Debug.Log("Mission name: " + missionTrigger.missionName + " completed: " + missionCompleted);
 
                     if (!missionCompleted)

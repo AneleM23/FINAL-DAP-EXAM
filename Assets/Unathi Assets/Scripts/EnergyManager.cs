@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnergyManager : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class EnergyManager : MonoBehaviour
     public delegate void OnEnergyChanged(float currentEnergy);
     public static event OnEnergyChanged EnergyChanged;
 
+    public Slider slider;
+
     private void Start()
     {
         // Initialize the player's energy to the maximum at the start
         currentEnergy = maxEnergy;
+        slider.maxValue = maxEnergy;
     }
 
     private void Update()
@@ -29,6 +33,8 @@ public class EnergyManager : MonoBehaviour
             // Notify listeners (e.g., UI) about the energy update
             EnergyChanged?.Invoke(currentEnergy);
         }
+
+        slider.value = currentEnergy;
     }
 
     // Function to spend energy for a mission or any other action
