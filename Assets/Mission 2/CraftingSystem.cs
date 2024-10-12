@@ -7,7 +7,7 @@ public class CraftingSystem : MonoBehaviour
 {
 
     public InventorySystem inventory; // Reference to the InventorySystem
-    public Text craftingMessageText; // Reference to the UI Text for crafting messages
+    public Text craftMessageText; // Reference to the UI Text for crafting messages
 
     public string[] requiredItems = { "Wood", "Grass", "Stone" }; // Required items
     public int[] requiredQuantities = { 5, 3, 2 }; // Quantities required
@@ -22,6 +22,7 @@ public class CraftingSystem : MonoBehaviour
             if (!inventory.HasEnoughItems(requiredItems[i], requiredQuantities[i]))
             {
                 canCraft = false;
+                Debug.Log("Not enough " + requiredItems[i]);
                 break; 
             }
         }
@@ -30,14 +31,28 @@ public class CraftingSystem : MonoBehaviour
         if (canCraft)
         {
             Debug.Log("Crafting Hut!");
-            craftingMessageText.text = " Crafting Hut"; 
             SpawnHut();
+            ShowCraftMessage("Hut crafted successfully!");
         }
         else
         {
-            Debug.Log("Can't craft hut, need more items.");
-            craftingMessageText.text = "Can't craft hut, need more items."; // Update the message
+            ShowCraftMessage("Not enough materials to craft the hut.");
         }
+    }
+
+    void ShowCraftMessage(string message)
+    {
+        // Display the message
+        craftMessageText.text = message;
+        craftMessageText.gameObject.SetActive(true); // Show the text
+
+        // Hide the message after a delay
+        Invoke("HideCraftMessage", 2f); // Hides the message after 2 seconds
+    }
+
+    void HideCraftMessage()
+    {
+        craftMessageText.gameObject.SetActive(false); // Hide the text again
     }
 
     void SpawnHut()
