@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventorySystem : MonoBehaviour
 {
     public static InventorySystem instance;
 
     private Dictionary<string, int> items = new Dictionary<string, int>();
+
+    public Text woodText;
+    public Text grassText;
+    public Text stoneText;
+
+    public int requiredWood = 5;
+    public int requiredGrass = 3;
+    public int requiredStone = 2;
 
 
     public void Awake()
@@ -33,6 +42,29 @@ public class InventorySystem : MonoBehaviour
         }
 
         Debug.Log("Collected: " + itemName + " x " + quantity);
+
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        if (woodText != null)
+        {
+            int collectedWood = items.ContainsKey("Wood") ? items["Wood"] : 0;
+            woodText.text = "Wood: " + collectedWood + " / " + requiredWood;
+        }
+
+        if (grassText != null)
+        {
+            int collectedGrass = items.ContainsKey("Grass") ? items["Grass"] : 0;
+            grassText.text = "Grass: " + collectedGrass + " / " + requiredGrass;
+        }
+
+        if (stoneText != null)
+        {
+            int collectedStone = items.ContainsKey("Stone") ? items["Stone"] : 0;
+            stoneText.text = "Stone: " + collectedStone + " / " + requiredStone;
+        }
     }
 
     // Check if player has enough items for crafting
