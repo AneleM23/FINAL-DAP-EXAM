@@ -7364,6 +7364,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       insertIndex: -1
       addedObject: {fileID: 605236748}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 605236749}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &605236746 stripped
 Transform:
@@ -7387,6 +7390,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c067174084a45f84e8ccfaa334451f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &605236749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605236747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ba59d6eb0079c4681b59d4548bde73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSystem: {fileID: 929098768}
+  npcName: Swati NPC
 --- !u!1001 &605298694
 PrefabInstance:
   m_ObjectHideFlags: 0
