@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mission2Manager : MonoBehaviour
+public class AmadumbeMission_Manager : MonoBehaviour
 {
-    [SerializeField] ZuluCowManager zuluMission1;
+    [SerializeField] XhosaCowManager xhosaMission1;
 
     [SerializeField] MissionManager mission;
 
@@ -17,28 +17,29 @@ public class Mission2Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(gameObject.name);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool missionCompleted = mission.GetActiveMissions().Exists(m => m.missionName == zuluMission1.missionTrigger.missionName);
+        bool missionCompleted = mission.GetActiveMissions().Exists(m => m.missionName == xhosaMission1.missionTrigger.missionName);
 
         if (!missionAdded && !missionCompleted)
         {
             SetMissionTrigger();
-            missionAdded=true;
+            missionAdded = true;
         }
     }
 
     void SetMissionTrigger()
     {
         MissionTrigger mission = gameObject.AddComponent<MissionTrigger>();
-        mission.missionName = "Boss Fight!";
-        mission.missionDescription = "The Zulu chief wants you gone from his village!";
+        mission.missionName = "Help the Farmer!";
+        mission.missionDescription = "Help the farmer collect ingredients!";
         mission.itemSprite = itemSprite;
-        mission.itemName = "Isihlangu";
+        mission.itemName = "Inxili";
         waypoints.waypoints.Add(gameObject);
+        GetComponent<MissionInformation>().missionTrigger = mission;
     }
 }

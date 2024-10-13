@@ -24,10 +24,18 @@ public class BattleManager : MonoBehaviour
     bool playerSkipTurn;
     public bool canPlay;
 
+    public bool missionActive;
+
     public Slider hpSlider;
     public Slider enemyHpSlider;
 
-    GameState game;
+    [SerializeField] GameState game;
+
+    [SerializeField] MissionTrigger missionTrigger;
+
+    [SerializeField] SceneManagement scenes;
+
+    [SerializeField] MissionManager missionManager;
 
     void Awake()
     {
@@ -48,6 +56,8 @@ public class BattleManager : MonoBehaviour
 
     void Update()
     {
+        missionTrigger = GameObject.Find("ZuluChief").GetComponent<MissionTrigger>();
+
          switch (game)
         {
             case GameState.PlayerTurn:
@@ -60,7 +70,17 @@ public class BattleManager : MonoBehaviour
                 playerCardDisplay.gameObject.SetActive(false);
                 turnText.text = "Enemy's Turn!";
                 break;
-            //case GameState.Win:
+            case GameState.Win:
+                if (missionActive)
+                {
+                      if (missionTrigger!= null)
+                    {
+                        missionManager.CompleteMission(missionTrigger.missionName);
+                        scenes.EndBattle();
+                    }
+                }
+                break;
+
         }
 
            UpdateSlider();
@@ -89,7 +109,7 @@ public class BattleManager : MonoBehaviour
                 {
                     case CardData.CardType.Attack:
                         playerAnimator.SetTrigger("isAttacking");
-                        enemyHealth -= card.power;
+                        enemyHealth -= card.power * 2;
                         break;
                     case CardData.CardType.Block:
                         // Block logic here
@@ -109,10 +129,17 @@ public class BattleManager : MonoBehaviour
                         break;
                 }
 
-                StartCoroutine(UpdatePlayerText(card.cardName));
+                if (enemyHealth > 0)
+                {
+                    StartCoroutine(UpdatePlayerText(card.cardName));
 
-                // After the player plays a card, have the enemy play one
-                StartCoroutine(EnemyTurn(card));
+                    // After the player plays a card, have the enemy play one
+                    StartCoroutine(EnemyTurn(card));
+                }   else if (enemyHealth<=0)
+                {
+                    game = GameState.Win;
+                }
+                
             }
         }
         

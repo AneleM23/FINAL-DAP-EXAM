@@ -17,6 +17,7 @@ public class MissionInformation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (missionTrigger != null) 
         missionName = missionTrigger.missionName;
     }
 }

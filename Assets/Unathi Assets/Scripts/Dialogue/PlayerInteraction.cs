@@ -70,10 +70,20 @@ public class PlayerInteraction : MonoBehaviour
 
     public void HandleInput()
     {
-        if (nearestDialogueTrigger != null) // "Interact" can be mapped to a key like "E"
+        if (nearestDialogueTrigger.dialogue.npcName == "Xhosa Farmer")
         {
-            nearestDialogueTrigger.TriggerDialogue();
+            Mission_Amadumbe missionAmadumbe = nearestDialogueTrigger.gameObject.GetComponent<Mission_Amadumbe>();
+            MissionInformation missionInfo = nearestDialogueTrigger.gameObject.GetComponent<MissionInformation>();
+
+            if (missionAmadumbe != null && missionAmadumbe.missionComplete)
+            {
+                missionManager.CompleteMission(missionInfo.missionName);
+                return; // Mission is complete, do not trigger dialogue.
+            }
         }
+
+        // If the mission is not complete or it's not the Xhosa Farmer, trigger dialogue
+        nearestDialogueTrigger.TriggerDialogue();
     }
 
     private void OnDrawGizmosSelected()

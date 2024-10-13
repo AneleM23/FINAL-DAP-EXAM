@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] SceneManagement scenes;
 
+    [SerializeField] Mission_Amadumbe amadumbe;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -64,6 +66,9 @@ public class DialogueManager : MonoBehaviour
 
         if (nameText.text == "Zulu Boss")
             scenes.StartBattle();
+
+        if (nameText.text == "Xhosa Farmer")
+            amadumbe.StartMission();
     }
 }
 

@@ -38,14 +38,31 @@ public class Mouse_Hover : MonoBehaviour
             // Display the object's name in the UI
             objectNameText.text = objectName;
 
+            Mission_Amadumbe amadumbeMission = FindObjectOfType<Mission_Amadumbe>();
+
+            Amadumbe amadumbe = hit.collider.gameObject.GetComponent<Amadumbe>();
+
             // If right-click is pressed
             if (Input.GetMouseButtonDown(1))
             {
                 // Empty space for additional functionality
                 Debug.Log("Right-clicked on: " + objectName);
                 // You can add your custom code here to interact with the object
-                missionManager.CompleteMission(hit.collider.gameObject.GetComponent<MissionInformation>().missionName);
-                wayPoints.waypoints.Remove(hit.collider.gameObject.GetComponent<MissionInformation>().missionTrigger.gameObject);
+
+                if (hit.collider.name == "Cow")
+                {
+                    missionManager.CompleteMission(hit.collider.gameObject.GetComponent<MissionInformation>().missionName);
+                    wayPoints.waypoints.Remove(hit.collider.gameObject.GetComponent<MissionInformation>().missionTrigger.gameObject);
+                }
+                
+
+                if (amadumbe != null)
+                {
+                    if (amadumbeMission.missionActive)
+                    {
+                        amadumbeMission.CollectAmadumbe();
+                    }
+                }
             }
         }
         else
