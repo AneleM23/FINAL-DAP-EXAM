@@ -92,6 +92,11 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    public void ActivateResourcesPanel()
+    {
+        SetActiveGameObject(2);
+    }
+
     public void ActivateOptionsPanel()
     {
         SetActiveGameObject(1);
