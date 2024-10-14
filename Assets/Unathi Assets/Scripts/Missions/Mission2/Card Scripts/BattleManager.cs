@@ -37,6 +37,8 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] MissionManager missionManager;
 
+    private UI_Manager uiManager; // Reference to the UI_Manager script
+
     void Awake()
     {
         if (Instance == null)
@@ -52,6 +54,8 @@ public class BattleManager : MonoBehaviour
 
         playerCardDisplay.text = "";
         enemyCardDisplay.text = "";
+
+        uiManager = FindObjectOfType<UI_Manager>();
     }
 
     void Update()
@@ -80,7 +84,24 @@ public class BattleManager : MonoBehaviour
                     }
                 }
                 break;
+            case GameState.Lose:
+                if (missionActive)
+                {
+                    if (missionTrigger != null)
+                    {
+                        playerHealth = 100;
+                        enemyHealth = 100;
 
+                        if (uiManager != null)
+                        {
+                            // Start the MissionFailed coroutine
+                            StartCoroutine(uiManager.MissionFailed());
+                        }
+
+                        scenes.EndBattle();
+                    }
+                }
+                break;
         }
 
            UpdateSlider();
@@ -199,7 +220,10 @@ public class BattleManager : MonoBehaviour
                     break;
             }
 
-            StartCoroutine(PlayerTurn());
+            if (playerHealth > 0)
+                StartCoroutine(PlayerTurn());
+            else
+                game = GameState.Lose;
         }
     }
 

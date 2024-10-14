@@ -34,12 +34,5 @@ public class InventoryManager : MonoBehaviour
 
         missionCompleteUI.SetActive(false);
     }
-
-    IEnumerator DeleteUI()
-    {
-        yield return new WaitForSeconds(5);
-
-
-    }
 }
 

@@ -13,7 +13,18 @@ public class UI_Manager : MonoBehaviour
 
     public List<GameObject> menuPanels;
 
+    [SerializeField] GameObject missionFailUI;
+
     private bool isPaused = false;
+
+    public IEnumerator MissionFailed()
+    {
+        missionFailUI.SetActive(true);
+
+        yield return new WaitForSeconds(5);
+
+        missionFailUI.SetActive(false);
+    }
 
     // Function to pause the game
     public void PauseGame()
@@ -90,6 +101,11 @@ public class UI_Manager : MonoBehaviour
                 menuPanels[i].SetActive(false);
             }
         }
+    }
+
+    public void ActivateResourcesPanel()
+    {
+        SetActiveGameObject(2);
     }
 
     public void ActivateOptionsPanel()
