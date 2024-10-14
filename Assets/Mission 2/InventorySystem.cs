@@ -28,6 +28,8 @@ public class InventorySystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        UpdateUI();
     }
 
     public void AddItem(string itemName, int quantity)
@@ -44,6 +46,22 @@ public class InventorySystem : MonoBehaviour
         Debug.Log("Collected: " + itemName + " x " + quantity);
 
         UpdateUI();
+    }
+
+    public void RemoveItem(string itemName, int quantity)
+    {
+        if (items.ContainsKey(itemName) && items[itemName] >= quantity)
+        {
+            items[itemName] -= quantity;
+
+            // Ensure items don't go negative
+            if (items[itemName] < 0)
+            {
+                items[itemName] = 0;
+            }
+        }
+
+        UpdateUI();  // Update the UI after items are used
     }
 
     private void UpdateUI()
