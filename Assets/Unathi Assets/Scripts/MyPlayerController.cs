@@ -19,7 +19,7 @@ public class MyPlayerController : MonoBehaviour
     private bool missionActive = false; // Track if the mission is active
 
     private CharacterController characterController;
-   [SerializeField] private Animator animator;
+   // [SerializeField] private Animator animator;
     private Vector3 moveDirection;
     private float verticalVelocity;
     private bool isGrounded;
@@ -36,7 +36,7 @@ public class MyPlayerController : MonoBehaviour
         GroundCheck();
         Move();
         HandleJump();
-       UpdateAnimator();
+       // UpdateAnimator();
 
         // Update the UI text for amadumbe count if the mission is active
         UpdateAmadumbeUI();
@@ -95,10 +95,10 @@ public class MyPlayerController : MonoBehaviour
     {
         // Update the isRunning parameter based on movement
         bool isRunning = moveDirection.magnitude > 0;
-        animator.SetBool("isRunning", isRunning);
+        //animator.SetBool("isRunning", isRunning);
 
         // Update the isJumping parameter based on ground check
-        animator.SetBool("isJumping", !isGrounded);
+        //animator.SetBool("isJumping", !isGrounded);
    }
 
     // Method to collect amadumbe
