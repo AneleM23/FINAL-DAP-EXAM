@@ -35,6 +35,15 @@ public class EnergyManager : MonoBehaviour
         }
 
         slider.value = currentEnergy;
+
+        if (currentEnergy >= maxEnergy)
+        {
+            slider.gameObject.SetActive(false);
+        }
+        else
+        {
+            slider.gameObject.SetActive(true);
+        }
     }
 
     // Function to spend energy for a mission or any other action
