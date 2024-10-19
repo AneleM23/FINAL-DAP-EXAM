@@ -11,8 +11,12 @@ public class PlayerInteraction : MonoBehaviour
     private DialogueTrigger nearestDialogueTrigger;
     private MissionManager missionManager;
 
+    WaypointManager wayPoints;
+
     void Start()
     {
+        wayPoints = GameObject.Find("WaypointManager").GetComponent<WaypointManager>();
+
         // Find the MissionManager in the scene
         missionManager = FindObjectOfType<MissionManager>();
         if (missionManager == null)
@@ -78,6 +82,7 @@ public class PlayerInteraction : MonoBehaviour
             if (missionAmadumbe != null && missionAmadumbe.missionComplete)
             {
                 missionManager.CompleteMission(missionInfo.missionName);
+                wayPoints.waypoints.Remove(missionInfo.gameObject);
                 return; // Mission is complete, do not trigger dialogue.
             }
         }
