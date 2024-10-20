@@ -75,10 +75,12 @@ public class DialogueManager : MonoBehaviour
         if (nameText.text == "Swazi Elder")
         {
             MissionTrigger missionTrigger = GameObject.Find("Elder 1").GetComponent<MissionTrigger>();
+            WaypointManager waypoints = GameObject.Find("WaypointManager").GetComponent<WaypointManager>();
 
             if (missionTrigger != null)
             {
                 mission.CompleteMission(missionTrigger.missionName);
+                waypoints.waypoints.Remove(missionTrigger.gameObject);
             }
         }   
     }

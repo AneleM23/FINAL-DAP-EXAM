@@ -10,6 +10,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] AudioSource xhosaIntro;
     [SerializeField] AudioSource swatiIntro;
     [SerializeField] AudioSource tswanaIntro;
+    [SerializeField] AudioSource vendaIntro;
 
     public void TriggerDialogue()
     {
@@ -28,6 +29,10 @@ public class DialogueTrigger : MonoBehaviour
         else if (gameObject.name == "Gogo_Tswana")
         {
             tswanaIntro.Play();
+        }
+        else if (gameObject.name == "Gogo_Venda")
+        {
+            vendaIntro.Play();
         }
 
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
