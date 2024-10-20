@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] Mission_Amadumbe amadumbe;
 
+    [SerializeField] MissionManager mission;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -69,6 +71,16 @@ public class DialogueManager : MonoBehaviour
 
         if (nameText.text == "Xhosa Farmer")
             amadumbe.StartMission();
+
+        if (nameText.text == "Swazi Elder")
+        {
+            MissionTrigger missionTrigger = GameObject.Find("Elder 1").GetComponent<MissionTrigger>();
+
+            if (missionTrigger != null)
+            {
+                mission.CompleteMission(missionTrigger.missionName);
+            }
+        }   
     }
 }
 
