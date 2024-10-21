@@ -11,6 +11,8 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] AudioSource swatiIntro;
     [SerializeField] AudioSource tswanaIntro;
     [SerializeField] AudioSource vendaIntro;
+    [SerializeField] AudioSource tsongaIntro;
+    [SerializeField] AudioSource pediIntro;
 
     public void TriggerDialogue()
     {
@@ -33,6 +35,14 @@ public class DialogueTrigger : MonoBehaviour
         else if (gameObject.name == "Gogo_Venda")
         {
             vendaIntro.Play();
+        }
+        else if (gameObject.name == "Gogo_Tsonga")
+        {
+            tsongaIntro.Play();
+        }
+        else if (gameObject.name == "Gogo_Pedi")
+        {
+            pediIntro.Play();
         }
 
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);

@@ -54,8 +54,8 @@ public class MyPlayerController : MonoBehaviour
 
     void WaterCheck()
     {
-        // Check if the player is in water (off the terrain)
-        isSwimming = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundCheckDistance, waterLayer);
+        //// Check if the player is in water (off the terrain)
+        //isSwimming = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundCheckDistance, waterLayer);
 
         // If player is in water, adjust vertical velocity to simulate buoyancy
         if (isSwimming)
