@@ -13,6 +13,11 @@ public class TaxiDestination : MonoBehaviour
     public GameObject[] tswanaIcons;
     public GameObject[] swatiIcons;
     public GameObject[] sothoIcons;
+    public GameObject[] pediIcons;
+    public GameObject[] vendaIcons;
+    public GameObject[] tsongaIcons;
+    public GameObject[] afrikaansIcons;
+    public GameObject[] ndebeleIcons;
 
     [SerializeField] private int pickDestination;
 
@@ -45,6 +50,26 @@ public class TaxiDestination : MonoBehaviour
             case 5:
                 SetToFalse();
                 sothoIcons[0].SetActive(true);
+                break;
+            case 6:
+                SetToFalse();
+                pediIcons[0].SetActive(true);
+                break;
+            case 7:
+                SetToFalse();
+                afrikaansIcons[0].SetActive(true);
+                break;
+            case 8:
+                SetToFalse();
+                vendaIcons[0].SetActive(true);
+                break;
+            case 9:
+                SetToFalse();
+                ndebeleIcons[0].SetActive(true);
+                break;
+            case 10:
+                SetToFalse();
+                tsongaIcons[0].SetActive(true);
                 break;
         }
     }
@@ -102,6 +127,31 @@ public class TaxiDestination : MonoBehaviour
         for (int i = 0; i < sothoIcons.Length; i++)
         {
             sothoIcons[i].SetActive(false);
+        }
+
+        for (int i = 0; i < pediIcons.Length; i++)
+        {
+            pediIcons[i].SetActive(false);
+        }
+
+        for (int i = 0; i < afrikaansIcons.Length; i++)
+        {
+            afrikaansIcons[i].SetActive(false);
+        }
+
+        for (int i = 0; i < vendaIcons.Length; i++)
+        {
+            vendaIcons[i].SetActive(false);
+        }
+
+        for (int i = 0; i < ndebeleIcons.Length; i++)
+        {
+            ndebeleIcons[i].SetActive(false);
+        }
+
+        for (int i = 0; i < tsongaIcons.Length; i++)
+        {
+            tsongaIcons[i].SetActive(false);
         }
     }
 }

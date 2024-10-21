@@ -58915,7 +58915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee78fed6a7fcf7540ac08c0ba2e2988d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  moveSpeed: 1
   swimSpeed: 15
   turnSpeed: 10000
   jumpForce: 7
@@ -58973,6 +58973,11 @@ MonoBehaviour:
   - {fileID: 2063264196}
   - {fileID: 1145043403}
   - {fileID: 1852858969}
+  - {fileID: 798928640}
+  - {fileID: 1626534889}
+  - {fileID: 841535589}
+  - {fileID: 483041181}
+  - {fileID: 670803114}
   destination: {fileID: 0}
   zuluIcons:
   - {fileID: 339006322}
@@ -58984,6 +58989,16 @@ MonoBehaviour:
   - {fileID: 402030706}
   sothoIcons:
   - {fileID: 1001747363}
+  pediIcons:
+  - {fileID: 1515776265}
+  vendaIcons:
+  - {fileID: 71998779}
+  tsongaIcons:
+  - {fileID: 304524193}
+  afrikaansIcons:
+  - {fileID: 989992016}
+  ndebeleIcons:
+  - {fileID: 553443155}
   pickDestination: 1
 --- !u!114 &1272128433
 MonoBehaviour:
@@ -100610,7 +100625,6 @@ SceneRoots:
   - {fileID: 1272128429}
   - {fileID: 448125851}
   - {fileID: 1513930590}
-  - {fileID: 1902482254}
   - {fileID: 922222353}
   - {fileID: 518902044}
   - {fileID: 1426843766}
@@ -100620,6 +100634,7 @@ SceneRoots:
   - {fileID: 1840494970}
   - {fileID: 927832826}
   - {fileID: 315354954}
+  - {fileID: 1902482254}
   - {fileID: 1333058949}
   - {fileID: 1112130645}
   - {fileID: 2010780965}
