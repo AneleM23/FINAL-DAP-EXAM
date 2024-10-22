@@ -23201,8 +23201,8 @@ Transform:
   - {fileID: 1664646566}
   - {fileID: 174799586}
   - {fileID: 344465855}
-  - {fileID: 273862561}
   - {fileID: 393948336}
+  - {fileID: 273862561}
   - {fileID: 95728349}
   - {fileID: 780790783}
   - {fileID: 1268932086}
@@ -58920,7 +58920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee78fed6a7fcf7540ac08c0ba2e2988d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 5
   swimSpeed: 15
   turnSpeed: 10000
   jumpForce: 7
