@@ -13723,10 +13723,10 @@ Transform:
   - {fileID: 1345566717}
   - {fileID: 2063264196}
   - {fileID: 1145043403}
+  - {fileID: 1852858969}
   - {fileID: 798928640}
   - {fileID: 1626534889}
   - {fileID: 841535589}
-  - {fileID: 1852858969}
   - {fileID: 483041181}
   - {fileID: 670803114}
   m_Father: {fileID: 2048848907}
@@ -18402,6 +18402,11 @@ MonoBehaviour:
   - {fileID: 2063264196}
   - {fileID: 1145043403}
   - {fileID: 1852858969}
+  - {fileID: 798928640}
+  - {fileID: 1626534889}
+  - {fileID: 841535589}
+  - {fileID: 483041181}
+  - {fileID: 670803114}
   player: {fileID: 1272128429}
   taxi: {fileID: 1056795147}
   circle: {fileID: 1645923916}
@@ -58973,9 +58978,9 @@ MonoBehaviour:
   - {fileID: 2063264196}
   - {fileID: 1145043403}
   - {fileID: 1852858969}
-  - {fileID: 798928640}
   - {fileID: 1626534889}
   - {fileID: 841535589}
+  - {fileID: 798928640}
   - {fileID: 483041181}
   - {fileID: 670803114}
   destination: {fileID: 0}
