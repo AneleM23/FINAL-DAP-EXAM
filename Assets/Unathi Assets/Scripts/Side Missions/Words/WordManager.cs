@@ -77,13 +77,9 @@ public class WordManager : MonoBehaviour
         isWordDisplayed = true;
     }
 
-    void Update()
+    public void Removepanel()
     {
-        // Close the word display when the player presses Space
-        if (isWordDisplayed && Input.GetKeyDown(KeyCode.Space))
-        {
-            wordUIPanel.SetActive(false);
-            isWordDisplayed = false;
-        }
+        wordUIPanel.SetActive(false);
+        isWordDisplayed = false;
     }
 }
