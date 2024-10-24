@@ -38,6 +38,8 @@ public class WordPaper : MonoBehaviour
                 wordManager.DisplayWord(randomWord.Key, randomWord.Value);
             }
 
+            isCollected = true;
+
             // Destroy the paper after collection
             Destroy(gameObject);
         }

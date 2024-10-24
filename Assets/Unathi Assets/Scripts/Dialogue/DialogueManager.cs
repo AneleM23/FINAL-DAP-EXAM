@@ -69,12 +69,12 @@ public class DialogueManager : MonoBehaviour
         if (nameText.text == "Zulu Boss")
             scenes.StartBattle();
 
-        if (nameText.text == "Xhosa Farmer")
+        else if (nameText.text == "Xhosa Farmer")
             amadumbe.StartMission();
 
-        if (nameText.text == "Swazi Elder")
+        else if (nameText.text == "Swazi Elder")
         {
-            MissionTrigger missionTrigger = GameObject.Find("Elder 1").GetComponent<MissionTrigger>();
+            MissionTrigger missionTrigger = GameObject.Find("SwatiMan").GetComponent<MissionTrigger>();
             WaypointManager waypoints = GameObject.Find("WaypointManager").GetComponent<WaypointManager>();
 
             if (missionTrigger != null)
@@ -82,7 +82,10 @@ public class DialogueManager : MonoBehaviour
                 mission.CompleteMission(missionTrigger.missionName);
                 waypoints.waypoints.Remove(missionTrigger.gameObject);
             }
-        }   
+        }
+
+        else if (nameText.text == "Tswana Man")
+            FindObjectOfType<QuestionManager>().StartMission();
     }
 }
 

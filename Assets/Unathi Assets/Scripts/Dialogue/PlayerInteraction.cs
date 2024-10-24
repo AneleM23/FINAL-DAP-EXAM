@@ -56,14 +56,16 @@ public class PlayerInteraction : MonoBehaviour
                     {
                         continue; // Skip this object if the mission is completed
                     }
+
+                    float distance = Vector3.Distance(transform.position, trigger.transform.position);
+                    if (distance < closestDistance)
+                    {
+                        closestDistance = distance;
+                        nearestDialogueTrigger = trigger;
+                    }
                 }
 
-                float distance = Vector3.Distance(transform.position, trigger.transform.position);
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    nearestDialogueTrigger = trigger;
-                }
+                
             }
         }
 

@@ -69,6 +69,11 @@ public class UI_Manager : MonoBehaviour
         Debug.Log("Game is quitting..."); // Just for testing in the Unity Editor
     }
 
+    public void MissionFail()
+    {
+        StartCoroutine(MissionFailed());
+    }
+
     // Example function for game over
     public void GameOver()
     {
