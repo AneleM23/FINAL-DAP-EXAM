@@ -17,6 +17,8 @@ public class WordManager : MonoBehaviour
     private Dictionary<string, string> wordsDictionary = new Dictionary<string, string>(); // Dictionary to be populated at runtime
     public GameObject wordUIPanel; // UI Panel to display the word and definition
     public TextMeshProUGUI wordUIText; // TMP Text field
+    public TextMeshProUGUI wordsText; // Assign your Text component here
+
 
     [SerializeField] private bool isWordDisplayed = false;
 
@@ -224,11 +226,18 @@ public class WordManager : MonoBehaviour
         wordUIText.text = "Word: " + word + "\nDefinition: " + definition;
         wordUIPanel.SetActive(true);
         isWordDisplayed = true;
+
+        AddWordToScrollList(word, definition);
     }
 
     public void Removepanel()
     {
         wordUIPanel.SetActive(false);
         isWordDisplayed = false;
+    }
+
+    private void AddWordToScrollList(string word, string definition)
+    {
+        wordsText.text += word + ": " + definition + "\n";
     }
 }

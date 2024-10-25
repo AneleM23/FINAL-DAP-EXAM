@@ -108,6 +108,11 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    public void ActivateWordsPanel()
+    {
+        SetActiveGameObject(3);
+    }
+
     public void ActivateResourcesPanel()
     {
         SetActiveGameObject(2);
