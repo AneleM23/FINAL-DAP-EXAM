@@ -24,7 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-       
+
         dialogueBox.SetActive(true);
 
         nameText.text = dialogue.npcName;
@@ -66,6 +66,16 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueBox.SetActive(false);
 
+        if (nameText.text == "Braai Master") // Replace with the NPC's name for this mission
+        {
+            Mission_Braai braaiMission = FindObjectOfType<Mission_Braai>();
+            if (braaiMission != null)
+            {
+                braaiMission.StartBraaiMission();
+            }
+        }
+
+        // Existing code for other NPCs
         if (nameText.text == "Zulu Boss")
             scenes.StartBattle();
 
@@ -82,7 +92,9 @@ public class DialogueManager : MonoBehaviour
                 mission.CompleteMission(missionTrigger.missionName);
                 waypoints.waypoints.Remove(missionTrigger.gameObject);
             }
-        }   
+        }
+
+
     }
 }
 
