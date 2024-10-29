@@ -17,6 +17,8 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] MissionManager mission;
 
+    [SerializeField] VendaM2Manager venda;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -86,6 +88,11 @@ public class DialogueManager : MonoBehaviour
 
         else if (nameText.text == "Tswana Man")
             FindObjectOfType<QuestionManager>().StartMission();
+
+        else if (nameText.text == "Venda Man")
+        {
+             venda.StartMission();
+        }
     }
 }
 
