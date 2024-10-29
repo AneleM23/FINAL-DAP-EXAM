@@ -11,6 +11,8 @@ public class PlayerInteraction : MonoBehaviour
     private DialogueTrigger nearestDialogueTrigger;
     private MissionManager missionManager;
 
+    [SerializeField] EnergyManager energy;
+
     WaypointManager wayPoints;
 
     void Start()
@@ -71,7 +73,11 @@ public class PlayerInteraction : MonoBehaviour
 
         // Activate or deactivate the interaction button based on whether a DialogueTrigger is nearby
         bool buttonShouldBeActive = nearestDialogueTrigger != null;
-        interactionButton.SetActive(buttonShouldBeActive);
+
+        bool hasEnergy = energy.HasEnoughEnergy(50);
+
+        if (hasEnergy)
+            interactionButton.SetActive(buttonShouldBeActive);
     }
 
     public void HandleInput()

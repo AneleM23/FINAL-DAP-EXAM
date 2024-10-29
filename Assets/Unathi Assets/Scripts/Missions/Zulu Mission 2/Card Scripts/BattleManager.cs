@@ -37,6 +37,10 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] MissionManager missionManager;
 
+    [SerializeField] WaypointManager waypoints;
+
+    [SerializeField] EnergyManager energy;
+
     private UI_Manager uiManager; // Reference to the UI_Manager script
 
     void Awake()
@@ -80,6 +84,7 @@ public class BattleManager : MonoBehaviour
                       if (missionTrigger!= null)
                     {
                         missionManager.CompleteMission(missionTrigger.missionName);
+                        waypoints.waypoints.Remove(missionTrigger.gameObject);
                         scenes.EndBattle();
                     }
                 }
@@ -98,6 +103,7 @@ public class BattleManager : MonoBehaviour
                             StartCoroutine(uiManager.MissionFailed());
                         }
 
+                        energy.SpendEnergy(50);
                         scenes.EndBattle();
                     }
                 }
