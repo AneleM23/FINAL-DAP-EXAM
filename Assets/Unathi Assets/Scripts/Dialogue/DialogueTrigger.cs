@@ -14,6 +14,10 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] AudioSource tsongaIntro;
     [SerializeField] AudioSource pediIntro;
 
+    [SerializeField] AudioSource braaiDialogue;
+
+
+
     public void TriggerDialogue()
     {
         if (gameObject.name == "Gogo_Zulu")
@@ -43,9 +47,29 @@ public class DialogueTrigger : MonoBehaviour
         else if (gameObject.name == "Gogo_Pedi")
         {
             pediIntro.Play();
+        } else if (braaiDialogue != null)
+        {
+            braaiDialogue.Play(); // Play dialogue audio if available
         }
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue); // Start dialogue text
 
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        // Start the braai mission after triggering dialogue
+        StartBraaiMission();
     }
+
+
+   
+    // New method to start the braai mission
+    private void StartBraaiMission()
+    {
+        AfrikaansBraaiMission braaiMission = GetComponent<AfrikaansBraaiMission>();
+        if (braaiMission != null)
+        {
+            braaiMission.InteractWithNPC();
+        }
+    }
+
+
+
 }
 
