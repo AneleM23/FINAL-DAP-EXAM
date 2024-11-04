@@ -51,8 +51,16 @@ public class Mouse_Hover : MonoBehaviour
 
                 if (hit.collider.name == "Cow")
                 {
-                    missionManager.CompleteMission(hit.collider.gameObject.GetComponent<MissionInformation>().missionName);
-                    wayPoints.waypoints.Remove(hit.collider.gameObject.GetComponent<MissionInformation>().missionTrigger.gameObject);
+                    MissionInformation info = hit.collider.gameObject.GetComponent<MissionInformation>();
+
+                       if (info != null)
+                    {
+                        if (info.canCollectCow == true)
+                        {
+                            missionManager.CompleteMission(info.missionName);
+                            wayPoints.waypoints.Remove(info.missionTrigger.gameObject);
+                        }
+                    }
                 }
                 
 

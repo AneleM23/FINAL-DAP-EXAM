@@ -8,6 +8,8 @@ public class MissionInformation : MonoBehaviour
 
     public string missionName;
 
+    public bool canCollectCow = false;
+
     // Start is called before the first frame update
     void Start()
     {

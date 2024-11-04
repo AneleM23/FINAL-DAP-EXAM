@@ -34,83 +34,81 @@ public class WordManager : MonoBehaviour
         // Zulu words
         wordsList.Add(new WordDefinition { word = "Sawubona", definition = "Zulu word for 'Hello'." });
         wordsList.Add(new WordDefinition { word = "Ngiyabonga", definition = "Zulu word for 'Thank you'." });
-        wordsList.Add(new WordDefinition { word = "Ukhona", definition = "Are you there?" });
-        wordsList.Add(new WordDefinition { word = "Yebo", definition = "Yes." });
-        wordsList.Add(new WordDefinition { word = "Hamba kahle", definition = "Go well (Goodbye)." });
-        wordsList.Add(new WordDefinition { word = "Sala kahle", definition = "Stay well (Goodbye)." });
-        wordsList.Add(new WordDefinition { word = "Umndeni", definition = "Family." });
-        wordsList.Add(new WordDefinition { word = "Umuntu", definition = "Person." });
-        wordsList.Add(new WordDefinition { word = "Inkosi", definition = "King." });
-        wordsList.Add(new WordDefinition { word = "Umfana", definition = "Boy." });
-        wordsList.Add(new WordDefinition { word = "Intombazane", definition = "Girl." });
-        wordsList.Add(new WordDefinition { word = "Isitolo", definition = "Shop." });
-        wordsList.Add(new WordDefinition { word = "Isikole", definition = "School." });
-        wordsList.Add(new WordDefinition { word = "Uhambo", definition = "Journey." });
-        wordsList.Add(new WordDefinition { word = "Ubaba", definition = "Father." });
-        wordsList.Add(new WordDefinition { word = "Umama", definition = "Mother." });
-        wordsList.Add(new WordDefinition { word = "Izandla", definition = "Hands." });
-        wordsList.Add(new WordDefinition { word = "Ithembiso", definition = "Promise." });
-        wordsList.Add(new WordDefinition { word = "Inhliziyo", definition = "Heart." });
-        wordsList.Add(new WordDefinition { word = "Amanzi", definition = "Water." });
+        wordsList.Add(new WordDefinition { word = "Ukhona", definition = "Zulu or Xhosa word for the phrase 'Are you there?'" });
+        wordsList.Add(new WordDefinition { word = "Yebo", definition = "Zulu word for Yes." });
+        wordsList.Add(new WordDefinition { word = "Hamba kahle", definition = "How to say 'Go well (Goodbye)' in Zulu." });
+        wordsList.Add(new WordDefinition { word = "Sala kahle", definition = "How to say 'Stay well (Goodbye)' in Zulu." });
+        wordsList.Add(new WordDefinition { word = "Umndeni", definition = "Zulu word for Family." });
+        wordsList.Add(new WordDefinition { word = "Umuntu", definition = "Zulu word which means Person." });
+        wordsList.Add(new WordDefinition { word = "Inkosi", definition = "Zulu word for King." });
+        wordsList.Add(new WordDefinition { word = "Umfana", definition = "Zulu word for Boy." });
+        wordsList.Add(new WordDefinition { word = "Intombazane", definition = "ZUlu word for Girl." });
+        wordsList.Add(new WordDefinition { word = "Isitolo", definition = "Zulu word for a Shop." });
+        wordsList.Add(new WordDefinition { word = "Isikole", definition = "Zulu word  which means School." });
+        wordsList.Add(new WordDefinition { word = "Uhambo", definition = "Zulu word for a Journey." });
+        wordsList.Add(new WordDefinition { word = "Ubaba", definition = "Zulu word for Father." });
+        wordsList.Add(new WordDefinition { word = "Umama", definition = "Zulu or Xhosa word for Mother." });
+        wordsList.Add(new WordDefinition { word = "Izandla", definition = "Zulu word (plural) which means Hands ." });
+        wordsList.Add(new WordDefinition { word = "Isithembiso", definition = "Zulu or Xhosa word which means a Promise." });
+        wordsList.Add(new WordDefinition { word = "Inhliziyo", definition = "Zulu or Xhosa word for a Heart." });
+        wordsList.Add(new WordDefinition { word = "Amanzi", definition = "Zulu or Xhosa word for Water." });
 
         // Xhosa words
         wordsList.Add(new WordDefinition { word = "Molo", definition = "Xhosa word for 'Hello'." });
         wordsList.Add(new WordDefinition { word = "Enkosi", definition = "Xhosa word for 'Thank you'." });
-        wordsList.Add(new WordDefinition { word = "Hayi", definition = "No." });
-        wordsList.Add(new WordDefinition { word = "Ewe", definition = "Yes." });
-        wordsList.Add(new WordDefinition { word = "Ndicela", definition = "Please." });
-        wordsList.Add(new WordDefinition { word = "Umhlobo", definition = "Friend." });
-        wordsList.Add(new WordDefinition { word = "Intsapho", definition = "Family." });
-        wordsList.Add(new WordDefinition { word = "Imfundo", definition = "Education." });
-        wordsList.Add(new WordDefinition { word = "Uthando", definition = "Love." });
-        wordsList.Add(new WordDefinition { word = "Ukutya", definition = "Food." });
-        wordsList.Add(new WordDefinition { word = "Inyama", definition = "Meat." });
+        wordsList.Add(new WordDefinition { word = "Hhayi", definition = "Xhosa or Zulu wor for No." });
+        wordsList.Add(new WordDefinition { word = "Ewe", definition = "Xhosa word for Yes." });
+        wordsList.Add(new WordDefinition { word = "Ndicela", definition = "How to say Please in Xhosa." });
+        wordsList.Add(new WordDefinition { word = "Umhlobo", definition = "Xhosa word for a Friend." });
+        wordsList.Add(new WordDefinition { word = "Intsapho", definition = "Xhosa word for Family." });
+        wordsList.Add(new WordDefinition { word = "Imfundo", definition = "Xhosa word for Education." });
+        wordsList.Add(new WordDefinition { word = "Uthando", definition = "Xhosa or Zulu word for Love." });
+        wordsList.Add(new WordDefinition { word = "Ukutya", definition = "Xhosa word for Food." });
+        wordsList.Add(new WordDefinition { word = "Inyama", definition = "Xhosa or Zulu word for Meat." });
 
         // Sotho and Tswana words
-        wordsList.Add(new WordDefinition { word = "Dumela", definition = "A Tswana word meaning 'Hello'." });
-        wordsList.Add(new WordDefinition { word = "Lerato", definition = "Love (Sotho & Tswana)." });
-        wordsList.Add(new WordDefinition { word = "Motho", definition = "Person (Sotho & Tswana)." });
-        wordsList.Add(new WordDefinition { word = "Mma", definition = "Mother (Sotho & Tswana)." });
-        wordsList.Add(new WordDefinition { word = "Rra", definition = "Father (Sotho & Tswana)." });
-        wordsList.Add(new WordDefinition { word = "Lefu", definition = "Death (Sotho)." });
-        wordsList.Add(new WordDefinition { word = "Pula", definition = "Rain (Tswana)." });
+        wordsList.Add(new WordDefinition { word = "Dumela", definition = "Tswana word which is used to greet." });
+        wordsList.Add(new WordDefinition { word = "Lerato", definition = "Sotho or Tswana word for Love." });
+        wordsList.Add(new WordDefinition { word = "Motho", definition = "Sotho or tTswana word for Person." });
+        wordsList.Add(new WordDefinition { word = "Mma", definition = "Sotho and Tswana word for Mother." });
+        wordsList.Add(new WordDefinition { word = "Rra", definition = "Tswana word, which is a respectful form of Mr." });
+        wordsList.Add(new WordDefinition { word = "Lefu", definition = "Sotho word for Death." });
+        wordsList.Add(new WordDefinition { word = "Pula", definition = "Tswana or Sotho word for Rain." });
 
         // Afrikaans words
-        wordsList.Add(new WordDefinition { word = "Biltong", definition = "Dried, cured meat." });
+        wordsList.Add(new WordDefinition { word = "Biltong", definition = "Word which referes to dried, cured meat." });
         wordsList.Add(new WordDefinition { word = "Boerewors", definition = "A type of South African sausage." });
-        wordsList.Add(new WordDefinition { word = "Ouma", definition = "Grandmother." });
-        wordsList.Add(new WordDefinition { word = "Oupa", definition = "Grandfather." });
-        wordsList.Add(new WordDefinition { word = "Melktert", definition = "Milk tart, a popular dessert." });
-        wordsList.Add(new WordDefinition { word = "Padkos", definition = "Food for the road, travel snacks." });
-        wordsList.Add(new WordDefinition { word = "Vrou", definition = "Woman." });
-        wordsList.Add(new WordDefinition { word = "Kop", definition = "Head." });
+        wordsList.Add(new WordDefinition { word = "Ouma", definition = "Afrikaans word for Grandmother." });
+        wordsList.Add(new WordDefinition { word = "Oupa", definition = "Afrikaans word for Grandfather." });
+        wordsList.Add(new WordDefinition { word = "Melktert", definition = "Afrikaans translation for Milk tart, a popular dessert." });
+        wordsList.Add(new WordDefinition { word = "Padkos", definition = "Afrikaans word for the phrase 'Food for the road' (travel snacks)." });
+        wordsList.Add(new WordDefinition { word = "Vrou", definition = "Afrikaans word for Woman." });
+        wordsList.Add(new WordDefinition { word = "Kop", definition = "Afrikaans word for Head." });
 
         // More Zulu, Xhosa, and Sotho words
-        wordsList.Add(new WordDefinition { word = "Ngiyaphila", definition = "I am fine (Zulu)." });
-        wordsList.Add(new WordDefinition { word = "Ngithanda", definition = "I love (Zulu)." });
-        wordsList.Add(new WordDefinition { word = "Nkosazana", definition = "Miss, or young lady (Zulu)." });
-        wordsList.Add(new WordDefinition { word = "Nkwenkwe", definition = "Boy (Xhosa)." });
-        wordsList.Add(new WordDefinition { word = "Madoda", definition = "Men (Zulu)." });
-        wordsList.Add(new WordDefinition { word = "Makoti", definition = "Bride (Zulu)." });
-        wordsList.Add(new WordDefinition { word = "Fihla", definition = "Hide (Zulu)." });
-        wordsList.Add(new WordDefinition { word = "Bafana", definition = "Boys (Zulu)." });
-        wordsList.Add(new WordDefinition { word = "Nkosi", definition = "God (Zulu)." });
-        wordsList.Add(new WordDefinition { word = "Leihlo", definition = "Eye (Sotho)." });
-        wordsList.Add(new WordDefinition { word = "Letsatsi", definition = "Sun (Sotho)." });
-        wordsList.Add(new WordDefinition { word = "Bana", definition = "Children (Sotho)." });
-        wordsList.Add(new WordDefinition { word = "Ntlo", definition = "House (Sotho)." });
-        wordsList.Add(new WordDefinition { word = "Leoto", definition = "Foot (Sotho)." });
+        wordsList.Add(new WordDefinition { word = "Ngiyaphila", definition = "Zulu word for the phrase 'I am fine.'" });
+        wordsList.Add(new WordDefinition { word = "Ngithanda", definition = "Zulu word for the phrase 'I love...'" });
+        wordsList.Add(new WordDefinition { word = "Nkosazana", definition = "Zulu word for Miss, or young lady." });
+        wordsList.Add(new WordDefinition { word = "Nkwenkwe", definition = "Xhosa word for Boy." });
+        wordsList.Add(new WordDefinition { word = "Madoda", definition = "Zulu word (plural) for Men." });
+        wordsList.Add(new WordDefinition { word = "Makoti", definition = "Zulu word for Bride." });
+        wordsList.Add(new WordDefinition { word = "Fihla", definition = "Zulu word which means to Hide." });
+        wordsList.Add(new WordDefinition { word = "Bafana", definition = "Zulu word for Boys." });
+        wordsList.Add(new WordDefinition { word = "Nkosi", definition = "Zulu word for God." });
+        wordsList.Add(new WordDefinition { word = "Leihlo", definition = "Sotho word for Eye." });
+        wordsList.Add(new WordDefinition { word = "Letsatsi", definition = "Sotho word for the Sun." });
+        wordsList.Add(new WordDefinition { word = "Bana", definition = "Sotho word (plural) for Children." });
+        wordsList.Add(new WordDefinition { word = "Ntlo", definition = "Sotho word for House." });
+        wordsList.Add(new WordDefinition { word = "Leoto", definition = "Sotho word for Foot." });
 
 
         //Tswana
-        wordsList.Add(new WordDefinition { word = "Bogosi", definition = "Kingship (Tswana)." });
-        wordsList.Add(new WordDefinition { word = "Morwa", definition = "Son (Tswana)." });
-        wordsList.Add(new WordDefinition { word = "Motho", definition = "Human (Tswana)." });// Tswana (continued)
-        wordsList.Add(new WordDefinition { word = "Motswana", definition = "A person from Botswana (Tswana)." });
-        wordsList.Add(new WordDefinition { word = "Lefoko", definition = "Word (Tswana)." });
-        wordsList.Add(new WordDefinition { word = "Lefatshe", definition = "Country or land (Tswana)." });
-        wordsList.Add(new WordDefinition { word = "Pula", definition = "Rain, but also a symbol of blessing (Tswana)." });
-        wordsList.Add(new WordDefinition { word = "Dikgosi", definition = "Chiefs or kings (Tswana)." });
+        wordsList.Add(new WordDefinition { word = "Bogosi", definition = "Tswana word for Kingship." });
+        wordsList.Add(new WordDefinition { word = "Morwa", definition = "Tswana word for Son." });
+        wordsList.Add(new WordDefinition { word = "Motswana", definition = "A word which refers to a culturally Tswana person" });
+        wordsList.Add(new WordDefinition { word = "Lefoko", definition = "A Tswana word which means 'the Word,' usually referring to God's word." });
+        wordsList.Add(new WordDefinition { word = "Lefatshe", definition = "Tswana word for Country or land." });
+        wordsList.Add(new WordDefinition { word = "Dikgosi", definition = "Tswana word (plural) for Chiefs or kings." });
 
         // Sesotho
         wordsList.Add(new WordDefinition { word = "Metsi", definition = "Water (Sesotho)." });
