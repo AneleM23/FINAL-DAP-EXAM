@@ -111,63 +111,54 @@ public class WordManager : MonoBehaviour
         wordsList.Add(new WordDefinition { word = "Dikgosi", definition = "Tswana word (plural) for Chiefs or kings." });
 
         // Sesotho
-        wordsList.Add(new WordDefinition { word = "Metsi", definition = "Water (Sesotho)." });
-        wordsList.Add(new WordDefinition { word = "Lijo", definition = "Food (Sesotho)." });
-        wordsList.Add(new WordDefinition { word = "Ntate", definition = "Father (Sesotho)." });
-        wordsList.Add(new WordDefinition { word = "Mme", definition = "Mother (Sesotho)." });
-        wordsList.Add(new WordDefinition { word = "Thabo", definition = "Happiness (Sesotho)." });
-        wordsList.Add(new WordDefinition { word = "Moetsi", definition = "Creator or maker (Sesotho)." });
-        wordsList.Add(new WordDefinition { word = "Morena", definition = "Chief or king (Sesotho)." });
-        wordsList.Add(new WordDefinition { word = "Motse", definition = "Village (Sesotho)." });
+        wordsList.Add(new WordDefinition { word = "Metsi", definition = "Sotho word for Water." });
+        wordsList.Add(new WordDefinition { word = "Lijo", definition = "Sotho word for Food." });
+        wordsList.Add(new WordDefinition { word = "Ntate", definition = "Sotho word for Father." });
+        wordsList.Add(new WordDefinition { word = "Mme", definition = "Sotho word for Mother." });
+        wordsList.Add(new WordDefinition { word = "Thabo", definition = "Sotho word for Happiness." });
+        wordsList.Add(new WordDefinition { word = "Moetsi", definition = "Sotho word for Creator or maker." });
+        wordsList.Add(new WordDefinition { word = "Morena", definition = "Sotho word for Chief or king." });
+        wordsList.Add(new WordDefinition { word = "Motse", definition = "Sotho word for Village." });
 
         // Afrikaans (continued)
-        wordsList.Add(new WordDefinition { word = "Klein", definition = "Small (Afrikaans)." });
-        wordsList.Add(new WordDefinition { word = "Vleis", definition = "Meat (Afrikaans)." });
-        wordsList.Add(new WordDefinition { word = "Tafel", definition = "Table (Afrikaans)." });
-        wordsList.Add(new WordDefinition { word = "Stoel", definition = "Chair (Afrikaans)." });
-        wordsList.Add(new WordDefinition { word = "Blou", definition = "Blue (Afrikaans)." });
-        wordsList.Add(new WordDefinition { word = "Groen", definition = "Green (Afrikaans)." });
-        wordsList.Add(new WordDefinition { word = "Huis", definition = "House (Afrikaans)." });
-        wordsList.Add(new WordDefinition { word = "Dorp", definition = "Town (Afrikaans)." });
+        wordsList.Add(new WordDefinition { word = "Klein", definition = "Afrikaans word for Small." });
+        wordsList.Add(new WordDefinition { word = "Vleis", definition = "Afrikaans word for Meat." });
+        wordsList.Add(new WordDefinition { word = "Tafel", definition = "Afrikaans word for Table." });
+        wordsList.Add(new WordDefinition { word = "Stoel", definition = "Afrikaans word for Chair." });
+        wordsList.Add(new WordDefinition { word = "Blou", definition = "Afrikaans word for the colour Blue." });
+        wordsList.Add(new WordDefinition { word = "Groen", definition = "Afrikaans word for the colour Green." });
+        wordsList.Add(new WordDefinition { word = "Huis", definition = "Afrikaans word for House." });
+        wordsList.Add(new WordDefinition { word = "Dorp", definition = "Afrikaans word for Town." });
 
         // IsiNdebele
-        wordsList.Add(new WordDefinition { word = "Khumbula", definition = "Remember (Ndebele)." });
-        wordsList.Add(new WordDefinition { word = "Ngiyabonga", definition = "Thank you (Ndebele)." });
-        wordsList.Add(new WordDefinition { word = "Hamba", definition = "Go or walk (Ndebele)." });
-        wordsList.Add(new WordDefinition { word = "Sikhuluma", definition = "We speak (Ndebele)." });
-        wordsList.Add(new WordDefinition { word = "Abantu", definition = "People (Ndebele)." });
-        wordsList.Add(new WordDefinition { word = "Inhloko", definition = "Head (Ndebele)." });
-        wordsList.Add(new WordDefinition { word = "Izandla", definition = "Hands (Ndebele)." });
+        wordsList.Add(new WordDefinition { word = "Siyalemukela", definition = "Ndebele word for the phrase 'We welcome you.'" });
+        wordsList.Add(new WordDefinition { word = "Salibonani", definition = "Ndebele general greeting; 'Hello.'" });
+        wordsList.Add(new WordDefinition { word = "Ibizo lakho ngubani?", definition = "Ndebele for the question 'What's your name?'" });
+        wordsList.Add(new WordDefinition { word = "Uvela ngaphi?", definition = "Ndebele way to ask 'Where are you from?'" });
+        wordsList.Add(new WordDefinition { word = "Livukile", definition = "Ndebele word for the greeting 'Good morning.'" });
+        wordsList.Add(new WordDefinition { word = "Litshonile", definition = "Ndebele word for 'Good afternoon/evening.'" });
+        wordsList.Add(new WordDefinition { word = "Akungitshiye!", definition = "Ndebele word for the phrase 'Leave me alone!'" });
 
         // Tsonga
-        wordsList.Add(new WordDefinition { word = "Avuxeni", definition = "Good morning (Tsonga)." });
-        wordsList.Add(new WordDefinition { word = "Ndzheko", definition = "Problem or issue (Tsonga)." });
-        wordsList.Add(new WordDefinition { word = "Khensa", definition = "Thank you (Tsonga)." });
-        wordsList.Add(new WordDefinition { word = "Loko", definition = "When (Tsonga)." });
-        wordsList.Add(new WordDefinition { word = "Vutomi", definition = "Life (Tsonga)." });
-        wordsList.Add(new WordDefinition { word = "Rirhandzu", definition = "Love (Tsonga)." });
-        wordsList.Add(new WordDefinition { word = "Moya", definition = "Spirit or wind (Tsonga)." });
+        wordsList.Add(new WordDefinition { word = "Avuxeni", definition = "Tsonga word for the phrase 'Good morning.'" });
+        wordsList.Add(new WordDefinition { word = "Ndzheko", definition = "tsonga word for Problem or issue." });
+        wordsList.Add(new WordDefinition { word = "Khensa", definition = "Tsonga way to say 'Thank you.'" });
+        wordsList.Add(new WordDefinition { word = "Vutomi", definition = "Tsonga word for Life." });
+        wordsList.Add(new WordDefinition { word = "Rirhandzu", definition = "Tsonga word for Love." });
 
         // Venda
-        wordsList.Add(new WordDefinition { word = "Ndi a livhuwa", definition = "Thank you (Venda)." });
-        wordsList.Add(new WordDefinition { word = "Ndaa", definition = "Hello or respect (Venda)." });
-        wordsList.Add(new WordDefinition { word = "Mutupo", definition = "Clan name or totem (Venda)." });
-        wordsList.Add(new WordDefinition { word = "Mpho", definition = "Gift (Venda)." });
-        wordsList.Add(new WordDefinition { word = "U thoma", definition = "Start (Venda)." });
-        wordsList.Add(new WordDefinition { word = "Lufu", definition = "Death (Venda)." });
-        wordsList.Add(new WordDefinition { word = "Thavha", definition = "Mountain (Venda)." });
-        wordsList.Add(new WordDefinition { word = "Nyimele", definition = "Tree (Venda)." });
+        wordsList.Add(new WordDefinition { word = "Ndi a livhuwa", definition = "Venda phrase for the phrase 'Thank you.'" });
+        wordsList.Add(new WordDefinition { word = "Ndaa", definition = "Venda word used as a greeting; Hello." });
+        wordsList.Add(new WordDefinition { word = "Lufu", definition = "Venda word for Death." });
+        wordsList.Add(new WordDefinition { word = "Thavha", definition = "Venda word for Mountain." });
+        wordsList.Add(new WordDefinition { word = "Muri", definition = "Venda word for Tree." });
 
         // More informal or colloquial
-        wordsList.Add(new WordDefinition { word = "Kasi", definition = "Township or urban area (informal)." });
-        wordsList.Add(new WordDefinition { word = "Tjovitjo", definition = "An informal greeting used in townships." });
-        wordsList.Add(new WordDefinition { word = "Yaz", definition = "You know (informal)." });
-        wordsList.Add(new WordDefinition { word = "Skaba", definition = "Don't (informal, often used in youth slang)." });
-        wordsList.Add(new WordDefinition { word = "Sgud' snax", definition = "Street food (informal)." });
-        wordsList.Add(new WordDefinition { word = "Chommie", definition = "Friend (colloquial, Afrikaans)." });
-        wordsList.Add(new WordDefinition { word = "Ekasi", definition = "In the township (informal)." });
-        wordsList.Add(new WordDefinition { word = "Phanda", definition = "To hustle (colloquial)." });
-        wordsList.Add(new WordDefinition { word = "Mzala", definition = "Cousin or close friend (colloquial)." });
+        wordsList.Add(new WordDefinition { word = "Kasi", definition = "A Township or urban area." });
+        wordsList.Add(new WordDefinition { word = "Tjovitjo", definition = "An informal greeting or expression used in townships." });
+        wordsList.Add(new WordDefinition { word = "Kota", definition = "A South African sandwhich made with a quarter of baked, uncut bread." });
+        wordsList.Add(new WordDefinition { word = "Chommie", definition = "A colloquial word for friend." });
+        wordsList.Add(new WordDefinition { word = "Phanda", definition = "A colloquial term which means to hustle"});
 
         // Remaining informal and colloquial
         wordsList.Add(new WordDefinition { word = "Ayoba", definition = "Cool, awesome (informal)." });
