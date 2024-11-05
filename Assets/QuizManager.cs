@@ -5,38 +5,94 @@ using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
-    public GameObject quizPanel;
-    public Text questionText;
-    public Button[] answerButtons;
+    public QuizQuestion[] questions; // Define questions in the Inspector
+    private int currentQuestionIndex = 0;
+
+    // UI Elements
+    public Text questionText; // Reference to the UI Text component for the question
+    public Button[] optionButtons; // Array of buttons for answer options
+    public GameObject quizPanel; // Panel to show quiz UI
+    public GameObject completionPanel; // Panel to show completion message
+    public Button startQuizButton; // Button to start the quiz in the confirmation panel
+    public Text confirmationMessage; // Text element for the confirmation message
 
     private void Start()
     {
-        // Set initial question and answers
-        SetQuestion();
+        // Hide quiz, completion, and confirmation panels at the start
+        quizPanel.SetActive(false);
+        completionPanel.SetActive(false);
+
+        // Assign StartQuiz to button click
+        startQuizButton.onClick.AddListener(StartQuiz);
     }
 
-    private void SetQuestion()
-    {
-        questionText.text = "What does this pattern represent?";
-        answerButtons[0].GetComponentInChildren<Text>().text = "Triangles"; // Correct answer
-        answerButtons[1].GetComponentInChildren<Text>().text = "Diamonds"; // Incorrect answer
 
-        // Add listeners
-        answerButtons[0].onClick.AddListener(() => Answer(true));
-        answerButtons[1].onClick.AddListener(() => Answer(false));
+    public void StartQuiz()
+    {
+        // Hide the confirmation panel and show the quiz panel
+        quizPanel.SetActive(true); // Show the quiz panel
+        currentQuestionIndex = 0; // Reset question index
+        ShowQuestion(currentQuestionIndex); // Show the first question
     }
 
-    private void Answer(bool isCorrect)
+    public void ShowQuestion(int index)
     {
-        if (isCorrect)
+        if (index < questions.Length)
         {
-            Debug.Log("Correct answer!");
-            // Proceed to next part of the mission or unlock something
+            questionText.text = questions[index].question; // Set question text
+            for (int i = 0; i < optionButtons.Length; i++)
+            {
+                optionButtons[i].GetComponentInChildren<Text>().text = questions[index].options[i]; // Set button text
+                optionButtons[i].interactable = true; // Enable button
+                optionButtons[i].gameObject.SetActive(true); // Show buttons
+            }
+        }
+        else
+        {
+            Debug.LogError("Question index out of bounds.");
+        }
+    }
+
+    public void SubmitAnswer(int selectedOptionIndex)
+    {
+        if (selectedOptionIndex == questions[currentQuestionIndex].correctAnswerIndex)
+        {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.Length)
+            {
+                ShowQuestion(currentQuestionIndex);
+            }
+            else
+            {
+                CompleteQuiz();
+            }
         }
         else
         {
             Debug.Log("Incorrect answer. Try again!");
         }
-        quizPanel.SetActive(false); // Hide quiz after answering
     }
+
+    public void CompleteQuiz()
+    {
+        quizPanel.SetActive(false); // Hide the quiz panel
+        completionPanel.SetActive(true); // Show completion panel
+
+        // Start coroutine to hide the completion panel after 3 seconds
+        StartCoroutine(HideCompletionPanelAfterDelay(3f));
+    }
+
+    private IEnumerator HideCompletionPanelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        completionPanel.SetActive(false); // Hide the completion panel after the delay
+    }
+}
+
+[System.Serializable]
+public class QuizQuestion
+{
+    public string question; // The quiz question
+    public string[] options; // The answer options
+    public int correctAnswerIndex; // Index of the correct answer
 }
