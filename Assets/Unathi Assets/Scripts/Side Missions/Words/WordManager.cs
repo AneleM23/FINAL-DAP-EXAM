@@ -158,15 +158,105 @@ public class WordManager : MonoBehaviour
         wordsList.Add(new WordDefinition { word = "Tjovitjo", definition = "An informal greeting or expression used in townships." });
         wordsList.Add(new WordDefinition { word = "Kota", definition = "A South African sandwhich made with a quarter of baked, uncut bread." });
         wordsList.Add(new WordDefinition { word = "Chommie", definition = "A colloquial word for friend." });
-        wordsList.Add(new WordDefinition { word = "Phanda", definition = "A colloquial term which means to hustle"});
-
-        // Remaining informal and colloquial
+        wordsList.Add(new WordDefinition { word = "Phanda", definition = "A colloquial term which means to hustle"}); 
         wordsList.Add(new WordDefinition { word = "Ayoba", definition = "Cool, awesome (informal)." });
         wordsList.Add(new WordDefinition { word = "Jo", definition = "Hey! (informal)." });
         wordsList.Add(new WordDefinition { word = "Eita", definition = "An informal greeting, similar to 'hi'." });
         wordsList.Add(new WordDefinition { word = "Sharp", definition = "Alright, okay (informal)." });
         wordsList.Add(new WordDefinition { word = "Laduma", definition = "It thunders! Often used during soccer celebrations." });
         wordsList.Add(new WordDefinition { word = "Tsotsi", definition = "Thug or gangster (informal)." });
+
+        //86 more words
+
+        // Zulu words
+        wordsList.Add(new WordDefinition { word = "Izinkomo", definition = "Zulu word for Cows." });
+        wordsList.Add(new WordDefinition { word = "Isiqhingi", definition = "Zulu word for Island." });
+        wordsList.Add(new WordDefinition { word = "Indlu", definition = "Zulu word for House." });
+        wordsList.Add(new WordDefinition { word = "Inkosi", definition = "Zulu word for Leader or Chief." });
+        wordsList.Add(new WordDefinition { word = "Intaba", definition = "Zulu word for Mountain." });
+        wordsList.Add(new WordDefinition { word = "Izinkanyezi", definition = "Zulu word for Stars." });
+        wordsList.Add(new WordDefinition { word = "Izulu", definition = "Zulu word for Sky or Heaven." });
+        wordsList.Add(new WordDefinition { word = "Izinkomo", definition = "Zulu word for Cattle." });
+        wordsList.Add(new WordDefinition { word = "Izandla", definition = "Zulu word for Hands." });
+
+        // Xhosa words
+        wordsList.Add(new WordDefinition { word = "Inkosikazi", definition = "Xhosa word for Queen or Lady." });
+        wordsList.Add(new WordDefinition { word = "Uhlanga", definition = "Xhosa word for Root or Origin." });
+        wordsList.Add(new WordDefinition { word = "Isizwe", definition = "Xhosa word for Nation or Tribe." });
+        wordsList.Add(new WordDefinition { word = "Inyoka", definition = "Xhosa word for Snake." });
+        wordsList.Add(new WordDefinition { word = "Ilanga", definition = "Xhosa word for Sun." });
+        wordsList.Add(new WordDefinition { word = "Ubomi", definition = "Xhosa word for Life." });
+        wordsList.Add(new WordDefinition { word = "Amandla", definition = "Xhosa word for Power." });
+        wordsList.Add(new WordDefinition { word = "Imvula", definition = "Xhosa word for Rain." });
+        wordsList.Add(new WordDefinition { word = "Intloko", definition = "Xhosa word for Head." });
+
+        // Tswana words
+        wordsList.Add(new WordDefinition { word = "Moja", definition = "Tswana word for Eat." });
+        wordsList.Add(new WordDefinition { word = "Ditau", definition = "Tswana word for Lions." });
+        wordsList.Add(new WordDefinition { word = "Matlho", definition = "Tswana word for Eyes." });
+        wordsList.Add(new WordDefinition { word = "Thato", definition = "Tswana word for Will or Desire." });
+        wordsList.Add(new WordDefinition { word = "Mosebetsi", definition = "Tswana word for Job." });
+        wordsList.Add(new WordDefinition { word = "Ntshe", definition = "Tswana word for Blood." });
+        wordsList.Add(new WordDefinition { word = "Melemo", definition = "Tswana word for Medicine." });
+        wordsList.Add(new WordDefinition { word = "Tswelopele", definition = "Tswana word for Progress." });
+        wordsList.Add(new WordDefinition { word = "Lapa", definition = "Tswana word for Home." });
+
+        // Sotho words
+        wordsList.Add(new WordDefinition { word = "Khomo", definition = "Sotho word for Cow." });
+        wordsList.Add(new WordDefinition { word = "Dikgosi", definition = "Sotho word for Chiefs." });
+        wordsList.Add(new WordDefinition { word = "Lefatše", definition = "Sotho word for Earth." });
+        wordsList.Add(new WordDefinition { word = "Boroko", definition = "Sotho word for Sleep." });
+        wordsList.Add(new WordDefinition { word = "Mpho", definition = "Sotho word for Gift." });
+        wordsList.Add(new WordDefinition { word = "Seaparo", definition = "Sotho word for Clothes." });
+        wordsList.Add(new WordDefinition { word = "Lerole", definition = "Sotho word for Dust." });
+        wordsList.Add(new WordDefinition { word = "Masole", definition = "Sotho word for Soldiers." });
+        wordsList.Add(new WordDefinition { word = "Lefu", definition = "Sotho word for Death." });
+
+        // Afrikaans words
+        wordsList.Add(new WordDefinition { word = "Boet", definition = "Afrikaans word for Brother." });
+        wordsList.Add(new WordDefinition { word = "Tannie", definition = "Afrikaans word for Aunt." });
+        wordsList.Add(new WordDefinition { word = "Oom", definition = "Afrikaans word for Uncle." });
+        wordsList.Add(new WordDefinition { word = "Kleinboet", definition = "Afrikaans term for Younger Brother." });
+        wordsList.Add(new WordDefinition { word = "Gesin", definition = "Afrikaans word for Family." });
+        wordsList.Add(new WordDefinition { word = "Vriend", definition = "Afrikaans word for Friend." });
+        wordsList.Add(new WordDefinition { word = "Geduld", definition = "Afrikaans word for Patience." });
+        wordsList.Add(new WordDefinition { word = "Geluk", definition = "Afrikaans word for Happiness." });
+        wordsList.Add(new WordDefinition { word = "Krag", definition = "Afrikaans word for Strength." });
+
+        // Tsonga words
+        wordsList.Add(new WordDefinition { word = "Nhluvuko", definition = "Tsonga word for Development." });
+        wordsList.Add(new WordDefinition { word = "Vutivi", definition = "Tsonga word for Knowledge." });
+        wordsList.Add(new WordDefinition { word = "Swilo", definition = "Tsonga word for Things." });
+        wordsList.Add(new WordDefinition { word = "Munhu", definition = "Tsonga word for Person." });
+        wordsList.Add(new WordDefinition { word = "Swiendlo", definition = "Tsonga word for Actions." });
+        wordsList.Add(new WordDefinition { word = "Nkateko", definition = "Tsonga word for Blessing." });
+        wordsList.Add(new WordDefinition { word = "Mufana", definition = "Tsonga word for Boy." });
+        wordsList.Add(new WordDefinition { word = "Nwana", definition = "Tsonga word for Child." });
+        wordsList.Add(new WordDefinition { word = "Vavasati", definition = "Tsonga word for Women." });
+
+        // Venda words
+        wordsList.Add(new WordDefinition { word = "Lufu", definition = "Venda word for Death." });
+        wordsList.Add(new WordDefinition { word = "Zwothe", definition = "Venda word for Everything." });
+        wordsList.Add(new WordDefinition { word = "Mbilu", definition = "Venda word for Heart." });
+        wordsList.Add(new WordDefinition { word = "Dzina", definition = "Venda word for Name." });
+        wordsList.Add(new WordDefinition { word = "Munna", definition = "Venda word for Man." });
+        wordsList.Add(new WordDefinition { word = "Makhulu", definition = "Venda word for Grandmother." });
+        wordsList.Add(new WordDefinition { word = "Tshilidzi", definition = "Venda word for Mercy." });
+        wordsList.Add(new WordDefinition { word = "Tshikwama", definition = "Venda word for Bag." });
+        wordsList.Add(new WordDefinition { word = "Khotsi", definition = "Venda word for Father." });
+
+        // Colloquial/Informal South African terms
+        wordsList.Add(new WordDefinition { word = "Chisa nyama", definition = "Braai or barbecue, typically in a township." });
+        wordsList.Add(new WordDefinition { word = "Baba", definition = "A term of respect for a man." });
+        wordsList.Add(new WordDefinition { word = "Mzala", definition = "Cousin." });
+        wordsList.Add(new WordDefinition { word = "Sbwl", definition = "A slang term for 'want' or 'long for' something." });
+        wordsList.Add(new WordDefinition { word = "Zama", definition = "To try." });
+        wordsList.Add(new WordDefinition { word = "Bodlela", definition = "Colloquial term for Bottle." });
+        wordsList.Add(new WordDefinition { word = "Zol", definition = "Informal term for a cigarette or joint." });
+        wordsList.Add(new WordDefinition { word = "Sekwanele", definition = "It is enough or sufficient." });
+        wordsList.Add(new WordDefinition { word = "Phoyisa", definition = "Police officer." });
+        wordsList.Add(new WordDefinition { word = "AmaGents", definition = "Term for Gentlemen or guys." });
+
 
 
         // Populate the dictionary from the list
