@@ -297,6 +297,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1550514412580984892, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
+--- !u!1 &4111004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 1351658556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4977137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -889,19 +894,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1072952041}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -950,7 +955,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 151262178}
   m_SourcePrefab: {fileID: 100100000, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
 --- !u!4 &27967266 stripped
 Transform:
@@ -2819,6 +2827,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71998779}
   m_CullTransparentMesh: 1
+--- !u!1 &76542711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 1507533058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &78319303 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
@@ -5433,6 +5446,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1034997395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &124265515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 2095773884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &127768453
 GameObject:
   m_ObjectHideFlags: 0
@@ -6622,6 +6640,27 @@ Transform:
   - {fileID: 1825889669}
   m_Father: {fileID: 156567498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &151262177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 27967265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &151262178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151262177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Unathi
+  funFact: One of the most important Xhosa traditions is initiation, a coming-of-age
+    ceremony for boys that marks the transition to adulthood.
+  interactionRange: 5
 --- !u!1 &151659672
 GameObject:
   m_ObjectHideFlags: 0
@@ -9389,6 +9428,104 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.14884034, y: 0.016027832, z: 0.04369811}
   m_Center: {x: 0.0027893067, y: -0.0005679607, z: 0.044889838}
+--- !u!1001 &202544261
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 534355118}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -397.4707
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 103.550575
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 551.5301
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_Name
+      value: NPC 26
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 202544264}
+  m_SourcePrefab: {fileID: 100100000, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+--- !u!4 &202544262 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 202544261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &202544263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 202544261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &202544264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202544263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Karabo
+  funFact: Pedi, a Northern Sotho language, is spoken in Limpopo, with variations
+    in dialects across regions like Roka, Ntwane, and Lobedu.
+  interactionRange: 5
 --- !u!1 &203397999
 GameObject:
   m_ObjectHideFlags: 0
@@ -10884,19 +11021,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1281861010}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10945,7 +11082,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1476875685}
   m_SourcePrefab: {fileID: 100100000, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
 --- !u!4 &238368409 stripped
 Transform:
@@ -11933,19 +12073,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1813788467}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11994,7 +12134,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1013447716}
   m_SourcePrefab: {fileID: 100100000, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
 --- !u!4 &254721050 stripped
 Transform:
@@ -12074,19 +12217,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1813788467}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12135,7 +12278,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2144752324}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &259870672 stripped
 Transform:
@@ -12395,6 +12541,32 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3581873577330021610, guid: 8d42ac1d92d644c4bad576276c281c50, type: 3}
+--- !u!1 &263375486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 482779723}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &263375487 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 482779723}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &263375488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263375486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Anele
+  funFact: Did you know that the Xhosa people boast some world-famous figures, including
+    former South African presidents Nelson Mandela and Thabo Mbeki?
+  interactionRange: 5
 --- !u!1 &264019536
 GameObject:
   m_ObjectHideFlags: 0
@@ -18484,19 +18656,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1072952041}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18553,7 +18725,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1417322905}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &380334400 stripped
 Transform:
@@ -19042,6 +19217,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3581873577330021610, guid: 8d42ac1d92d644c4bad576276c281c50, type: 3}
+--- !u!1 &389789968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 511192818}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &390695000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8416272007918961125, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
@@ -20149,26 +20329,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 380334400}
-  - {fileID: 27967266}
-  - {fileID: 1682741073}
-  - {fileID: 511192819}
-  - {fileID: 897327098}
-  - {fileID: 259870672}
-  - {fileID: 254721050}
-  - {fileID: 2095773885}
-  - {fileID: 1303311028}
-  - {fileID: 1507533059}
-  - {fileID: 1507155013}
-  - {fileID: 700651213}
-  - {fileID: 1432887604}
-  - {fileID: 1926125573}
-  - {fileID: 661315994}
-  - {fileID: 1837247161}
-  - {fileID: 238368409}
-  - {fileID: 1351658557}
-  - {fileID: 1690684662}
-  - {fileID: 777626048}
+  - {fileID: 1072952041}
+  - {fileID: 1813788467}
+  - {fileID: 1957835678}
+  - {fileID: 1281861010}
+  - {fileID: 534355118}
   m_Father: {fileID: 518902044}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &429483864 stripped
@@ -21936,6 +22101,78 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1550514412580984892, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
+--- !u!1001 &482779723
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1072952041}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1783.4595
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 103.50596
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 864.26807
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_Name
+      value: NPC 25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 263375488}
+  m_SourcePrefab: {fileID: 100100000, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
 --- !u!1001 &482801252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23497,19 +23734,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1072952041}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23558,13 +23795,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 511192820}
   m_SourcePrefab: {fileID: 100100000, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
 --- !u!4 &511192819 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
   m_PrefabInstance: {fileID: 511192818}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &511192820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389789968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Ayanda
+  funFact: Xhosa women are skilled in beadwork, which they use to make jewelry and
+    accessories that hold symbolic meanings.
+  interactionRange: 5
 --- !u!1 &511634449
 GameObject:
   m_ObjectHideFlags: 0
@@ -24864,6 +25120,42 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3581873577330021610, guid: 8d42ac1d92d644c4bad576276c281c50, type: 3}
+--- !u!1 &534355117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 534355118}
+  m_Layer: 0
+  m_Name: Pedi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &534355118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534355117}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 777626048}
+  - {fileID: 202544262}
+  - {fileID: 1878713075}
+  - {fileID: 2035635985}
+  - {fileID: 731322860}
+  m_Father: {fileID: 428626448}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &534573388
 GameObject:
   m_ObjectHideFlags: 0
@@ -30865,19 +31157,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1281861010}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30926,7 +31218,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1019105884}
   m_SourcePrefab: {fileID: 100100000, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
 --- !u!4 &661315994 stripped
 Transform:
@@ -32664,19 +32959,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1957835678}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32725,7 +33020,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1450318863}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &700651213 stripped
 Transform:
@@ -34654,6 +34952,104 @@ Transform:
   m_Children: []
   m_Father: {fileID: 340934803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &731322859
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 534355118}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 470.15833
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 137.43881
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 245.13408
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_Name
+      value: NPC 29
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 731322862}
+  m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+--- !u!4 &731322860 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 731322859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &731322861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 731322859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &731322862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731322861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Nthabiseng
+  funFact: Popular dishes include thophi (maize meal with melon), mashotja (Mopani
+    worms), moroga wa dikgopana (sun-dried spinach), and dikgobe (corn and beans).
+  interactionRange: 5
 --- !u!1 &734916082
 GameObject:
   m_ObjectHideFlags: 0
@@ -37003,19 +37399,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 534355118}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37064,7 +37460,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1064581656}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &777626048 stripped
 Transform:
@@ -41540,6 +41939,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3581873577330021610, guid: 8d42ac1d92d644c4bad576276c281c50, type: 3}
+--- !u!1 &894238807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 1690684661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &894319609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41902,19 +42306,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1813788467}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41963,7 +42367,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1865727204}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &897327098 stripped
 Transform:
@@ -47252,6 +47659,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9178106020003806825, guid: 318f7a0815369fc42ae3318b855c6dc5, type: 3}
   m_PrefabInstance: {fileID: 1013170180}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1013447715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 254721049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1013447716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013447715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Buhle
+  funFact: "Zulu women traditionally brew beer using maize and sorghum in a three-day
+    process. This homemade brew is an essential part of Zulu ceremonies, where it\u2019s
+    shared among family and guests."
+  interactionRange: 5
 --- !u!1001 &1013557325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47656,6 +48085,27 @@ Transform:
   - {fileID: 59997142}
   m_Father: {fileID: 1657858277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1019105883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 661315993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1019105884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019105883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Banele
+  funFact: Swaziland (Eswatini) is ruled by King Mswati III, one of Africa's few
+    remaining absolute monarchs.
+  interactionRange: 5
 --- !u!1001 &1019704254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49662,6 +50112,27 @@ Transform:
   - {fileID: 1779841802}
   m_Father: {fileID: 393948336}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1064581655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 777626047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1064581656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064581655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Lerato
+  funFact: Women wear brightly colored dresses in yellow, purple, and blue, with
+    different attire for different life stages (virgin, engaged, married).
+  interactionRange: 5
 --- !u!1 &1066293257 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8416272007918961125, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
@@ -50141,6 +50612,42 @@ Transform:
   - {fileID: 594124914}
   - {fileID: 511017140}
   m_Father: {fileID: 315354954}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1072952040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1072952041}
+  m_Layer: 0
+  m_Name: Xhosa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1072952041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072952040}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 263375487}
+  - {fileID: 380334400}
+  - {fileID: 27967266}
+  - {fileID: 1682741073}
+  - {fileID: 511192819}
+  m_Father: {fileID: 428626448}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073990101
 GameObject:
@@ -66049,6 +66556,42 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1550514412580984892, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
+--- !u!1 &1281861009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1281861010}
+  m_Layer: 0
+  m_Name: Swati
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1281861010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281861009}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 661315994}
+  - {fileID: 1837247161}
+  - {fileID: 238368409}
+  - {fileID: 1351658557}
+  - {fileID: 1690684662}
+  m_Father: {fileID: 428626448}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1285634601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67169,19 +67712,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1813788467}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67230,7 +67773,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1723142610}
   m_SourcePrefab: {fileID: 100100000, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
 --- !u!4 &1303311028 stripped
 Transform:
@@ -70237,19 +70783,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1281861010}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70298,13 +70844,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1351658558}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &1351658557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
   m_PrefabInstance: {fileID: 1351658556}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1351658558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Lungile
+  funFact: ' Swazis maintain strong belief in their ancestors (amadloti), seeking
+    their blessings and guidance.'
+  interactionRange: 5
 --- !u!1001 &1354555227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73957,6 +74522,27 @@ MonoBehaviour:
   missionDescription: My cow ran away, I think in the hills nearby.
   itemSprite: {fileID: 21300000, guid: eba2acf231fcbc946aee000e9a0d8406, type: 3}
   itemName: Intonga
+--- !u!1 &1417322904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 380334399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1417322905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417322904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Yanga
+  funFact: Many traditional Xhosa families are farmers who keep cattle, a symbol
+    of wealth and an important part of their culture.
+  interactionRange: 5
 --- !u!1 &1417725008
 GameObject:
   m_ObjectHideFlags: 0
@@ -74640,19 +75226,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1957835678}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74701,7 +75287,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1866614667}
   m_SourcePrefab: {fileID: 100100000, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
 --- !u!4 &1432887604 stripped
 Transform:
@@ -75058,6 +75647,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
   m_PrefabInstance: {fileID: 1443279166}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1448183187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 1682741072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1450318862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 700651212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1450318863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450318862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Khangwe
+  funFact: "The Venda king has a special language, emphasizing his status as a \u201Cliving
+    ancestor.\u201D"
+  interactionRange: 5
 --- !u!1001 &1453952031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76224,6 +76839,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
+--- !u!1 &1476875684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 238368408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1476875685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476875684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Lungelo
+  funFact: The iNcwala ceremony is the most sacred ritual, held in December or January,
+    marking the first fruit harvest for the king.
+  interactionRange: 5
 --- !u!1 &1478368933
 GameObject:
   m_ObjectHideFlags: 0
@@ -77024,19 +77660,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1957835678}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -77085,7 +77721,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1719340809}
   m_SourcePrefab: {fileID: 100100000, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
 --- !u!4 &1507155013 stripped
 Transform:
@@ -77098,19 +77737,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1957835678}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -77159,13 +77798,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1507533060}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &1507533059 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
   m_PrefabInstance: {fileID: 1507533058}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1507533060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76542711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Rakkie
+  funFact: "The Venda named their homeland \u201CVenda,\u201D meaning \"Pleasant
+    Place,\" for its rich land and beauty."
+  interactionRange: 5
 --- !u!1 &1510198366 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -516098083770646512, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
@@ -84772,19 +85430,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1072952041}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -84833,13 +85491,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1682741074}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &1682741073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
   m_PrefabInstance: {fileID: 1682741072}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1682741074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448183187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Lilita
+  funFact: "Xhosa women\u2019s traditional attire is known for its elegance and vibrant
+    colors, Married Xhosa women wear headwraps and cover their shoulders to symbolize
+    their status."
+  interactionRange: 5
 --- !u!1001 &1684034231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85399,19 +86077,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1281861010}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -85460,13 +86138,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1690684663}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &1690684662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
   m_PrefabInstance: {fileID: 1690684661}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1690684663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894238807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Lindelwa
+  funFact: The annual reed dance honors the Queen Mother, where young maidens participate
+    in a colorful ceremony in late August.
+  interactionRange: 5
 --- !u!1001 &1690831662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87129,6 +87826,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3581873577330021610, guid: 8d42ac1d92d644c4bad576276c281c50, type: 3}
+--- !u!1 &1719340808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 1507155012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1719340809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719340808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Dakalo
+  funFact: The Venda trace their origins to the ancient Mapungubwe Kingdom, dating
+    back to the ninth century.
+  interactionRange: 5
 --- !u!1 &1720779797
 GameObject:
   m_ObjectHideFlags: 0
@@ -87280,6 +87998,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
   m_PrefabInstance: {fileID: 1721146538}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1723142609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 1303311027}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1723142610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723142609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Monde
+  funFact: The Zulu people proudly refer to themselves as "the people of the heavens"
+    and are the largest ethnic group in South Africa, with about 10 million Zulu
+    residents mainly in KwaZulu-Natal.
+  interactionRange: 5
 --- !u!1 &1728484872
 GameObject:
   m_ObjectHideFlags: 0
@@ -91884,6 +92624,42 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3581873577330021610, guid: 8d42ac1d92d644c4bad576276c281c50, type: 3}
+--- !u!1 &1813788466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1813788467}
+  m_Layer: 0
+  m_Name: Zulu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1813788467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813788466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 897327098}
+  - {fileID: 259870672}
+  - {fileID: 254721050}
+  - {fileID: 2095773885}
+  - {fileID: 1303311028}
+  m_Father: {fileID: 428626448}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1814003580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93439,19 +94215,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1281861010}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -93500,7 +94276,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2084346353}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &1837247161 stripped
 Transform:
@@ -94726,6 +95505,49 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
   m_PrefabInstance: {fileID: 1865725023}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1865727203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 897327097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1865727204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865727203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Njabulo
+  funFact: 'Amasi, a kind of fermented milk, is considered a Zulu delicacy. It has
+    a tangy taste like a mix of cottage cheese and yogurt '
+  interactionRange: 5
+--- !u!1 &1866614666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 1432887603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1866614667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866614666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Hangwani
+  funFact: Unlike many traditional societies, Venda women are encouraged to take
+    on senior positions within their communities, making them highly influential
+    and integral to society.
+  interactionRange: 5
 --- !u!1 &1868713408
 GameObject:
   m_ObjectHideFlags: 0
@@ -95097,6 +95919,104 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
   m_PrefabInstance: {fileID: 1008716887}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1878713074
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 534355118}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -220.02637
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 108.6465
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 423.82004
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      propertyPath: m_Name
+      value: NPC 27
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1878713077}
+  m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+--- !u!4 &1878713075 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 1878713074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1878713076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 1878713074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1878713077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878713076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Lebogang
+  funFact: The Malopo ritual (go phasa) is a key cultural practice, often involving
+    animal sacrifices or beer offerings to communicate with ancestors.
+  interactionRange: 5
 --- !u!1001 &1880008790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95951,6 +96871,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
+--- !u!1 &1911522856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 1926125572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1914993379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96599,19 +97524,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1957835678}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -96660,13 +97585,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1926125574}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &1926125573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
   m_PrefabInstance: {fileID: 1926125572}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1926125574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911522856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Gundo
+  funFact: "The Venda believe children are close to ancestors because they\u2019ve
+    just arrived on the earthly plane, while elders are nearing the spiritual world.
+    This connection makes children and elders especially respected members of Venda
+    society."
+  interactionRange: 5
 --- !u!1 &1926404619
 GameObject:
   m_ObjectHideFlags: 0
@@ -97835,6 +98781,42 @@ Transform:
   m_Children:
   - {fileID: 812378465}
   m_Father: {fileID: 1796994390}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1957835677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1957835678}
+  m_Layer: 0
+  m_Name: Venda
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1957835678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957835677}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1507533059}
+  - {fileID: 1507155013}
+  - {fileID: 700651213}
+  - {fileID: 1432887604}
+  - {fileID: 1926125573}
+  m_Father: {fileID: 428626448}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1957876449
 PrefabInstance:
@@ -102476,6 +103458,105 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &2035635984
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 534355118}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.46814
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 152.12715
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 46.448505
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      propertyPath: m_Name
+      value: NPC 28
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2035635987}
+  m_SourcePrefab: {fileID: 100100000, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+--- !u!4 &2035635985 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 2035635984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2035635986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e4f664373d075843b60b14d4f4c67c8, type: 3}
+  m_PrefabInstance: {fileID: 2035635984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2035635987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035635986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Koketso
+  funFact: Bapedi brew traditional beer from sorghum (mabele), which is prepared
+    in tree-branch huts and served in traditional cups (mokgopu) during ceremonies
+    and weddings.
+  interactionRange: 5
 --- !u!1001 &2040068918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104890,6 +105971,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d42ac1d92d644c4bad576276c281c50, type: 3}
   m_PrefabInstance: {fileID: 2084011301}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2084346352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 1837247160}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2084346353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084346352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Bongani
+  funFact: Swazi men traditionally practice polygamy, with multiple wives and the
+    establishment of separate villages.
+  interactionRange: 5
 --- !u!1 &2084364699
 GameObject:
   m_ObjectHideFlags: 0
@@ -105488,19 +106590,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 428626448}
+    m_TransformParent: {fileID: 1813788467}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -105549,13 +106651,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2095773886}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
 --- !u!4 &2095773885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
   m_PrefabInstance: {fileID: 2095773884}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2095773886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124265515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Andiswa
+  funFact: "Zulu women\u2019s attire varies with their marital status. Single women
+    proudly wear beaded skirts, engaged women grow their hair and cover their chests,
+    while married women cover their bodies to show they\u2019re \u201Ctaken.\u201D"
+  interactionRange: 5
 --- !u!1001 &2097130601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107782,6 +108904,28 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 14911948}
   m_SourcePrefab: {fileID: 100100000, guid: ebd01e1033f30104e949d5e16129b03a, type: 3}
+--- !u!1 &2144752323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14b49bfbfeb16448bd524a378f5c36, type: 3}
+  m_PrefabInstance: {fileID: 259870671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2144752324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144752323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f24ca02f5eaf94892f393168237cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Lindokuhle
+  funFact: In 1879, Zulu warriors had their greatest military success, defeating
+    1,500 British troops in the Battle of Isandlwana. This remains one of the most
+    celebrated victories in Zulu history.
+  interactionRange: 5
 --- !u!1 &2145964060
 GameObject:
   m_ObjectHideFlags: 0
