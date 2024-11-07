@@ -38,11 +38,13 @@ public class AfrikaansBraaiMission : MonoBehaviour
         }
     }
 
-    public void InteractWithNPC()
-    {
-        missionDialogueText.text = "Can you make a lekker braai?"; // Display initial dialogue
-        StartMission();
-    }
+
+    // No need for this, use the DialogueTrigger.
+    //public void InteractWithNPC()
+    //{
+    //    missionDialogueText.text = "Can you make a lekker braai?"; // Display initial dialogue
+    //    StartMission();
+    //}
 
     void StartMission()
     {
