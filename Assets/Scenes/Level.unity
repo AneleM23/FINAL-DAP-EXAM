@@ -31869,9 +31869,9 @@ MonoBehaviour:
   - {fileID: 991287476}
   - {fileID: 591305821}
   - {fileID: 397088927}
-  spawnInterval: 40
+  spawnInterval: 30
   maxAnimals: 500
-  despawnInterval: 15
+  despawnInterval: 10000
 --- !u!1001 &661315993
 PrefabInstance:
   m_ObjectHideFlags: 0

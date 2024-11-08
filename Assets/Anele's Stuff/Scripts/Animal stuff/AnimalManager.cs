@@ -30,11 +30,19 @@ public class AnimalManager : MonoBehaviour
 
     void SpawnAnimal()
     {
+        // Find the player GameObject by tag
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            Debug.LogWarning("Player not found!");
+            return;  // Exit if no player found
+        }
+
+        // Get a random position near the player
+        Vector3 spawnPosition = GetRandomPositionNearPlayer(player.transform.position);
+
         // Choose a random animal prefab from the list
         GameObject randomAnimalPrefab = animalPrefabs[Random.Range(0, animalPrefabs.Count)];
-
-        // Choose a random position on the terrain to spawn the animal
-        Vector3 spawnPosition = GetRandomPositionOnTerrain();
 
         // Instantiate the animal prefab at the random position
         GameObject newAnimal = Instantiate(randomAnimalPrefab, spawnPosition, Quaternion.identity, transform);
@@ -46,6 +54,7 @@ public class AnimalManager : MonoBehaviour
         // Log the animal count in the console
         Debug.Log("Animal spawned! Total animals: " + spawnedAnimals.Count);
     }
+
 
     void DespawnAnimals()
     {
@@ -66,12 +75,11 @@ public class AnimalManager : MonoBehaviour
     }
 
     // Get a random position on the terrain
-    Vector3 GetRandomPositionOnTerrain()
+    Vector3 GetRandomPositionNearPlayer(Vector3 playerPosition, float spawnRadius = 50f)
     {
-        Terrain terrain = Terrain.activeTerrain;
-        float x = Random.Range(terrain.transform.position.x, terrain.transform.position.x + terrain.terrainData.size.x);
-        float z = Random.Range(terrain.transform.position.z, terrain.transform.position.z + terrain.terrainData.size.z);
-        float y = terrain.SampleHeight(new Vector3(x, 0, z));
+        float x = Random.Range(playerPosition.x - spawnRadius, playerPosition.x + spawnRadius);
+        float z = Random.Range(playerPosition.z - spawnRadius, playerPosition.z + spawnRadius);
+        float y = Terrain.activeTerrain.SampleHeight(new Vector3(x, 0, z));
         return new Vector3(x, y, z);
     }
 
