@@ -37,7 +37,7 @@ public class AfrikaansBraaiMission : MonoBehaviour
         }
     }
 
-    void StartMission()
+    public void StartMission()
     {
         missionActive = true;
         flipCount = 0;
