@@ -14,7 +14,7 @@ public class MissionManager : MonoBehaviour
     public void AddMission(Mission newMission)
     {
         currentMissions.Add(newMission);
-        Debug.Log("Mission added: " + newMission.missionName);
+        //Debug.Log("Mission added: " + newMission.missionName);
         UpdateMissionButtons();
     }
 
@@ -42,7 +42,7 @@ public class MissionManager : MonoBehaviour
     public void RemoveCompletedMissions()
     {
         currentMissions.RemoveAll(m => m.isCompleted);
-        Debug.Log("Completed missions removed");
+        //Debug.Log("Completed missions removed");
         UpdateMissionButtons();
     }
 

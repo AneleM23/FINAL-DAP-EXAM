@@ -14,12 +14,6 @@ public class Mission2_Venda : MonoBehaviour
 
     bool missionAdded;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log(gameObject.name);
-    }
-
     // Update is called once per frame
     void Update()
     {

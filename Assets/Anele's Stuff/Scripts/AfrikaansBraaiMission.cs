@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class AfrikaansBraaiMission : MonoBehaviour
 {
-    public Text missionDialogueText;   // UI element for displaying dialogue text
     public Text flipIndicatorText;     // UI element to tell the player to flip the meat
     public float flipInterval = 6f;    // Time in seconds to wait before each flip
     private int flipCount = 0;         // Counter for number of flips
@@ -38,20 +37,13 @@ public class AfrikaansBraaiMission : MonoBehaviour
         }
     }
 
-
-    // No need for this, use the DialogueTrigger.
-    //public void InteractWithNPC()
-    //{
-    //    missionDialogueText.text = "Can you make a lekker braai?"; // Display initial dialogue
-    //    StartMission();
-    //}
-
     void StartMission()
     {
         missionActive = true;
         flipCount = 0;
         timeSinceLastFlip = 0;
         flipIndicatorText.text = "Flip the meat!";
+        flipIndicatorText.gameObject.SetActive(true);
     }
 
     public void FlipMeat()
@@ -79,9 +71,18 @@ public class AfrikaansBraaiMission : MonoBehaviour
 
     void CompleteMission()
     {
+        StartCoroutine(MissionComplete());
+    }
+
+    IEnumerator MissionComplete()
+    {
         missionActive = false;
         flipIndicatorText.text = "Braai complete! Enjoy your meal!";
         Debug.Log("Mission complete: You made a lekker braai!");
+
+        yield return new WaitForSeconds(5f);
+
+        flipIndicatorText.gameObject.SetActive(false);
     }
 
 }

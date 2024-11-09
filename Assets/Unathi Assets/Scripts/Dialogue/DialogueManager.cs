@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] VendaM2Manager venda;
 
+    [SerializeField] AfrikaansBraaiMission afrikaans;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -92,6 +94,10 @@ public class DialogueManager : MonoBehaviour
         else if (nameText.text == "Venda Man")
         {
              venda.StartMission();
+        }
+        else if (nameText.text == "Afrikaans Boy")
+        {
+            afrikaans.StartMission();
         }
     }
 }

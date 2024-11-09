@@ -268,11 +268,11 @@ public class WordManager : MonoBehaviour
             }
         }
 
-        // Log the contents of the dictionary for debugging
-        foreach (var kvp in wordsDictionary)
-        {
-            Debug.Log($"Word: {kvp.Key}, Definition: {kvp.Value}");
-        }
+        //// Log the contents of the dictionary for debugging
+        //foreach (var kvp in wordsDictionary)
+        //{
+        //    Debug.Log($"Word: {kvp.Key}, Definition: {kvp.Value}");
+        //}
 
         if (wordsDictionary.Count == 0)
         {

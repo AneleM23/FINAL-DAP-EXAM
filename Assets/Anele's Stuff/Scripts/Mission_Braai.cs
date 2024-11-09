@@ -5,80 +5,35 @@ using UnityEngine.UI;
 
 public class Mission_Braai : MonoBehaviour
 {
-    public int flipsRequired = 3; // Number of flips required per side
-    public float flipInterval = 6f; // Time in seconds between required flips
-    public Text indicatorText; // UI indicator to tell player to flip the meat
+    [SerializeField] AfrikaansCowManager afrikaansMission1;
 
-    private int currentFlips = 0;
-    private bool isFlipping = false;
-    private float flipTimer;
-    private bool missionStarted = false;
+    [SerializeField] MissionManager mission;
 
-    // Method to start the braai mission
-    public void StartBraaiMission()
-    {
-        missionStarted = true;
-        currentFlips = 0;
-        flipTimer = flipInterval;
-        indicatorText.text = "Flip the meat!";
-        StartCoroutine(BraaiRoutine());
-    }
+    [SerializeField] WaypointManager waypoints;
 
-    // Coroutine to handle the braai flipping timing
-    private IEnumerator BraaiRoutine()
-    {
-        while (missionStarted && currentFlips < flipsRequired * 2) // Multiply by 2 for both sides
-        {
-            flipTimer -= Time.deltaTime;
-            if (flipTimer <= 0f)
-            {
-                indicatorText.text = "Flip now!";
-                isFlipping = true;
-            }
-            yield return null;
-        }
+    [SerializeField] Sprite itemSprite;
 
-        // End mission if all flips were completed successfully
-        if (currentFlips >= flipsRequired * 2)
-        {
-            indicatorText.text = "Braai complete! You win!";
-            missionStarted = false;
-        }
-    }
+    bool missionAdded;
 
-    // Public method for player to flip meat
-    public void FlipMeat()
-    {
-        if (!missionStarted || !isFlipping) return;
-
-        if (flipTimer >= -1f && flipTimer <= 1f) // Check if flip was close enough to the timer
-        {
-            currentFlips++;
-            indicatorText.text = $"Flips: {currentFlips}/{flipsRequired * 2}";
-
-            if (currentFlips < flipsRequired * 2)
-            {
-                // Reset the timer and continue to the next flip
-                flipTimer = flipInterval;
-                isFlipping = false;
-            }
-        }
-        else
-        {
-            // Fail condition if player flips too late or too early
-            indicatorText.text = "The meat burned! You lose.";
-            missionStarted = false;
-        }
-    }
-
-    // Check for mouse click input
+    // Update is called once per frame
     void Update()
     {
-        if (missionStarted && Input.GetMouseButtonDown(0)) // Only accept input when mission is active
+        bool missionCompleted = mission.GetActiveMissions().Exists(m => m.missionName == afrikaansMission1.missionTrigger.missionName);
+
+        if (!missionAdded && !missionCompleted)
         {
-            FlipMeat();
+            SetMissionTrigger();
+            missionAdded = true;
         }
     }
 
-
+    void SetMissionTrigger()
+    {
+        MissionTrigger mission = gameObject.AddComponent<MissionTrigger>();
+        mission.missionName = "Braai!";
+        mission.missionDescription = "Learn how to braai some meat!";
+        mission.itemSprite = itemSprite;
+        mission.itemName = "";
+        waypoints.waypoints.Add(gameObject);
+    }
 }

@@ -28,7 +28,7 @@ public class MissionTrigger : MonoBehaviour
 
             missionManager.AddMission(newMission);
 
-            Debug.Log("Mission added: " + missionName + " with item: " + itemName);
+            //Debug.Log("Mission added: " + missionName + " with item: " + itemName);
         }
         else
         {
