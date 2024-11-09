@@ -7,11 +7,15 @@ using UnityEngine.UI;
 public class WordMatchingPuzzle : MonoBehaviour
 {
     // UI Elements
-    public Text feedbackText;  // Text that gives feedback
-    public Text instructionText;  // Instruction Text "Match the English and Tsonga words!"
-    public Button[] englishButtons;  // Buttons for English words
-    public Button[] tsongaButtons;  // Buttons for Tsonga words
-    public GameObject completionPanel;  // Panel to show when the puzzle is completed
+    public Text feedbackText;               // Text that gives feedback
+    public Text instructionText;            // Instruction Text "Match the English and Tsonga words!"
+    public Button[] englishButtons;         // Buttons for English words
+    public Button[] tsongaButtons;          // Buttons for Tsonga words
+    public GameObject completionPanel;      // Panel to show when the puzzle is completed
+    public GameObject startMissionPanel;    // Panel to ask the player to start the mission
+    public Text startMissionText;           // Text for the start mission question
+    public Button startButton;              // Button to start the mission
+    public Button cancelButton;             // Button to cancel the mission
 
     // Variables for tracking matches
     private int selectedEnglishIndex = -1;  // Track which English word is selected
@@ -27,17 +31,38 @@ public class WordMatchingPuzzle : MonoBehaviour
         completionPanel.SetActive(false);
         HidePuzzleButtons();
         feedbackText.gameObject.SetActive(false);  // Hide feedback text initially
+        instructionText.gameObject.SetActive(false); // Hide instructions initially
 
-        // Set up event listeners for button clicks
+        // Set up the start mission panel
+        startMissionPanel.SetActive(true);  // Show the start mission panel
+        startMissionText.text = "Would you like to start the mission?";  // Set prompt text
+
+        // Set up event listeners for start and cancel buttons
+        startButton.onClick.AddListener(StartMission);
+        cancelButton.onClick.AddListener(CancelMission);
+
+        // Set up event listeners for button clicks on puzzle buttons
         for (int i = 0; i < englishButtons.Length; i++)
         {
             int index = i;  // Capture the index in the closure
             englishButtons[i].onClick.AddListener(() => OnEnglishButtonClicked(index));
             tsongaButtons[i].onClick.AddListener(() => OnTsongaButtonClicked(index));
         }
+    }
 
-        // Start the process to show the instruction text and then the puzzle
-        StartCoroutine(ShowPuzzleInstructions());
+    // Start the mission when the player clicks "Yes"
+    private void StartMission()
+    {
+        startMissionPanel.SetActive(false);  // Hide the start mission panel
+        StartCoroutine(ShowPuzzleInstructions());  // Begin showing instructions and puzzle
+    }
+
+    // Cancel the mission if the player clicks "No"
+    private void CancelMission()
+    {
+        startMissionPanel.SetActive(false);  // Hide the start mission panel
+        feedbackText.gameObject.SetActive(true);
+        feedbackText.text = "Mission canceled.";
     }
 
     // Show instruction text, then reveal puzzle buttons
