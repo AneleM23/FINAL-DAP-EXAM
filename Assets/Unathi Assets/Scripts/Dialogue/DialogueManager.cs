@@ -94,6 +94,15 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        if (nameText.text == "Elder_Pedi") // Replace with the elder's display name
+        {
+            Mission_CatchChicken catchChickenMission = FindObjectOfType<Mission_CatchChicken>();
+            if (catchChickenMission != null)
+            {
+                catchChickenMission.CompleteMission();
+            }
+        }
+
 
     }
 }

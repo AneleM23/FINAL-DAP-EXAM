@@ -16,8 +16,6 @@ public class DialogueTrigger : MonoBehaviour
 
     [SerializeField] AudioSource braaiDialogue;
 
-
-
     public void TriggerDialogue()
     {
         if (gameObject.name == "Gogo_Zulu")
@@ -47,29 +45,39 @@ public class DialogueTrigger : MonoBehaviour
         else if (gameObject.name == "Gogo_Pedi")
         {
             pediIntro.Play();
-        } else if (braaiDialogue != null)
+        }
+        else if (braaiDialogue != null)
         {
             braaiDialogue.Play(); // Play dialogue audio if available
         }
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue); // Start dialogue text
 
-        // Start the braai mission after triggering dialogue
-        StartBraaiMission();
+        // Start the dialogue text
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+
+        // Start specific missions based on the NPC
+        StartSpecificMissions();
     }
 
-
-   
-    // New method to start the braai mission
-    private void StartBraaiMission()
+    // Method to start missions based on the NPC name
+    private void StartSpecificMissions()
     {
-        AfrikaansBraaiMission braaiMission = GetComponent<AfrikaansBraaiMission>();
-        if (braaiMission != null)
+        if (gameObject.name == "Gogo_Pedi") // Replace with actual NPC name for the chicken mission
         {
-            braaiMission.InteractWithNPC();
+            Mission_CatchChicken catchChickenMission = GetComponent<Mission_CatchChicken>();
+            if (catchChickenMission != null)
+            {
+                catchChickenMission.StartCatchChickenMission();
+            }
+        }
+        else if (gameObject.name == "Braai Master")
+        {
+            AfrikaansBraaiMission braaiMission = GetComponent<AfrikaansBraaiMission>();
+            if (braaiMission != null)
+            {
+                braaiMission.InteractWithNPC();
+            }
         }
     }
-
-
 
 }
 
