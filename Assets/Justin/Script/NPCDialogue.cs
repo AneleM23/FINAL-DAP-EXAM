@@ -41,8 +41,8 @@ public class NPCDialogue : MonoBehaviour
         string[] welcomeDialogue = new string[]
         {
             "Welcome, young one. I have a task for you.",
-            "Collect the 3 paint colors scattered around the village and return to me.",
-            "These colors will help us restore our heritage."
+            "Collect the 3 paint colors scattered around the village.",
+            "There is a quiz you must answer after collecting all 3 paint colors."
         };
 
         Dialogue dialogue = new Dialogue { npcName = npcName, sentences = welcomeDialogue };
