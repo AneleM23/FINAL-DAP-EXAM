@@ -11,6 +11,7 @@ TagManager:
   - Rabbit
   - Terrain
   - Water
+  - PaintSupply
   layers:
   - Default
   - TransparentFX
