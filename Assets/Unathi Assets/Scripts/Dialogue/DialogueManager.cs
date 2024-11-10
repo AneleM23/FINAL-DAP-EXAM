@@ -17,10 +17,6 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] MissionManager mission;
 
-    [SerializeField] VendaM2Manager venda;
-
-    [SerializeField] AfrikaansBraaiMission afrikaans;
-
     void Start()
     {
         sentences = new Queue<string>();
@@ -28,7 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-       
+
         dialogueBox.SetActive(true);
 
         nameText.text = dialogue.npcName;
@@ -70,15 +66,25 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueBox.SetActive(false);
 
+        if (nameText.text == "Braai Master") // Replace with the NPC's name for this mission
+        {
+            Mission_Braai braaiMission = FindObjectOfType<Mission_Braai>();
+            if (braaiMission != null)
+            {
+                braaiMission.StartBraaiMission();
+            }
+        }
+
+        // Existing code for other NPCs
         if (nameText.text == "Zulu Boss")
             scenes.StartBattle();
 
-        else if (nameText.text == "Xhosa Farmer")
+        if (nameText.text == "Xhosa Farmer")
             amadumbe.StartMission();
 
-        else if (nameText.text == "Swazi Elder")
+        if (nameText.text == "Swazi Elder")
         {
-            MissionTrigger missionTrigger = GameObject.Find("SwatiMan").GetComponent<MissionTrigger>();
+            MissionTrigger missionTrigger = GameObject.Find("Elder 1").GetComponent<MissionTrigger>();
             WaypointManager waypoints = GameObject.Find("WaypointManager").GetComponent<WaypointManager>();
 
             if (missionTrigger != null)
@@ -88,17 +94,16 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        else if (nameText.text == "Tswana Man")
-            FindObjectOfType<QuestionManager>().StartMission();
+        if (nameText.text == "Elder_Pedi") // Replace with the elder's display name
+        {
+            Mission_CatchChicken catchChickenMission = FindObjectOfType<Mission_CatchChicken>();
+            if (catchChickenMission != null)
+            {
+                catchChickenMission.CompleteMission();
+            }
+        }
 
-        else if (nameText.text == "Venda Man")
-        {
-             venda.StartMission();
-        }
-        else if (nameText.text == "Afrikaans Boy")
-        {
-            afrikaans.StartMission();
-        }
+
     }
 }
 
