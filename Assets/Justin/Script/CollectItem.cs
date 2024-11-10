@@ -33,10 +33,11 @@ public class CollectItem : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        // Check if all colors are collected and show the quiz
+        // Check if all colors are collected and trigger the start mission panel
         if (HasAllColors())
         {
-            FindObjectOfType<QuizManager>().StartQuiz(); // Call StartQuiz directly
+            // Trigger the start mission function
+            FindObjectOfType<QuizManager>().StartMission();
         }
     }
 
@@ -44,5 +45,4 @@ public class CollectItem : MonoBehaviour
     {
         return hasRedPaint && hasBluePaint && hasYellowPaint;
     }
-
 }
