@@ -13,71 +13,100 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] AudioSource vendaIntro;
     [SerializeField] AudioSource tsongaIntro;
     [SerializeField] AudioSource pediIntro;
-
-    [SerializeField] AudioSource braaiDialogue;
+    [SerializeField] AudioSource ndebeleIntro;
 
     public void TriggerDialogue()
     {
         if (gameObject.name == "Gogo_Zulu")
         {
             zuluIntro.Play();
+
+            MissionInformation info = GetComponentInChildren<MissionInformation>();
+
+            if (info != null)
+            {
+                info.canCollectCow = true;
+            }
         }
         else if (gameObject.name == "Gogo_Xhosa")
         {
             xhosaIntro.Play();
+
+            MissionInformation info = GetComponentInChildren<MissionInformation>();
+
+            if (info != null)
+            {
+                info.canCollectCow = true;
+            }
         }
         else if (gameObject.name == "Gogo_Swati")
         {
             swatiIntro.Play();
+
+            MissionInformation info = GetComponentInChildren<MissionInformation>();
+
+            if (info != null)
+            {
+                info.canCollectCow = true;
+            }
         }
         else if (gameObject.name == "Gogo_Tswana")
         {
             tswanaIntro.Play();
+
+            MissionInformation info = GetComponentInChildren<MissionInformation>();
+
+            if (info != null)
+            {
+                info.canCollectCow = true;
+            }
         }
         else if (gameObject.name == "Gogo_Venda")
         {
             vendaIntro.Play();
+
+            MissionInformation info = GetComponentInChildren<MissionInformation>();
+
+            if (info != null)
+            {
+                info.canCollectCow = true;
+            }
         }
         else if (gameObject.name == "Gogo_Tsonga")
         {
             tsongaIntro.Play();
+
+            MissionInformation info = GetComponentInChildren<MissionInformation>();
+
+            if (info != null)
+            {
+                info.canCollectCow = true;
+            }
         }
         else if (gameObject.name == "Gogo_Pedi")
         {
             pediIntro.Play();
+
+            MissionInformation info = GetComponentInChildren<MissionInformation>();
+
+            if (info != null)
+            {
+                info.canCollectCow = true;
+            }
         }
-        else if (braaiDialogue != null)
+        else if (gameObject.name == "Gogo_Ndebele")
         {
-            braaiDialogue.Play(); // Play dialogue audio if available
+            ndebeleIntro.Play();
+
+            MissionInformation info = GetComponentInChildren<MissionInformation>();
+
+            if (info != null)
+            {
+                info.canCollectCow = true;
+            }
         }
 
-        // Start the dialogue text
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-
-        // Start specific missions based on the NPC
-        StartSpecificMissions();
     }
-
-    // Method to start missions based on the NPC name
-    private void StartSpecificMissions()
-    {
-        if (gameObject.name == "Gogo_Pedi") // Replace with actual NPC name for the chicken mission
-        {
-            Mission_CatchChicken catchChickenMission = GetComponent<Mission_CatchChicken>();
-            if (catchChickenMission != null)
-            {
-                catchChickenMission.StartCatchChickenMission();
-            }
-        }
-        else if (gameObject.name == "Braai Master")
-        {
-            AfrikaansBraaiMission braaiMission = GetComponent<AfrikaansBraaiMission>();
-            if (braaiMission != null)
-            {
-                braaiMission.InteractWithNPC();
-            }
-        }
-    }
-
 }
 
