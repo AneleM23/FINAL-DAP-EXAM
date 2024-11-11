@@ -17,9 +17,10 @@ public class WordMatchingPuzzle : MonoBehaviour
     public Button startButton;              // Button to start the mission
     public Button cancelButton;             // Button to cancel the mission
 
-    // Variables for tracking matches
+    // Variables for tracking matches and mission state
     private int selectedEnglishIndex = -1;  // Track which English word is selected
     private bool isWaitingForMatch = false; // Flag to track if we're waiting for a Tsonga word match
+    private bool missionStarted = false;    // Track if the mission has already started
 
     // List of correct English-Tsonga word pairs
     private string[] englishWords = { "Hello", "Goodbye", "See", "I Love You" };
@@ -33,9 +34,12 @@ public class WordMatchingPuzzle : MonoBehaviour
         feedbackText.gameObject.SetActive(false);  // Hide feedback text initially
         instructionText.gameObject.SetActive(false); // Hide instructions initially
 
-        // Set up the start mission panel
-        startMissionPanel.SetActive(true);  // Show the start mission panel
-        startMissionText.text = "Would you like to start the mission?";  // Set prompt text
+        // Show the start mission panel if mission hasn’t started
+        if (!missionStarted)
+        {
+            startMissionPanel.SetActive(true);
+            startMissionText.text = "Would you like to start the mission?";
+        }
 
         // Set up event listeners for start and cancel buttons
         startButton.onClick.AddListener(StartMission);
@@ -53,6 +57,7 @@ public class WordMatchingPuzzle : MonoBehaviour
     // Start the mission when the player clicks "Yes"
     private void StartMission()
     {
+        missionStarted = true;  // Set the mission as started
         startMissionPanel.SetActive(false);  // Hide the start mission panel
         StartCoroutine(ShowPuzzleInstructions());  // Begin showing instructions and puzzle
     }
@@ -68,14 +73,11 @@ public class WordMatchingPuzzle : MonoBehaviour
     // Show instruction text, then reveal puzzle buttons
     private IEnumerator ShowPuzzleInstructions()
     {
-        // Show instruction text at the start of the puzzle
         instructionText.gameObject.SetActive(true);
         instructionText.text = "Match the English and Tsonga words!";
 
-        // Wait for 3 seconds before hiding the instruction text
         yield return new WaitForSeconds(3);
 
-        // Hide instruction text and show the puzzle buttons
         instructionText.gameObject.SetActive(false);
         ShowPuzzleButtons();  // Reveal puzzle buttons
     }
@@ -111,39 +113,37 @@ public class WordMatchingPuzzle : MonoBehaviour
     {
         if (isWaitingForMatch)
         {
-            feedbackText.text = "You need to select a Tsonga word first!"; // Feedback for trying to select English word before Tsonga
+            feedbackText.text = "You need to select a Tsonga word first!";
             feedbackText.gameObject.SetActive(true);
             return;
         }
 
         selectedEnglishIndex = index;
-        isWaitingForMatch = true; // Now we are waiting for a Tsonga word match
-        feedbackText.text = "Select the Tsonga word to match: " + englishWords[selectedEnglishIndex];  // Show which word to match
+        isWaitingForMatch = true;
+        feedbackText.text = "Select the Tsonga word to match: " + englishWords[selectedEnglishIndex];
         feedbackText.gameObject.SetActive(true);
     }
 
     // Handle when a Tsonga button is clicked
     private void OnTsongaButtonClicked(int index)
     {
-        if (!isWaitingForMatch) return;  // If we're not waiting for a match, ignore the click.
+        if (!isWaitingForMatch) return;
 
-        // Correct matching logic
         if (selectedEnglishIndex == index)
         {
-            feedbackText.text = "Correct!"; // Provide feedback
+            feedbackText.text = "Correct!";
             feedbackText.gameObject.SetActive(true);
             englishButtons[selectedEnglishIndex].gameObject.SetActive(false);
-            tsongaButtons[index].gameObject.SetActive(false); // Optionally disable the buttons that are correctly matched
+            tsongaButtons[index].gameObject.SetActive(false);
         }
         else
         {
-            feedbackText.text = "Try again!"; // Provide feedback for wrong match
+            feedbackText.text = "Try again!";
             feedbackText.gameObject.SetActive(true);
         }
 
-        // Check if the puzzle is complete
         CheckPuzzleCompletion();
-        isWaitingForMatch = false;  // Stop waiting for a match after one Tsonga word is clicked
+        isWaitingForMatch = false;
     }
 
     // Check if all the puzzle pieces are correctly matched
@@ -152,14 +152,13 @@ public class WordMatchingPuzzle : MonoBehaviour
         bool allCorrect = true;
         foreach (var button in englishButtons)
         {
-            if (button.gameObject.activeSelf) // If there's any active button, the puzzle isn't complete
+            if (button.gameObject.activeSelf)
             {
                 allCorrect = false;
                 break;
             }
         }
 
-        // If all matches are correct, show the completion panel
         if (allCorrect)
         {
             ShowCompletionPanel();
@@ -169,7 +168,7 @@ public class WordMatchingPuzzle : MonoBehaviour
     // Show the completion panel when puzzle is solved
     private void ShowCompletionPanel()
     {
-        completionPanel.SetActive(true);  // Show the completion panel
-        feedbackText.gameObject.SetActive(false);  // Hide feedback text when done
+        completionPanel.SetActive(true);
+        feedbackText.gameObject.SetActive(false);
     }
 }

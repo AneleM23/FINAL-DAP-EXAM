@@ -7,6 +7,7 @@ public class QuizManager : MonoBehaviour
 {
     public QuizQuestion[] questions; // Define questions in the Inspector
     private int currentQuestionIndex = 0;
+    private bool missionStarted = false; // Flag to check if the mission has already started
 
     // UI Elements
     public Text questionText; // Reference to the UI Text component for the question
@@ -33,8 +34,12 @@ public class QuizManager : MonoBehaviour
     // Function to show the startMission panel asking if the player wants to start the mission
     public void StartMission()
     {
-        startMissionText.text = "Would you like to begin the puzzle mission?"; // Set the text on the startMission panel
-        startMissionPanel.SetActive(true); // Show the startMission panel
+        if (!missionStarted) // Check if mission hasn't started yet
+        {
+            missionStarted = true; // Set mission as started
+            startMissionText.text = "Would you like to begin the puzzle mission?"; // Set the text on the startMission panel
+            startMissionPanel.SetActive(true); // Show the startMission panel
+        }
     }
 
     // Function called when the player clicks "Yes" to start the quiz
@@ -50,7 +55,7 @@ public class QuizManager : MonoBehaviour
     public void CancelQuizStart()
     {
         startMissionPanel.SetActive(false); // Hide the startMission panel
-        // Optionally, you can add a message or additional logic here for when the player cancels
+        missionStarted = false; // Reset missionStarted flag if they cancel
     }
 
     // Function to show the current question and its options
