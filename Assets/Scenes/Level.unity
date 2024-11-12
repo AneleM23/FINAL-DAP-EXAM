@@ -8897,9 +8897,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951b1298105fb004884277044b593587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Ndebele Elder
-  dialogueManager: {fileID: 1774003527}
-  quizManager: {fileID: 1788230144}
 --- !u!65 &175701134
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63785,7 +63782,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   interactionButton: {fileID: 1559002261}
-  energy: {fileID: 0}
+  energy: {fileID: 1749985911}
 --- !u!114 &1272128434
 MonoBehaviour:
   m_ObjectHideFlags: 0

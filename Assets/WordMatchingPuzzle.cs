@@ -52,6 +52,8 @@ public class WordMatchingPuzzle : MonoBehaviour
             englishButtons[i].onClick.AddListener(() => OnEnglishButtonClicked(index));
             tsongaButtons[i].onClick.AddListener(() => OnTsongaButtonClicked(index));
         }
+
+        Debug.Log(gameObject.name);
     }
 
     // Start the mission when the player clicks "Yes"
