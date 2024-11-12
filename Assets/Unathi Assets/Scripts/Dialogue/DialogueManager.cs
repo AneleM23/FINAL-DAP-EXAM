@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] AfrikaansBraaiMission afrikaans;
 
+    [SerializeField] WordMatchingPuzzle tsonga;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -98,6 +100,10 @@ public class DialogueManager : MonoBehaviour
         else if (nameText.text == "Afrikaans Boy")
         {
             afrikaans.StartMission();
+        }
+        else if (nameText.text == "Tsonga Boy")
+        {
+            tsonga.StartMission();
         }
     }
 }
