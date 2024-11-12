@@ -23,6 +23,8 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] WordMatchingPuzzle tsonga;
 
+    [SerializeField] QuizManager ndebele;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -104,6 +106,10 @@ public class DialogueManager : MonoBehaviour
         else if (nameText.text == "Tsonga Boy")
         {
             tsonga.StartMission();
+        }
+        else if (nameText.text == "Ndebele Man")
+        {
+            FindObjectOfType<QuizManager>().StartMission();
         }
     }
 }

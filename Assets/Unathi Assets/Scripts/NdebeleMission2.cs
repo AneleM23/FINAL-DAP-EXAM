@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TsongaMission2 : MonoBehaviour
+public class NdebeleMission2 : MonoBehaviour
 {
-    [SerializeField] TsongaCowManager tsongaMission1;
+    [SerializeField] NdebeleCowManager ndebeleMission1;
 
     [SerializeField] MissionManager mission;
 
@@ -17,7 +17,7 @@ public class TsongaMission2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool missionCompleted = mission.GetActiveMissions().Exists(m => m.missionName == tsongaMission1.missionTrigger.missionName);
+        bool missionCompleted = mission.GetActiveMissions().Exists(m => m.missionName == ndebeleMission1.missionTrigger.missionName);
 
         if (!missionAdded && !missionCompleted)
         {
@@ -29,8 +29,8 @@ public class TsongaMission2 : MonoBehaviour
     void SetMissionTrigger()
     {
         MissionTrigger mission = gameObject.AddComponent<MissionTrigger>();
-        mission.missionName = "Tsonga culture!";
-        mission.missionDescription = "See how much knowledge you have about the Tsonga culture!";
+        mission.missionName = "Ndebele culture!";
+        mission.missionDescription = "See how much knowledge you have about the Ndebele culture!";
         mission.itemSprite = itemSprite;
         mission.itemName = "";
         waypoints.waypoints.Add(gameObject);

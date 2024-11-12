@@ -102,7 +102,7 @@ public class QuestionManager : MonoBehaviour
                 FindObjectOfType<UI_Manager>().MissionFail();
             }         else if (correctAnswers == 3)
             {
-                MissionTrigger missionTrigger = GameObject.Find("TswanaMan").GetComponent<MissionTrigger>();
+                MissionTrigger missionTrigger = GameObject.Find("Tswana Man").GetComponent<MissionTrigger>();
 
                 if (missionTrigger != null)
                 {
