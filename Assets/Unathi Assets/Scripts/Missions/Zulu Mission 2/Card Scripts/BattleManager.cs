@@ -96,6 +96,8 @@ public class BattleManager : MonoBehaviour
                     {
                         playerHealth = 100;
                         enemyHealth = 100;
+                        canPlay = true;
+                        game = GameState.PlayerTurn;
 
                         if (uiManager != null)
                         {

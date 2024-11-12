@@ -57,7 +57,7 @@ public class WordMatchingPuzzle : MonoBehaviour
     }
 
     // Start the mission when the player clicks "Yes"
-    private void StartMission()
+    public void StartMission()
     {
         missionStarted = true;  // Set the mission as started
         startMissionPanel.SetActive(false);  // Hide the start mission panel
