@@ -172,5 +172,13 @@ public class WordMatchingPuzzle : MonoBehaviour
     {
         completionPanel.SetActive(true);
         feedbackText.gameObject.SetActive(false);
+        StartCoroutine(HideCompletionPanelAfterDelay(5f));  // Hide after 5 seconds
+    }
+
+    // Coroutine to hide the completion panel after a delay
+    private IEnumerator HideCompletionPanelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        completionPanel.SetActive(false);  // Hide the completion panel after the delay
     }
 }
