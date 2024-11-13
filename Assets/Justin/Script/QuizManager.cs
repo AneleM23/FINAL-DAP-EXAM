@@ -21,8 +21,6 @@ public class QuizManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(gameObject.name);
-
         // Hide quiz, completion, and startMission panels at the start
         quizPanel.SetActive(false);
         completionPanel.SetActive(false);
