@@ -176,18 +176,18 @@ public class WordManager : MonoBehaviour
         wordsList.Add(new WordDefinition { word = "Intaba", definition = "Zulu word for Mountain." });
         wordsList.Add(new WordDefinition { word = "Izinkanyezi", definition = "Zulu word for Stars." });
         wordsList.Add(new WordDefinition { word = "Izulu", definition = "Zulu word for Sky or Heaven." });
-        wordsList.Add(new WordDefinition { word = "Izinkomo", definition = "Zulu word for Cattle." });
+        wordsList.Add(new WordDefinition { word = "Imfuyo", definition = "Zulu word for Livestock." });
         wordsList.Add(new WordDefinition { word = "Izandla", definition = "Zulu word for Hands." });
 
         // Xhosa words
         wordsList.Add(new WordDefinition { word = "Inkosikazi", definition = "Xhosa word for Queen or Lady." });
         wordsList.Add(new WordDefinition { word = "Uhlanga", definition = "Xhosa word for Root or Origin." });
         wordsList.Add(new WordDefinition { word = "Isizwe", definition = "Xhosa word for Nation or Tribe." });
-        wordsList.Add(new WordDefinition { word = "Inyoka", definition = "Xhosa word for Snake." });
-        wordsList.Add(new WordDefinition { word = "Ilanga", definition = "Xhosa word for Sun." });
+        wordsList.Add(new WordDefinition { word = "Inyoka", definition = "Xhosa or Zulu word for Snake." });
+        wordsList.Add(new WordDefinition { word = "Ilanga", definition = "Xhosa or Zulu word for Sun." });
         wordsList.Add(new WordDefinition { word = "Ubomi", definition = "Xhosa word for Life." });
-        wordsList.Add(new WordDefinition { word = "Amandla", definition = "Xhosa word for Power." });
-        wordsList.Add(new WordDefinition { word = "Imvula", definition = "Xhosa word for Rain." });
+        wordsList.Add(new WordDefinition { word = "Amandla", definition = "Xhosa or Zulu word for Power." });
+        wordsList.Add(new WordDefinition { word = "Imvula", definition = "Xhosa or Zulu word for Rain." });
         wordsList.Add(new WordDefinition { word = "Intloko", definition = "Xhosa word for Head." });
 
         // Tswana words
@@ -210,7 +210,6 @@ public class WordManager : MonoBehaviour
         wordsList.Add(new WordDefinition { word = "Seaparo", definition = "Sotho word for Clothes." });
         wordsList.Add(new WordDefinition { word = "Lerole", definition = "Sotho word for Dust." });
         wordsList.Add(new WordDefinition { word = "Masole", definition = "Sotho word for Soldiers." });
-        wordsList.Add(new WordDefinition { word = "Lefu", definition = "Sotho word for Death." });
 
         // Afrikaans words
         wordsList.Add(new WordDefinition { word = "Boet", definition = "Afrikaans word for Brother." });
@@ -247,14 +246,14 @@ public class WordManager : MonoBehaviour
 
         // Colloquial/Informal South African terms
         wordsList.Add(new WordDefinition { word = "Chisa nyama", definition = "Braai or barbecue, typically in a township." });
-        wordsList.Add(new WordDefinition { word = "Baba", definition = "A term of respect for a man." });
+        wordsList.Add(new WordDefinition { word = "Inyuku", definition = "Informal way to say  money." });
         wordsList.Add(new WordDefinition { word = "Mzala", definition = "Cousin." });
         wordsList.Add(new WordDefinition { word = "Sbwl", definition = "A slang term for 'want' or 'long for' something." });
-        wordsList.Add(new WordDefinition { word = "Zama", definition = "To try." });
-        wordsList.Add(new WordDefinition { word = "Bodlela", definition = "Colloquial term for Bottle." });
+        wordsList.Add(new WordDefinition { word = "Thasa", definition = "A word used to ask for lip balm." });
+        wordsList.Add(new WordDefinition { word = "Bhodlela", definition = "Colloquial term for Bottle." });
         wordsList.Add(new WordDefinition { word = "Zol", definition = "Informal term for a cigarette or joint." });
-        wordsList.Add(new WordDefinition { word = "Sekwanele", definition = "It is enough or sufficient." });
-        wordsList.Add(new WordDefinition { word = "Phoyisa", definition = "Police officer." });
+        wordsList.Add(new WordDefinition { word = "Iklipa", definition = "Informal word for one hundred rands." });
+        wordsList.Add(new WordDefinition { word = "Rands", definition = "The South African currency." });
         wordsList.Add(new WordDefinition { word = "AmaGents", definition = "Term for Gentlemen or guys." });
 
 
