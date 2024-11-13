@@ -21,7 +21,7 @@ public class XhosaCowManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool missionCompleted = missionManager.GetCurrentMissionNames().Contains(missionTrigger.missionName);
+        bool missionCompleted = missionManager.GetActiveMissions().Exists(m => m.missionName == missionTrigger.missionName);
 
         if (missionCompleted)
         {
