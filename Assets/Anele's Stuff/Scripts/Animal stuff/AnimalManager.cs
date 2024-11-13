@@ -8,6 +8,8 @@ public class AnimalManager : MonoBehaviour
     public float spawnInterval = 10f;        // Time interval between spawns
     public int maxAnimals = 10;              // Maximum number of animals
     public float despawnInterval = 30f;      // Time before despawning animals
+    public float spawnRadius = 50f;          // Radius around the player to spawn animals
+    public float terrainOffset = 0.5f;       // Offset to keep animals above the terrain
 
     private float spawnTimer = 0f;
     private List<GameObject> spawnedAnimals = new List<GameObject>(); // Track spawned animals
@@ -17,7 +19,7 @@ public class AnimalManager : MonoBehaviour
     {
         spawnTimer += Time.deltaTime;
 
-        // Spawn animals at a regular interval if there are fewer than maxAnimals
+        // Spawn animals at regular intervals if there are fewer than maxAnimals
         if (spawnTimer >= spawnInterval && spawnedAnimals.Count < maxAnimals)
         {
             SpawnAnimal();
@@ -53,8 +55,10 @@ public class AnimalManager : MonoBehaviour
 
         // Log the animal count in the console
         Debug.Log("Animal spawned! Total animals: " + spawnedAnimals.Count);
-    }
 
+        // Start the terrain-following behavior
+        newAnimal.AddComponent<FollowTerrain>().terrainOffset = terrainOffset;
+    }
 
     void DespawnAnimals()
     {
@@ -74,14 +78,45 @@ public class AnimalManager : MonoBehaviour
         }
     }
 
-    // Get a random position on the terrain
-    Vector3 GetRandomPositionNearPlayer(Vector3 playerPosition, float spawnRadius = 50f)
+    // Get a random position near the player within the spawn radius
+    Vector3 GetRandomPositionNearPlayer(Vector3 playerPosition)
     {
         float x = Random.Range(playerPosition.x - spawnRadius, playerPosition.x + spawnRadius);
         float z = Random.Range(playerPosition.z - spawnRadius, playerPosition.z + spawnRadius);
-        float y = Terrain.activeTerrain.SampleHeight(new Vector3(x, 0, z));
+        float y = Terrain.activeTerrain.SampleHeight(new Vector3(x, 0, z)) + terrainOffset;
         return new Vector3(x, y, z);
     }
+}
 
+// Component added to each animal to handle terrain following
+public class FollowTerrain : MonoBehaviour
+{
+    public float terrainOffset = 0.5f; // Offset to keep animal above terrain
+
+    void Update()
+    {
+        AlignToTerrain();
+    }
+
+    void AlignToTerrain()
+    {
+        // Raycast down from above to detect the terrain height
+        Ray ray = new Ray(transform.position + Vector3.up * 10f, Vector3.down);
+        if (Physics.Raycast(ray, out RaycastHit hit, 20f))
+        {
+            // Check if the hit object is the terrain
+            if (hit.collider.CompareTag("Terrain"))
+            {
+                // Set the animal's position to terrain height + offset
+                Vector3 newPosition = transform.position;
+                newPosition.y = hit.point.y + terrainOffset;
+                transform.position = newPosition;
+
+                // Align rotation with the terrain's slope
+                Quaternion terrainSlopeRotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+                transform.rotation = Quaternion.Slerp(transform.rotation, terrainSlopeRotation, Time.deltaTime * 5f);
+            }
+        }
+    }
 
 }
