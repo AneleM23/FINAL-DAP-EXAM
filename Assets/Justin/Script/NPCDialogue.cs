@@ -8,6 +8,7 @@ public class NPCDialogue : MonoBehaviour
     public string npcName = "Elder";
     public DialogueManager dialogueManager; // Reference to your DialogueManager script
     public QuizManager quizManager; // Reference to your QuizManager script
+    public CollectItem collectItemScript; // Reference to the CollectItem script
     private bool hasPlayerStartedMission = false;
     private bool hasPlayerCollectedAllColors = false;
     private bool hasShownCompletionDialogue = false;
@@ -18,9 +19,12 @@ public class NPCDialogue : MonoBehaviour
         {
             if (!hasPlayerStartedMission)
             {
-                // First interaction: Start mission
+                // First interaction: Start mission and allow paint collection
                 StartMissionDialogue();
                 hasPlayerStartedMission = true;
+
+                // Activate mission to allow paint collection
+                collectItemScript.ActivateMission();
             }
             else if (hasPlayerCollectedAllColors && !hasShownCompletionDialogue)
             {
@@ -59,7 +63,5 @@ public class NPCDialogue : MonoBehaviour
 
         Dialogue dialogue = new Dialogue { npcName = npcName, sentences = completionDialogue };
         dialogueManager.StartDialogue(dialogue);
-
-       
     }
 }
