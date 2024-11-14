@@ -41,6 +41,7 @@ public class Mission_CatchChicken : MonoBehaviour
         chickenCaught = true;
         chicken.SetActive(false); // Hide the chicken after catching
         Debug.Log("Chicken caught! Return to the elder.");
+        FindObjectOfType<MissionManager>().CompleteMission(GetComponent<MissionTrigger>().missionName);
     }
 
     public void CompleteMission()

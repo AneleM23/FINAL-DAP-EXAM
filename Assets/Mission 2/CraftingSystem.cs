@@ -18,6 +18,9 @@ public class CraftingSystem : MonoBehaviour
     public Transform player; // Reference to the player's transform
     public float requiredDistance = 5f; // Set the distance threshold
 
+    public int craftedHuts = 0;
+    bool missionComplete = false;
+
     void Start()
     {
         craftButton.SetActive(false); // Make sure the craft button starts inactive
@@ -25,6 +28,12 @@ public class CraftingSystem : MonoBehaviour
 
     void Update()
     {
+        if (craftedHuts == 3 && !missionComplete)
+        {
+            FindObjectOfType<MissionManager>().CompleteMission(GetComponent<MissionTrigger>().missionName);
+            missionComplete = true;
+        }
+
         CheckProximityToSpawnPoints();
     }
 
@@ -77,6 +86,7 @@ public class CraftingSystem : MonoBehaviour
             // Spawn the hut and show the message
             SpawnHut();
             ShowCraftMessage("Hut crafted successfully!");
+            craftedHuts++;
         }
         else
         {

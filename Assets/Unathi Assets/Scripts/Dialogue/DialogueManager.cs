@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] AfrikaansBraaiMission afrikaans;
     [SerializeField] WordMatchingPuzzle tsonga;
     [SerializeField] QuizManager ndebele;
+    [SerializeField] Mission_CatchChicken pedi;
 
     void Start()
     {
@@ -95,6 +96,8 @@ public class DialogueManager : MonoBehaviour
             tsonga.StartMission();
         else if (nameText.text == "Ndebele Man")
             FindObjectOfType<QuizManager>().StartMission();
+        else if (nameText.text == "Pedi Man")
+            pedi.StartCatchChickenMission();
     }
 
 }

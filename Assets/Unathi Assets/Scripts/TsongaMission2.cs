@@ -32,7 +32,7 @@ public class TsongaMission2 : MonoBehaviour
         mission.missionName = "Tsonga culture!";
         mission.missionDescription = "See how much knowledge you have about the Tsonga culture!";
         mission.itemSprite = itemSprite;
-        mission.itemName = "";
+        mission.itemName = "Xibhelani";
         waypoints.waypoints.Add(gameObject);
     }
 }
