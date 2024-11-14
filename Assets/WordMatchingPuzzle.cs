@@ -70,6 +70,13 @@ public class WordMatchingPuzzle : MonoBehaviour
         startMissionPanel.SetActive(false);  // Hide the start mission panel
         feedbackText.gameObject.SetActive(true);
         feedbackText.text = "Mission canceled.";
+        StartCoroutine(HideFeedbackTextAfterDelay(3f)); // Hide after 3 seconds
+    }
+
+    private IEnumerator HideFeedbackTextAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        feedbackText.gameObject.SetActive(false);  // Hide the feedback text after the delay
     }
 
     // Show instruction text, then reveal puzzle buttons

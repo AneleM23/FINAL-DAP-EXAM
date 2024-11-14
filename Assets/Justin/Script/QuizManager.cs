@@ -11,6 +11,7 @@ public class QuizManager : MonoBehaviour
 
     // UI Elements
     public Text questionText; // Reference to the UI Text component for the question
+    public Text feedbackText;
     public Button[] optionButtons; // Array of buttons for answer options
     public GameObject quizPanel; // Panel to show quiz UI
     public GameObject completionPanel; // Panel to show completion message
@@ -40,6 +41,20 @@ public class QuizManager : MonoBehaviour
             startMissionText.text = "Would you like to begin the puzzle mission?"; // Set the text on the startMission panel
             startMissionPanel.SetActive(true); // Show the startMission panel
         }
+    }
+
+    private void CancelMission()
+    {
+        startMissionPanel.SetActive(false);  // Hide the start mission panel
+        feedbackText.gameObject.SetActive(true);
+        feedbackText.text = "Mission canceled.";
+        StartCoroutine(HideFeedbackTextAfterDelay(3f)); // Hide after 3 seconds
+    }
+
+    private IEnumerator HideFeedbackTextAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        feedbackText.gameObject.SetActive(false);  // Hide the feedback text after the delay
     }
 
     // Function called when the player clicks "Yes" to start the quiz
