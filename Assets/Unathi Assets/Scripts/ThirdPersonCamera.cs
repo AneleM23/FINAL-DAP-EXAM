@@ -24,11 +24,23 @@ public class ThirdPersonCamera : MonoBehaviour
 
     void LateUpdate()
     {
-        if (Input.GetMouseButton(1)) // Right mouse button for camera control
+        // Get input values
+        float mouseX = Input.GetMouseButton(1) ? Input.GetAxis("Mouse X") : 0f;
+        float mouseY = Input.GetMouseButton(1) ? Input.GetAxis("Mouse Y") : 0f;
+
+        float rightStickX = Input.GetAxis("RightStickX"); // Make sure this exists in Input Manager
+        float rightStickY = Input.GetAxis("RightStickY");
+
+        // Combine inputs (mouse only if RMB is held, or right stick)
+        float inputX = mouseX + rightStickX;
+        float inputY = mouseY + rightStickY;
+
+        // Only rotate if there's meaningful input
+        if (Input.GetMouseButton(1) || Mathf.Abs(rightStickX) > 0.1f || Mathf.Abs(rightStickY) > 0.1f)
         {
-            rotationX += Input.GetAxis("Mouse X") * sensitivity;
-            rotationY -= Input.GetAxis("Mouse Y") * sensitivity;
-            rotationY = Mathf.Clamp(rotationY, -35, 60); // Limit vertical rotation
+            rotationX += inputX * sensitivity;
+            rotationY -= inputY * sensitivity;
+            rotationY = Mathf.Clamp(rotationY, -35, 60);
         }
 
         Vector3 targetRotation = new Vector3(rotationY, rotationX);
@@ -37,4 +49,5 @@ public class ThirdPersonCamera : MonoBehaviour
         transform.eulerAngles = currentRotation;
         transform.position = player.position - transform.forward * distance + Vector3.up * height;
     }
+
 }
