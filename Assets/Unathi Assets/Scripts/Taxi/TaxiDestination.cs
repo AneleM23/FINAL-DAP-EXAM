@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TaxiDestination : MonoBehaviour
 {
+    [SerializeField] TaxiUI taxiUI;
+
+    private float dpadCooldown = 0.3f;
+    private float lastDpadTime;
+
     public TaxiTransport taxi;
     public Transform[] destinationArray; // Array of possible destinations
     [SerializeField] private Transform destination;
@@ -23,54 +28,42 @@ public class TaxiDestination : MonoBehaviour
 
     void Update()
     {
-        // Ensure pickDestination is within valid range and assign the corresponding destination
+        // Handle destination logic
         if (pickDestination > 0 && pickDestination <= destinationArray.Length)
         {
             destination = destinationArray[pickDestination - 1];
         }
 
+        // D-Pad Input with cooldown
+        float dpad = Input.GetAxisRaw("DPadHorizontal");
+
+        if (taxiUI.taxiUI.activeInHierarchy && Time.time > lastDpadTime + dpadCooldown)
+        {
+            if (dpad > 0.5f)
+            {
+                IncreasePickDestination();
+                lastDpadTime = Time.time;
+            }
+            else if (dpad < -0.5f)
+            {
+                DecreasePickDestination();
+                lastDpadTime = Time.time;
+            }
+        }
+
+        // Show relevant icon
         switch (pickDestination)
         {
-            case 1:
-                SetToFalse();
-                zuluIcons[0].SetActive(true);
-                break;
-            case 2:
-                SetToFalse();
-                xhosaIcons[0].SetActive(true);
-                break;
-            case 3:
-                SetToFalse();
-                tswanaIcons[0].SetActive(true);
-                break;
-            case 4:
-                SetToFalse();
-                swatiIcons[0].SetActive(true);
-                break;
-            case 5:
-                SetToFalse();
-                sothoIcons[0].SetActive(true);
-                break;
-            case 6:
-                SetToFalse();
-                pediIcons[0].SetActive(true);
-                break;
-            case 7:
-                SetToFalse();
-                afrikaansIcons[0].SetActive(true);
-                break;
-            case 8:
-                SetToFalse();
-                vendaIcons[0].SetActive(true);
-                break;
-            case 9:
-                SetToFalse();
-                ndebeleIcons[0].SetActive(true);
-                break;
-            case 10:
-                SetToFalse();
-                tsongaIcons[0].SetActive(true);
-                break;
+            case 1: SetToFalse(); zuluIcons[0].SetActive(true); break;
+            case 2: SetToFalse(); xhosaIcons[0].SetActive(true); break;
+            case 3: SetToFalse(); tswanaIcons[0].SetActive(true); break;
+            case 4: SetToFalse(); swatiIcons[0].SetActive(true); break;
+            case 5: SetToFalse(); sothoIcons[0].SetActive(true); break;
+            case 6: SetToFalse(); pediIcons[0].SetActive(true); break;
+            case 7: SetToFalse(); afrikaansIcons[0].SetActive(true); break;
+            case 8: SetToFalse(); vendaIcons[0].SetActive(true); break;
+            case 9: SetToFalse(); ndebeleIcons[0].SetActive(true); break;
+            case 10: SetToFalse(); tsongaIcons[0].SetActive(true); break;
         }
     }
 

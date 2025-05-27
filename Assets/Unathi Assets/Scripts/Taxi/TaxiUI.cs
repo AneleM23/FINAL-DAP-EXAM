@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class TaxiUI : MonoBehaviour
 {
-    [SerializeField] GameObject taxiUI;
+    public GameObject taxiUI;
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(gameObject.name);
         taxiUI.SetActive(false);
     }
 
