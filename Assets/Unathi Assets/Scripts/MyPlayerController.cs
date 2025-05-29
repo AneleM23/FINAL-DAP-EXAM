@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(CharacterController))]
 public class MyPlayerController : MonoBehaviour
 {
+    [SerializeField] TaxiUI taxiUI;
+
     public float moveSpeed = 5f;
     public float swimSpeed = 3f; // Speed while swimming
     public float turnSpeed = 720f;
@@ -38,6 +40,8 @@ public class MyPlayerController : MonoBehaviour
         else
         {
             Move();
+
+            if (!taxiUI.taxiUI.activeInHierarchy)
             HandleJump();
         }
         UpdateAnimator();

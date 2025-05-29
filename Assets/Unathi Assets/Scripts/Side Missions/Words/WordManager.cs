@@ -19,8 +19,9 @@ public class WordManager : MonoBehaviour
     public TextMeshProUGUI wordUIText; // TMP Text field
     public TextMeshProUGUI wordsText; // Assign your Text component here
 
-
     [SerializeField] private bool isWordDisplayed = false;
+
+    [SerializeField] GameObject wordPanel;
 
     void Start()
     {
@@ -276,6 +277,14 @@ public class WordManager : MonoBehaviour
         if (wordsDictionary.Count == 0)
         {
             Debug.LogWarning("No words in the dictionary.");
+        }
+    }
+
+    void Update()
+    {
+        if (wordPanel.activeInHierarchy && Input.GetKeyDown(KeyCode.JoystickButton1))
+        {
+            Removepanel();
         }
     }
 

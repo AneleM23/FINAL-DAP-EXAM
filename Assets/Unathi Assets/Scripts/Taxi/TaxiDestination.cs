@@ -65,6 +65,11 @@ public class TaxiDestination : MonoBehaviour
             case 9: SetToFalse(); ndebeleIcons[0].SetActive(true); break;
             case 10: SetToFalse(); tsongaIcons[0].SetActive(true); break;
         }
+
+        if (taxiUI.taxiUI.activeInHierarchy && Input.GetButtonDown("Submit"))
+        {
+            PickDestination();
+        }
     }
 
     public void IncreasePickDestination()
