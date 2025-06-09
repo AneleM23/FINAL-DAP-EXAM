@@ -30,6 +30,11 @@ public class AfrikaansBraaiMission : MonoBehaviour
         }
     }
 
+    public void StartMission()
+    {
+        StartMission();
+    }
+
     public void StartBraai()
     {
         flipsDone = 0;
