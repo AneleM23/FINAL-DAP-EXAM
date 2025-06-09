@@ -2,28 +2,46 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    public float moveSpeed = 2f;             // How fast the animal moves
-    public float roamRadius = 10f;           // Max distance to roam from the current position
-    public float detectionRadius = 5f;       // How close the player can get before the animal runs away
-    public float runAwayDistance = 15f;      // Distance to run when the player is near
-    public LayerMask obstacleLayer;          // LayerMask to detect obstacles (e.g., trees, houses)
+    [Header("Movement")]
+    public float moveSpeed = 2f;          // How fast the animal moves
+    public float roamRadius = 10f;        // Max distance to roam from the current position
 
-    private Vector3 roamPosition;
-    private bool isRunningAway = false;
-    private Transform player;
+    [Header("Player Interaction")]
+    public float detectionRadius = 5f;    // How close the player can get before the animal runs
+    public float runAwayDistance = 15f;   // Distance to run when the player is near
 
+    [Header("Environment")]
+    public LayerMask obstacleLayer;       // LayerMask to detect obstacles (e.g., trees, houses)
+
+    private Vector3 roamPosition;         // Current roam target
+    private bool isRunningAway = false;   // Are we fleeing right now?
+    private Transform player;             // Cached player reference
+
+    //--------------------------------------------------
+    // INITIALISATION
+    //--------------------------------------------------
     void Start()
     {
+        Vector3 pos = transform.position;
+        SnapToTerrain(ref pos);
+        transform.position = pos;
+
         roamPosition = GetRandomRoamingPosition();
-        player = GameObject.FindGameObjectWithTag("Player").transform; // Find the player by tag
+
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+        if (p != null) player = p.transform;
+        else Debug.LogWarning("Player tag not found!");
     }
 
+    //--------------------------------------------------
+    // MAIN UPDATE LOOP
+    //--------------------------------------------------
     void Update()
     {
+        if (player == null) return;
+
         if (isRunningAway)
-        {
             RunAway();
-        }
         else
         {
             DetectPlayer();
@@ -31,83 +49,103 @@ public class Animal : MonoBehaviour
         }
     }
 
-    // Detect if the player is within the detection radius
+    //--------------------------------------------------
+    // PLAYER DETECTION
+    //--------------------------------------------------
     void DetectPlayer()
     {
         if (Vector3.Distance(transform.position, player.position) < detectionRadius)
-        {
             isRunningAway = true;
-        }
     }
 
-    // Move the animal in a random direction within its roam radius
+    //--------------------------------------------------
+    // ROAMING BEHAVIOUR
+    //--------------------------------------------------
     void Roam()
     {
-        // Check if there's an obstacle in the direction of movement
         if (Vector3.Distance(transform.position, roamPosition) < 0.5f || IsObstacleAhead())
-        {
-            roamPosition = GetRandomRoamingPosition(); // Get a new position to roam to
-        }
+            roamPosition = GetRandomRoamingPosition();
 
         MoveTowards(roamPosition);
     }
 
-    // Detect obstacles ahead using raycasting
+    //--------------------------------------------------
+    // OBSTACLE AVOIDANCE
+    //--------------------------------------------------
     bool IsObstacleAhead()
     {
-        // Cast a ray forward to detect obstacles
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, obstacleLayer))
         {
-            Debug.Log("Obstacle detected: " + hit.collider.name); // Print obstacle name for debugging
+            Debug.Log("Obstacle detected: " + hit.collider.name);
             return true;
         }
-
         return false;
     }
 
-    // Run away from the player in the opposite direction
+    //--------------------------------------------------
+    // FLEEING FROM THE PLAYER
+    //--------------------------------------------------
     void RunAway()
     {
-        Vector3 runDirection = (transform.position - player.position).normalized * runAwayDistance;
-        Vector3 runPosition = transform.position + runDirection;
+        Vector3 runDir = (transform.position - player.position).normalized;
+        Vector3 runPos = transform.position + runDir * runAwayDistance;
 
-        MoveTowards(runPosition);
+        SnapToTerrain(ref runPos);
+        MoveTowards(runPos);
 
         if (Vector3.Distance(transform.position, player.position) > runAwayDistance)
         {
-            isRunningAway = false; // Stop running once far enough from the player
-            roamPosition = GetRandomRoamingPosition(); // Reset to roam after running away
+            isRunningAway = false;
+            roamPosition = GetRandomRoamingPosition();
         }
     }
 
-    // Move the animal towards a given position
-    void MoveTowards(Vector3 targetPosition) 
+    //--------------------------------------------------
+    // MOVEMENT TOWARD TARGET
+    //--------------------------------------------------
+    void MoveTowards(Vector3 targetPosition)
     {
-        Vector3 direction = (targetPosition - transform.position).normalized;
-        transform.position += direction * moveSpeed * Time.deltaTime;
+        Vector3 adjustedTarget = targetPosition;
+        SnapToTerrain(ref adjustedTarget);
 
-        // Optionally rotate the animal towards the target position
-        transform.LookAt(new Vector3(targetPosition.x, transform.position.y, targetPosition.z));
+        Vector3 dir = (adjustedTarget - transform.position).normalized;
+        Vector3 newPos = transform.position + dir * moveSpeed * Time.deltaTime;
+
+        SnapToTerrain(ref newPos);
+        transform.position = newPos;
+
+        Vector3 lookPos = new Vector3(adjustedTarget.x, transform.position.y, adjustedTarget.z);
+        transform.LookAt(lookPos);
     }
 
-    // Get a random position to roam to within the roam radius
+    //--------------------------------------------------
+    // RANDOM ROAMING POSITION (TERRAIN-CLAMPED)
+    //--------------------------------------------------
     Vector3 GetRandomRoamingPosition()
     {
-        Vector3 randomDirection = Random.insideUnitSphere * roamRadius;
-        randomDirection += transform.position;
-        randomDirection.y = Terrain.activeTerrain.SampleHeight(randomDirection); // Ensure it stays on terrain
+        Vector3 randomDir = Random.insideUnitSphere * roamRadius;
+        randomDir += transform.position;
 
-        // Ensure the random position is not inside an obstacle
-        while (Physics.CheckSphere(randomDirection, 0.5f, obstacleLayer))
+        SnapToTerrain(ref randomDir);
+
+        int attempts = 0;
+        while (Physics.CheckSphere(randomDir, 0.5f, obstacleLayer) && attempts < 10)
         {
-            randomDirection = Random.insideUnitSphere * roamRadius;
-            randomDirection += transform.position;
-            randomDirection.y = Terrain.activeTerrain.SampleHeight(randomDirection);
+            randomDir = Random.insideUnitSphere * roamRadius + transform.position;
+            SnapToTerrain(ref randomDir);
+            attempts++;
         }
-
-        return randomDirection;
+        return randomDir;
     }
 
-}
+    //--------------------------------------------------
+    // HELPER: SNAP Y COORDINATE TO TERRAIN HEIGHT
+    //--------------------------------------------------
+    void SnapToTerrain(ref Vector3 pos)
+    {
+        if (Terrain.activeTerrain == null) return;
 
+        pos.y = Terrain.activeTerrain.SampleHeight(pos) + 0.1f; // slight lift to avoid sinking
+    }
+}

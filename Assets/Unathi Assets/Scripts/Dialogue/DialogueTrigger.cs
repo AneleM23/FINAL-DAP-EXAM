@@ -14,6 +14,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] AudioSource tsongaIntro;
     [SerializeField] AudioSource pediIntro;
     [SerializeField] AudioSource ndebeleIntro;
+    [SerializeField] AudioSource sothoIntro;
 
     public void TriggerDialogue()
     {
@@ -105,6 +106,18 @@ public class DialogueTrigger : MonoBehaviour
                 info.canCollectCow = true;
             }
         }
+        else if (gameObject.name == "Gogo_Sotho")
+        {
+            sothoIntro.Play();
+
+            MissionInformation info = GetComponentInChildren<MissionInformation>();
+
+            if (info != null)
+            {
+                info.canCollectCow = true;
+            }
+        }
+        
 
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
