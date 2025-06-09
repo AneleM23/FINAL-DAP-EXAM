@@ -143,9 +143,13 @@ public class Animal : MonoBehaviour
     // HELPER: SNAP Y COORDINATE TO TERRAIN HEIGHT
     //--------------------------------------------------
     void SnapToTerrain(ref Vector3 pos)
+{
+    RaycastHit hit;
+    Vector3 rayOrigin = new Vector3(pos.x, pos.y + 50f, pos.z); // Start well above
+    if (Physics.Raycast(rayOrigin, Vector3.down, out hit, 100f))
     {
-        if (Terrain.activeTerrain == null) return;
-
-        pos.y = Terrain.activeTerrain.SampleHeight(pos) + 0.1f; // slight lift to avoid sinking
+        pos.y = hit.point.y + 0.1f; // Slight lift to avoid clipping
     }
+}
+
 }
