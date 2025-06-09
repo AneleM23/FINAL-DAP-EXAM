@@ -3,86 +3,64 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class AfrikaansBraaiMission : MonoBehaviour
 {
-    public Text flipIndicatorText;     // UI element to tell the player to flip the meat
-    public float flipInterval = 6f;    // Time in seconds to wait before each flip
-    private int flipCount = 0;         // Counter for number of flips
-    private float timeSinceLastFlip;
-    private bool missionActive = false;
-    private bool meatBurned = false;
-
-    void Start()
-    {
-        flipIndicatorText.gameObject.SetActive(false); // Hide the flip indicator initially
-    }
+    public Text braaiUI; // Assign this in the Unity Inspector
+    public float flipTime = 3f; // Time player has to flip
+    private int flipsDone = 0;
+    private bool canFlip = false;
+    private float flipTimer = 0f;
 
     void Update()
     {
-        if (missionActive && !meatBurned)
+        if (canFlip)
         {
-            timeSinceLastFlip += Time.deltaTime;
+            flipTimer += Time.deltaTime;
 
-            // Show flip indicator if time to flip
-            if (timeSinceLastFlip >= flipInterval)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                flipIndicatorText.gameObject.SetActive(true); // Prompt player to flip the meat
+                FlipMeat();
             }
 
-            // Check if the player missed the flip
-            if (timeSinceLastFlip > flipInterval + 1) // 1-second buffer
+            if (flipTimer >= flipTime)
             {
-                BurnMeat(); // Fail the mission if flip missed
+                MissionFail();
             }
         }
     }
 
-    public void StartMission()
+    public void StartBraai()
     {
-        missionActive = true;
-        flipCount = 0;
-        timeSinceLastFlip = 0;
-        flipIndicatorText.text = "Flip the meat!";
-        flipIndicatorText.gameObject.SetActive(true);
+        flipsDone = 0;
+        StartCoroutine(BraaiRoutine());
     }
 
-    public void FlipMeat()
+    IEnumerator BraaiRoutine()
     {
-        if (flipIndicatorText.gameObject.activeSelf && !meatBurned)
+        for (int i = 0; i < 6; i++) // 3 times per side
         {
-            flipCount++;
-            timeSinceLastFlip = 0; // Reset timer
-            flipIndicatorText.gameObject.SetActive(false); // Hide the flip indicator until next flip
+            braaiUI.text = "🔥 Flip die vleis! Druk E!";
+            canFlip = true;
+            flipTimer = 0f;
 
-            if (flipCount >= 6) // 3 flips per side = 6 total flips
-            {
-                CompleteMission();
-            }
+            yield return new WaitUntil(() => !canFlip); // Wait until flipped or failed
+            yield return new WaitForSeconds(0.5f); // Delay between flips
         }
+
+        braaiUI.text = "✅ Jy't dit gemaak! Vleis is perfek gebraai!";
     }
 
-    void BurnMeat()
+    void FlipMeat()
     {
-        missionActive = false;
-        meatBurned = true;
-        flipIndicatorText.text = "The meat burned!";
-        Debug.Log("Mission failed: The meat burned.");
+        canFlip = false;
+        braaiUI.text = $"✅ Omgedraai {++flipsDone}/6";
     }
 
-    void CompleteMission()
+    void MissionFail()
     {
-        StartCoroutine(MissionComplete());
+        canFlip = false;
+        braaiUI.text = "🔥 Die vleis het gebrand! Sending gefaal.";
+        StopAllCoroutines();
     }
-
-    IEnumerator MissionComplete()
-    {
-        missionActive = false;
-        flipIndicatorText.text = "Braai complete! Enjoy your meal!";
-        Debug.Log("Mission complete: You made a lekker braai!");
-
-        yield return new WaitForSeconds(5f);
-
-        flipIndicatorText.gameObject.SetActive(false);
-    }
-
 }

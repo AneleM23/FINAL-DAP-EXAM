@@ -3,37 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Mission_Braai : MonoBehaviour
 {
-    [SerializeField] AfrikaansCowManager afrikaansMission1;
+    public AfrikaansBraaiMission braaiMission;
 
-    [SerializeField] MissionManager mission;
+    private bool isPlayerNear;
+    private Transform player;
+    public float interactionRange = 3f;
 
-    [SerializeField] WaypointManager waypoints;
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
-    [SerializeField] Sprite itemSprite;
-
-    bool missionAdded;
-
-    // Update is called once per frame
     void Update()
     {
-        bool missionCompleted = mission.GetActiveMissions().Exists(m => m.missionName == afrikaansMission1.missionTrigger.missionName);
+        isPlayerNear = Vector3.Distance(transform.position, player.position) <= interactionRange;
 
-        if (!missionAdded && !missionCompleted)
+        if (isPlayerNear && Input.GetKeyDown(KeyCode.E))
         {
-            SetMissionTrigger();
-            missionAdded = true;
+            braaiMission.StartBraai();
         }
     }
-
-    void SetMissionTrigger()
-    {
-        MissionTrigger mission = gameObject.AddComponent<MissionTrigger>();
-        mission.missionName = "Braai!";
-        mission.missionDescription = "Learn how to braai some meat!";
-        mission.itemSprite = itemSprite;
-        mission.itemName = "";
-        waypoints.waypoints.Add(gameObject);
-    }
 }
+
