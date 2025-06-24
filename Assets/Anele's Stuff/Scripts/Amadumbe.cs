@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Amadumbe : MonoBehaviour
 {
+ private bool isCollected = false;
+
     private void OnMouseDown()
     {
-        // Check if the player has clicked on the amadumbe
-        Mission_Amadumbe amadumbe = FindObjectOfType<Mission_Amadumbe>();
+        if (isCollected) return;
 
-        if (amadumbe != null)
+        isCollected = true;
+
+        // Reference to the mission tracker
+        Mission_Amadumbe mission = FindObjectOfType<Mission_Amadumbe>();
+        if (mission != null)
         {
-            amadumbe.CollectAmadumbe(); // Call the collect function
-            Destroy(gameObject); // Remove the amadumbe from the scene
+            mission.CollectAmadumbe(); // Increment counter
         }
+
+        Destroy(gameObject); // Only THIS amadumbe disappears
     }
 
 

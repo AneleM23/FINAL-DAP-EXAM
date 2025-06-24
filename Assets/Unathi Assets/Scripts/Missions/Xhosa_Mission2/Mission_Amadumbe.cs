@@ -30,9 +30,12 @@ public class Mission_Amadumbe : MonoBehaviour
     // Method to collect amadumbe
     public void CollectAmadumbe()
     {
-        amadumbeCollected++;
-        UpdateAmadumbeUI(); // Update UI after collecting
-        CheckMissionCompletion(); // Check if the mission is completed
+       if (!missionActive || missionComplete) return; // Prevent collection if mission hasn't started or is done
+
+    amadumbeCollected++;
+    UpdateAmadumbeUI(); // Update UI after collecting
+    CheckMissionCompletion(); // Check if the mission is completed
+
     }
 
     // Start the mission
